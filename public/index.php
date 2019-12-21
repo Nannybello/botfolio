@@ -1,5 +1,7 @@
 <?php
 
+include_once '../config/line_bot.php';
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
