@@ -20,6 +20,7 @@ class ReceiverController
         // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
         $events = json_decode($content, true);
         print_r($events);
+        $replyToken = null;
         if (!is_null($events)) {
             // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
             $replyToken = $events['events'][0]['replyToken'];
