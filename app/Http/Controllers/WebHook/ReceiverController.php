@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WebHook;
 
+use Illuminate\Http\Request;
 use Illuminate\Log\Logger;
 use Illuminate\Support\Facades\Log;
 use LINE\LINEBot;
@@ -10,7 +11,7 @@ use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
 class ReceiverController
 {
-    public function index()
+    public function index(Request $request)
     {
         // เชื่อมต่อกับ LINE Messaging API
         $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
@@ -21,7 +22,8 @@ class ReceiverController
 
         // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
         $events = json_decode($content, true);
-        Log::debug($events);
+        Log::debug($request->getContent());
+        Log::debug($request->headers);
         $replyToken = LINE_MESSAGE_ACCESS_TOKEN;
         if (!is_null($events)) {
             // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
