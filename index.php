@@ -1,3 +1,4 @@
 <?php
 
-echo "test botfolio";
+//echo "test botfolio";
+include 'public/index.php';
