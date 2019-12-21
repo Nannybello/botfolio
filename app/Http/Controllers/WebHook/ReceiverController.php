@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\WebHook;
 
+use Illuminate\Log\Logger;
+use Illuminate\Support\Facades\Log;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
@@ -19,8 +21,8 @@ class ReceiverController
 
         // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
         $events = json_decode($content, true);
-        print_r($events);
-        $replyToken = null;
+        Log::debug($events);
+        $replyToken = LINE_MESSAGE_ACCESS_TOKEN;
         if (!is_null($events)) {
             // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
             $replyToken = $events['events'][0]['replyToken'];
@@ -36,6 +38,6 @@ class ReceiverController
         }
 
         // Failed
-        echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+        echo $response->getHTTPStatus() . ' ' . $response->getRawBody() . $content;
     }
 }
