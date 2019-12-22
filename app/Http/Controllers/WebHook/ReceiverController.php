@@ -13,13 +13,14 @@ class ReceiverController
 {
     public function index(Request $request)
     {
-        Log::info(json_encode(["GET" => $_GET, "POST" => $_POST]));
+        // คำสั่งรอรับการส่งค่ามาของ LINE Messaging API
+        $content = file_get_contents('php://input');
+
+        Log::info(json_encode(["GET" => $_GET, "POST" => $_POST, "CONTENT" => $content]));
         // เชื่อมต่อกับ LINE Messaging API
         $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
         $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
 
-        // คำสั่งรอรับการส่งค่ามาของ LINE Messaging API
-        $content = file_get_contents('php://input');
 
         // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
         $events = json_decode($content, true);
