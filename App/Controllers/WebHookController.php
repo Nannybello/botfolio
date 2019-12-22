@@ -4,46 +4,49 @@ namespace App\Controllers;
 
 
 use LINE\LINEBot;
-use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use LINE\LINEBot\Response;
 
 class WebHookController
 {
-    public function index(): string
+    public function index(LINEBot $bot, array $event): Response
     {
+        $replyToken = $this->getReplyToken($event);
+        $todo = $this->getTextMessage($event);
 
-        $logger = new Logger('channel-name');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/app.log', Logger::DEBUG));
-
-        $content = file_get_contents('php://input');
-        $logger->info(json_encode(["GET" => $_GET, "POST" => $_POST, "CONTENT" => $content, "HEADERS" => getallheaders()]));
-
-
-//
-
-
-        $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
-        $bot = new LINEBot($httpClient, ['channelSecret' => LINE_MESSAGE_CHANNEL_SECRET]);
-
-        $events = json_decode($content, true);
-
-        if (!is_null($events)) {
-            // ถ้ามีค่า สร้างตัวแปรเก็บ replyToken ไว้ใช้งาน
-            $replyToken = $events['events'][0]['replyToken'];
+        switch ($todo) {
+            case "hi":
+                return $this->hi($bot, $event, $replyToken);
+            case "info":
+                return $this->info($bot, $event, $replyToken);
         }
 
-        $text = $events['events'][0]['message']['text'];
+        $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง");
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
+    }
 
-        $textMessageBuilder = new TextMessageBuilder(json_encode($events) . "\nคุณถามเข้ามาว่า $text");
+    private function getReplyToken(array $event): ?string
+    {
+        return $event['replyToken'];
+    }
 
-        $response = $bot->replyMessage($replyToken ?? "", $textMessageBuilder);
-        if ($response->isSucceeded()) {
-            return 'ok';
-        } else {
-            return $response->getHTTPStatus() . ' ' . $response->getRawBody();
-        }
+    private function getTextMessage(array $event): ?string
+    {
+        $type = $event['type'];
+        if ($type != "message") return null;
+        return $event['message']['text'];
+    }
+
+    private function hi(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $textMessageBuilder = new TextMessageBuilder("Hello, I'm Botfolio");
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
+    }
+
+    private function info(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $textMessageBuilder = new TextMessageBuilder(json_encode($event));
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 }
 

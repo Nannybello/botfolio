@@ -16,27 +16,7 @@ spl_autoload_register(function ($path) {
     include_once ROOT_PATH . "/$path.php";
 });
 
-use App\Controllers\WebHookController;
+use App\Router\LineWebHookRouter;
 
-$controller = new WebHookController();
-echo $controller->index();
-
-//use App\Controllers\WebHookController;
-//use Psr\Http\Message\ResponseInterface as Response;
-//use Psr\Http\Message\ServerRequestInterface as Request;
-//use Slim\Factory\AppFactory;
-//
-//$app = AppFactory::create();
-//
-//$app->get('/', function (Request $request, Response $response, $args) {
-//    $response->getBody()->write("Hello world!");
-//    return $response;
-//});
-//
-//$app->get('/webhook', function (Request $request, Response $response, $args) {
-//    $controller = new WebHookController();
-//    $response->getBody()->write($controller);
-//    return $response;
-//});
-//
-//$app->run();
+$router = new LineWebHookRouter();
+$router->route();
