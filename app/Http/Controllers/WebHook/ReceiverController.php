@@ -13,6 +13,7 @@ class ReceiverController
 {
     public function index(Request $request)
     {
+        Log::info(json_encode(["GET" => $_GET, "POST" => $_POST]));
         // เชื่อมต่อกับ LINE Messaging API
         $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
         $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
