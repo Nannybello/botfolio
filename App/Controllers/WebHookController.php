@@ -19,6 +19,8 @@ class WebHookController
                 return $this->hi($bot, $event, $replyToken);
             case "info":
                 return $this->info($bot, $event, $replyToken);
+            case "website":
+                return $this->website($bot, $event, $replyToken);
         }
 
         $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง");
@@ -46,6 +48,12 @@ class WebHookController
     private function info(LINEBot $bot, array $event, string $replyToken): Response
     {
         $textMessageBuilder = new TextMessageBuilder(json_encode($event));
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
+    }
+
+    private function website(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $textMessageBuilder = new TextMessageBuilder("https://www.beautyandballoon.com");
         return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 }
