@@ -9,6 +9,8 @@
     "require": {
         "linecorp/line-bot-sdk": "^4.1",
         "slim/slim": "4.*",
-        "monolog/monolog": "^2.0"
+        "monolog/monolog": "^2.0",
+        "illuminate/database": "^6.8",
+        "php-di/php-di": "^6.0"
     }
 }
