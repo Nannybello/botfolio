@@ -14,11 +14,11 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
-spl_autoload_register(function($path){
-    $paths = explode("\\", $path);
-    $path = implode(DIRECTORY_SEPARATOR, $paths);
-    include_once ROOT_PATH . "/$path.php";
-});
+//spl_autoload_register(function($path){
+//    $paths = explode("\\", $path);
+//    $path = implode(DIRECTORY_SEPARATOR, $paths);
+//    include_once ROOT_PATH . "/$path.php";
+//});
 
 $app = AppFactory::create();
 
