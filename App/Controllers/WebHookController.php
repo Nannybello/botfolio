@@ -21,6 +21,8 @@ class WebHookController
                 return $this->info($bot, $event, $replyToken);
             case "website":
                 return $this->website($bot, $event, $replyToken);
+            case "confirm":
+                return $this->confirmBox($bot, $event, $replyToken);
         }
 
         $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง");
@@ -54,6 +56,23 @@ class WebHookController
     private function website(LINEBot $bot, array $event, string $replyToken): Response
     {
         $textMessageBuilder = new TextMessageBuilder("https://www.beautyandballoon.com");
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
+    }
+
+    private function confirmBox(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $textMessageBuilder = new TextMessageBuilder("1 + 1 = ?",
+        new LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
+            "1 + 1 = ?",
+            [
+                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                    "1", "Wrong"
+                ),
+                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                    "2", "Correct"
+                )
+            ]
+        ));
         return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 }
