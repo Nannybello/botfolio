@@ -109,7 +109,7 @@ class WebHookController
                         new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                             "Title",
                             "Desc",
-                            null,
+                            "",
                             [
                                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
                                     "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
