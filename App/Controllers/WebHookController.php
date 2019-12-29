@@ -61,7 +61,7 @@ class WebHookController
 
     private function confirmBox(LINEBot $bot, array $event, string $replyToken): Response
     {
-        $textMessageBuilder = new TextMessageBuilder("1 + 1 = ?",
+        $message = new LINEBot\MessageBuilder\TemplateMessageBuilder("1 + 1 = ?",
         new LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
             "1 + 1 = ?",
             [
@@ -73,7 +73,7 @@ class WebHookController
                 )
             ]
         ));
-        return $bot->replyMessage($replyToken, $textMessageBuilder);
+        return $bot->replyMessage($replyToken, $message);
     }
 }
 
