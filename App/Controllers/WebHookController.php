@@ -66,17 +66,17 @@ class WebHookController
     private function confirmBox(LINEBot $bot, array $event, string $replyToken): Response
     {
         $message = new LINEBot\MessageBuilder\TemplateMessageBuilder("1 + 1 = ?",
-        new LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
-            "เลือกคำสั่ง",
-            [
-                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                    "welcome", "hi"
-                ),
-                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                    "ข้อมูล", "info"
-                )
-            ]
-        ));
+            new LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
+                "เลือกคำสั่ง",
+                [
+                    new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                        "welcome", "hi"
+                    ),
+                    new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                        "ข้อมูล", "info"
+                    )
+                ]
+            ));
         return $bot->replyMessage($replyToken, $message);
     }
 
@@ -95,13 +95,32 @@ class WebHookController
                                     "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
                                 )
                             ]
+                        ),
+                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                            "Title",
+                            "Desc",
+                            "https://botfolio.beautyandballoon.com/storage/img1.jpg",
+                            [
+                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                                )
+                            ]
+                        ),
+                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                            "Title",
+                            "Desc",
+                            "https://botfolio.beautyandballoon.com/storage/img1.jpg",
+                            [
+                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                                )
+                            ]
                         )
                     ]
                 )
             );
             return $bot->replyMessage($replyToken, $textMessageBuilder);
-        }
-        catch (Exception $e){
+        } catch (Exception $e) {
             $logger = new Logger('channel-name');
             $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/reply.log', Logger::DEBUG));
             $logger->alert($e->getMessage());
