@@ -83,7 +83,7 @@ class WebHookController
     private function img(LINEBot $bot, array $event, string $replyToken): Response
     {
         try {
-            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("",
+            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("img",
                 new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
                     [
                         new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
