@@ -29,7 +29,7 @@ class WebHookController
                 return $this->img($bot, $event, $replyToken);
         }
 
-        $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง");
+        $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง -- " . json_encode($event));
         return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 
