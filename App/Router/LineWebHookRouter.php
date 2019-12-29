@@ -25,13 +25,18 @@ class LineWebHookRouter
 
         $events = json_decode($content, true);
 
-        foreach ($events['events'] as $event) {
-            $controller = new WebHookController();
-            $response = $controller->index($bot, $event);
-            if (!$response->isSucceeded()) {
-                return $response->getHTTPStatus() . ' ' . $response->getRawBody();
+        try {
+
+            foreach ($events['events'] as $event) {
+                $controller = new WebHookController();
+                $response = $controller->index($bot, $event);
+                if (!$response->isSucceeded()) {
+                    return $response->getHTTPStatus() . ' ' . $response->getRawBody();
+                }
             }
+            return 'ok';
+        } catch (Exception $e) {
+            $logger->alert($e->getMessage());
         }
-        return 'ok';
     }
 }
