@@ -16,6 +16,10 @@ class WebHookController
         $replyToken = $this->getReplyToken($event);
         $todo = $this->getTextMessage($event);
 
+        if(isset($event['message']['type']) && $event['message']['type'] == "file"){
+            $todo = "file";
+        }
+
         switch ($todo) {
             case "hi":
                 return $this->hi($bot, $event, $replyToken);
@@ -27,6 +31,8 @@ class WebHookController
                 return $this->confirmBox($bot, $event, $replyToken);
             case "img":
                 return $this->img($bot, $event, $replyToken);
+            case "file":
+                return $this->file($bot, $event, $replyToken);
         }
 
         $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง -- " . json_encode($event));
@@ -60,6 +66,17 @@ class WebHookController
     private function website(LINEBot $bot, array $event, string $replyToken): Response
     {
         $textMessageBuilder = new TextMessageBuilder("https://www.beautyandballoon.com");
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
+    }
+
+    private function file(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $res = $bot->getMessageContent($event['message']['id']);
+        if($res->isSucceeded()){
+            $binaryData = $res->getRawBody();
+            file_put_contents(ROOT_PATH . "/storage/" . $event['message']['fileName'], $binaryData);
+        }
+        $textMessageBuilder = new TextMessageBuilder("Saved!");
         return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 
