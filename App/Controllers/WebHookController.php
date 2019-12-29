@@ -63,13 +63,13 @@ class WebHookController
     {
         $message = new LINEBot\MessageBuilder\TemplateMessageBuilder("1 + 1 = ?",
         new LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
-            "1 + 1 = ?",
+            "เลือกคำสั่ง",
             [
                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                    "1", "Wrong"
+                    "welcome", "hi"
                 ),
                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                    "2", "Correct"
+                    "ข้อมูล", "info"
                 )
             ]
         ));
