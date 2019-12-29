@@ -23,6 +23,8 @@ class WebHookController
                 return $this->website($bot, $event, $replyToken);
             case "confirm":
                 return $this->confirmBox($bot, $event, $replyToken);
+            case "img":
+                return $this->img($bot, $event, $replyToken);
         }
 
         $textMessageBuilder = new TextMessageBuilder("ไม่พบคำสั่งนี้ กรุณาลองใหม่อีกครั้ง");
@@ -74,6 +76,27 @@ class WebHookController
             ]
         ));
         return $bot->replyMessage($replyToken, $message);
+    }
+
+    private function img(LINEBot $bot, array $event, string $replyToken): Response
+    {
+        $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("",
+        new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
+            [
+                new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                    "Title",
+                    "Desc",
+                    "https://botfolio.beautyandballoon.com/storage/img1.jpg",
+                    [
+                        new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                            "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                        )
+                    ]
+                )
+            ]
+        )
+        );
+        return $bot->replyMessage($replyToken, $textMessageBuilder);
     }
 }
 
