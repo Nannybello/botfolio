@@ -13,7 +13,7 @@ class NotFoundCommand extends DefaultCommand
     {
         $message = new TextMessageBuilder("Command Not Found");
         $this->bot->replyMessage($this->replyToken, $message);
-        
+
         return parent::getResponse();
     }
 }

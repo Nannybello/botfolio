@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Router\Handler;
 
 
 use App\Commands\BaseCommands;

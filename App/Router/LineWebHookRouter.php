@@ -2,10 +2,9 @@
 
 namespace App\Router;
 
-use App\Controllers\WebHookController;
+use App\Router\Handler\WebHookController;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
