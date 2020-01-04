@@ -18,7 +18,7 @@ abstract class BaseCommands
     {
         $this->bot = $bot;
         $this->event = $event;
-        $this->replyToken = replyToken;
+        $this->replyToken = $replyToken;
 
         $this->type = $event['type'];
         if ($this->type == 'message') {

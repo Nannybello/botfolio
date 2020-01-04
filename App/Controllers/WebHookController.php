@@ -32,6 +32,8 @@ class WebHookController
         } catch (\Exception $e) {
             $logger->alert($e->getMessage());
         }
+
+        return null;
     }
 
     private function getReplyToken(array $event): ?string
