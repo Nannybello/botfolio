@@ -35,7 +35,7 @@ class LineWebHookRouter
                 }
             }
             return 'ok';
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $logger->alert($e->getMessage());
         }
     }

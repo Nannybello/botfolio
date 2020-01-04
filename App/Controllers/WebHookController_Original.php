@@ -9,14 +9,14 @@ use LINE\LINEBot\Response;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
-class WebHookController
+class WebHookController_Original
 {
     public function index(LINEBot $bot, array $event): Response
     {
         $replyToken = $this->getReplyToken($event);
         $todo = $this->getTextMessage($event);
 
-        if(isset($event['message']['type']) && $event['message']['type'] == "file"){
+        if (isset($event['message']['type']) && $event['message']['type'] == "file") {
             $todo = "file";
         }
 
@@ -72,7 +72,7 @@ class WebHookController
     private function file(LINEBot $bot, array $event, string $replyToken): Response
     {
         $res = $bot->getMessageContent($event['message']['id']);
-        if($res->isSucceeded()){
+        if ($res->isSucceeded()) {
             $binaryData = $res->getRawBody();
             file_put_contents(ROOT_PATH . "/storage/" . $event['message']['fileName'], $binaryData);
         }
