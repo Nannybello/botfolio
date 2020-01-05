@@ -3,6 +3,7 @@
 namespace App\Commands\Text;
 
 use App\Commands\BaseCommands;
+use App\Controllers\BaseController;
 use App\Controllers\HiController;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\Response;
@@ -10,11 +11,9 @@ use LINE\LINEBot\Response;
 class Hi extends BaseCommands
 {
 
-    private $controller;
-
-    public function __construct()
+    public function controller(): ?BaseController
     {
-        $this->controller = new HiController();
+        return new HiController();
     }
 
     public function canHandle(): bool

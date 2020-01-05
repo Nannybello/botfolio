@@ -3,11 +3,16 @@
 namespace App\Commands;
 
 
+use App\Controllers\BaseController;
+use App\Database\Models\LineUser;
 use LINE\LINEBot;
 use LINE\LINEBot\Response;
 
 abstract class BaseCommands
 {
+    protected $userId;
+    protected $lineUserId;
+    protected $controller;
     protected $bot;
     protected $event;
     protected $replyToken;
@@ -24,6 +29,20 @@ abstract class BaseCommands
         if ($this->type == 'message') {
             $this->text = $event['message']['text'];
         }
+
+        $this->lineUserId = @strval($event['source']['userId']);
+
+        $this->controller = $this->controller();
+    }
+
+    private function fetchUser()
+    {
+        $user = LineUser::query()->where('userId', '=', $this->lineUserId)->first();
+    }
+
+    public function controller(): ?BaseController
+    {
+        return null;
     }
 
     public abstract function canHandle(): bool;
