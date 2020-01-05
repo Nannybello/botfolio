@@ -12,6 +12,9 @@ require_once(ROOT_PATH . '/App/Database/init.php');
 require_once(ROOT_PATH . '/App/Config/line_bot.php');
 
 spl_autoload_register(function ($path) {
+    if (strpos($path, "App") != 0) {
+        $path = "vendor\\$path";
+    }
     $paths = explode("\\", $path);
     $path = implode(DIRECTORY_SEPARATOR, $paths);
     include_once ROOT_PATH . "/$path.php";
