@@ -38,7 +38,7 @@ abstract class BaseCommands
     private function fetchUser()
     {
         //เช็คว่ามีอยู่ใน database มั้ย
-        $user = LineUser::query()->where('userId', '=', $this->lineUserId)->first();
+        $user = LineUser::query()->where('lineUserId', '=', $this->lineUserId)->first();
         if ($user === null) {
             $user = new LineUser();
             $user->lineUserId = $this->lineUserId;
