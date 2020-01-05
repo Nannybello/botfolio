@@ -9,7 +9,7 @@ use LINE\LINEBot\Response;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
-class WebHookController_Original
+class WebHookHandler_Original
 {
     public function index(LINEBot $bot, array $event): Response
     {

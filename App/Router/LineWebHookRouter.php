@@ -2,7 +2,7 @@
 
 namespace App\Router;
 
-use App\Router\Handler\WebHookController;
+use App\Router\Handler\WebHookHandler;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use Monolog\Handler\StreamHandler;
@@ -27,7 +27,7 @@ class LineWebHookRouter
         try {
 
             foreach ($events['events'] as $event) {
-                $controller = new WebHookController();
+                $controller = new WebHookHandler();
                 $response = $controller->index($bot, $event);
                 if (!$response->isSucceeded()) {
                     return $response->getHTTPStatus() . ' ' . $response->getRawBody();
