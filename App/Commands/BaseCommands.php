@@ -29,4 +29,20 @@ abstract class BaseCommands
     public abstract function canHandle(): bool;
 
     public abstract function getResponse(): Response;
+
+
+    public function matchHoldKeyWord(array $keywords): bool
+    {
+        return in_array($this->text, $keywords);
+    }
+
+    public function hasKeyWord(array $keywords): bool
+    {
+        foreach ($keywords as $keyword) {
+            if (stripos($this->text, $keyword) !== false) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

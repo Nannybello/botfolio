@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 define("ROOT_PATH", __DIR__);
 
 require_once(ROOT_PATH . '/vendor/autoload.php');
+require_once(ROOT_PATH . '/App/Database/init.php');
 require_once(ROOT_PATH . '/App/Config/line_bot.php');
 
 spl_autoload_register(function ($path) {

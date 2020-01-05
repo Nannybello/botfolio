@@ -2,7 +2,7 @@
 
 include 'autoload.php';
 
-use App\Router\LineWebHookRouter;
+use App\Router\ApiRouter;
 
-$router = new LineWebHookRouter();
+$router = new ApiRouter();
 $router->route();

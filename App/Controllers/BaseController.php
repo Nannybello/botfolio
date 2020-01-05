@@ -1,7 +1,8 @@
 <?php
 
+namespace App\Controllers;
 
-class BaseController
+abstract class BaseController
 {
-
+    public abstract function index(): array;
 }

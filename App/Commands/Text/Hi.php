@@ -3,20 +3,29 @@
 namespace App\Commands\Text;
 
 use App\Commands\BaseCommands;
+use App\Controllers\HiController;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\Response;
 
 class Hi extends BaseCommands
 {
 
+    private $controller;
+
+    public function __construct()
+    {
+        $this->controller = new HiController();
+    }
+
     public function canHandle(): bool
     {
-        return in_array($this->text, ['hi', 'Hi']);
+        return $this->matchHoldKeyWord(['hi', 'Hi']);
     }
 
     public function getResponse(): Response
     {
-        $message = new TextMessageBuilder("Hello World!");
+        [$msg] = $this->controller->index();
+        $message = new TextMessageBuilder($msg);
         return $this->bot->replyMessage($this->replyToken, $message);
     }
 }
