@@ -6,7 +6,7 @@ abstract class BaseController
 {
     protected $userId;
 
-    public function __construct($userId)
+    public function __construct($userId = null)
     {
         $this->userId = $userId;
     }

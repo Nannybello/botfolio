@@ -31,13 +31,25 @@ abstract class BaseCommands
         }
 
         $this->lineUserId = @strval($event['source']['userId']);
-
+        $this->fetchUser();
         $this->controller = $this->controller();
     }
 
     private function fetchUser()
     {
+        //เช็คว่ามีอยู่ใน database มั้ย
         $user = LineUser::query()->where('userId', '=', $this->lineUserId)->first();
+        if ($user === null) {
+            $user = new LineUser();
+            $user->lineUserId = $this->lineUserId;
+            $user->created_at = date('Y-m-d H:i:s');
+            $user->updated_at = date('Y-m-d H:i:s');
+            $user->save();
+        } else {
+            $user->updated_at = date('Y-m-d H:i:s');
+            $user->save();
+        }
+        $this->userId = $user->id;
     }
 
     public function controller(): ?BaseController

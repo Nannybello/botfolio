@@ -13,7 +13,7 @@ class Hi extends BaseCommands
 
     public function controller(): ?BaseController
     {
-        return new HiController();
+        return new HiController($this->userId);
     }
 
     public function canHandle(): bool
