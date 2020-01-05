@@ -20,7 +20,7 @@ class ApiRouter
         /**
          * @var BaseController $controller
          */
-        $controller = new $class();
+        $controller = new $class(intval($_GET['id']));
 
         header('Content-Type: application/json');
         echo json_encode($controller->index());
