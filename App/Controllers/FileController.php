@@ -9,6 +9,6 @@ class FileController extends BaseController
 {
     public function index(): array
     {
-        return FilesInfo::query()->where('user_id', '=', $this->userId)->toArray();
+        return FilesInfo::query()->where('user_id', '=', $this->userId)->get();
     }
 }
