@@ -28,7 +28,7 @@ class FileList extends BaseCommands
         if ($files) {
             $output = '';
             foreach ($files as $file) {
-                $output .= "- " . $file->filename . "\n";
+                $output .= "- " . $file['filename'] . "\n";
             }
         } else {
             $output = 'ยังไม่มีไฟล์';
