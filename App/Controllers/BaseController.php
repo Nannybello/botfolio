@@ -12,5 +12,7 @@ abstract class BaseController
     }
 
 
-    public abstract function index(): array;
+    public function index(): array
+    {
+    }
 }

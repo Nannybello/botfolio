@@ -106,20 +106,20 @@ class WebHookHandler_Original
                         new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                             "Title",
                             "Desc",
-                            "https://botfolio.beautyandballoon.com/storage/img1.jpg",
+                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
                             [
                                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
                                 )
                             ]
                         ),
                         new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                             "Title",
                             "Desc",
-                            "https://botfolio.beautyandballoon.com/storage/img1.jpg",
+                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
                             [
                                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
                                 )
                             ]
                         ),
@@ -129,7 +129,7 @@ class WebHookHandler_Original
                             "",
                             [
                                 new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/img1.jpg"
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
                                 )
                             ]
                         )
