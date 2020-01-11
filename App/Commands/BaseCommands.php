@@ -62,9 +62,17 @@ abstract class BaseCommands
     public abstract function getResponse(): Response;
 
 
-    public function matchHoldKeyWord(array $keywords): bool
+    public function matchHoldKeyWord(array $keywords, bool $ignoreCase = true): bool
     {
-        return in_array($this->text, $keywords);
+        $text = $ignoreCase ? strtolower($this->text) : $this->text;
+
+        if ($ignoreCase) {
+            $keywords = array_map(function ($k) {
+                return strtolower($k);
+            }, $keywords);
+        }
+
+        return in_array($text, $keywords);
     }
 
     public function hasKeyWord(array $keywords): bool

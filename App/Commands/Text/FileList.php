@@ -19,7 +19,7 @@ class FileList extends BaseCommands
 
     public function canHandle(): bool
     {
-        return $this->matchHoldKeyWord(['file', 'files']);
+        return $this->matchHoldKeyWord(['file', 'files', 'File' , ]);
     }
 
     public function getResponse(): Response
