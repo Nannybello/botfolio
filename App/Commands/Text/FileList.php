@@ -24,13 +24,13 @@ class FileList extends BaseCommands
 
     public function getResponse(): Response
     {
-        $files= $this->controller->index();
-        $output = '';
-        foreach ($files as $file){
-            $output .= "- " . $file['filename'] . "\n";
-        }
-
-        if(!$output){
+        $files = $this->controller->index();
+        if ($files) {
+            $output = '';
+            foreach ($files as $file) {
+                $output .= "- " . $file['filename'] . "\n";
+            }
+        } else {
             $output = 'ยังไม่มีไฟล์';
         }
 
