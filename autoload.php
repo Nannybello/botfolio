@@ -12,7 +12,7 @@ require_once(ROOT_PATH . '/App/Database/init.php');
 require_once(ROOT_PATH . '/App/Config/line_bot.php');
 
 //helper
-require_once(ROOT_PATH . '/Helpers/url.php');
+require_once(ROOT_PATH . '/App/Helpers/url.php');
 
 spl_autoload_register(function ($path) {
     if (strpos($path, "App") !== 0) {
