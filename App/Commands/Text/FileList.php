@@ -10,6 +10,8 @@ use LINE\LINEBot\Response;
 use LINE\LINEBot;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use function App\Helpers\makeLink;
+use function App\Helpers\userFileUrl;
 
 class FileList extends BaseCommands
 {
@@ -33,30 +35,6 @@ class FileList extends BaseCommands
         $logger->info(json_encode($files));
 
 
-        try {
-            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("img",
-                new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
-                    [
-                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                            "Title",
-                            "Desc",
-                            "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg",
-                            [
-                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg"
-                                )
-                            ]
-                        ),
-                    ]
-                )
-            );
-            return $this->bot->replyMessage($this->replyToken, $textMessageBuilder);
-        } catch (Exception $e) {
-            $logger = new Logger('channel-name');
-            $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/command.log', Logger::DEBUG));
-            $logger->alert($e->getMessage());
-        }
-
         if (!$files) {
             $output = 'ยังไม่มีไฟล์';
             $message = new TextMessageBuilder($output);
@@ -65,41 +43,23 @@ class FileList extends BaseCommands
 
 
         try {
-            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("img",
-                new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
+
+            $carouseColumns = array_map(function ($file) {
+                $url = userFileUrl($file['filename'], $this->userId);
+                return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                    $file['filename_original'],
+                    $file['filetype'] . ", upload at " . $file['created_at'],
+                    $url,
                     [
-                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                            "Title",
-                            "Desc",
-                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
-                            [
-                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
-                                )
-                            ]
-                        ),
-                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                            "Title",
-                            "Desc",
-                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
-                            [
-                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
-                                )
-                            ]
-                        ),
-                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                            "Title",
-                            "Desc",
-                            "",
-                            [
-                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
-                                )
-                            ]
+                        new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                            "Download", makeLink($url)
                         )
                     ]
-                )
+                );
+            }, $files);
+
+            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("img",
+                new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($carouseColumns)
             );
             return $this->bot->replyMessage($this->replyToken, $textMessageBuilder);
         } catch (Exception $e) {
