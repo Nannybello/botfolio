@@ -15,7 +15,6 @@ use Monolog\Logger;
 class Upload extends BaseCommands
 {
 
-    private $controller;
     private $logger;
 
     /**
