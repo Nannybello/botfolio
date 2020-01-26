@@ -9,6 +9,8 @@ use App\Controllers\HiController;
 use LINE\LINEBot;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\Response;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class Upload extends BaseCommands
 {
@@ -35,15 +37,22 @@ class Upload extends BaseCommands
 
     public function getResponse(): Response
     {
-        $done = false;
-        $filename = $this->event['message']['fileName'];
-        $res = $this->bot->getMessageContent($this->event['message']['id']);
-        if ($res->isSucceeded()) {
-            $binaryData = $res->getRawBody();
-            $done = $this->controller->saveFile($filename, $binaryData);
+        $logger = new Logger('channel-name');
+        $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/upload-file.log', Logger::DEBUG));
+        try {
+            $logger->debug(json_encode($this->event));
+            $done = false;
+            $filename = $this->event['message']['fileName'];
+            $res = $this->bot->getMessageContent($this->event['message']['id']);
+            if ($res->isSucceeded()) {
+                $binaryData = $res->getRawBody();
+                $done = $this->controller->saveFile($filename, $binaryData);
+            }
+            $msg = $done ? 'Saved' : 'cannot upload this file';
+            $message = new TextMessageBuilder($msg);
+            return $this->bot->replyMessage($this->replyToken, $message);
+        } catch (Exception $e) {
+            $logger->alert($e->getMessage());
         }
-        $msg = $done ? 'Saved' : 'cannot upload this file';
-        $message = new TextMessageBuilder($msg);
-        return $this->bot->replyMessage($this->replyToken, $message);
     }
 }
