@@ -16,6 +16,7 @@ class Upload extends BaseCommands
 {
 
     private $controller;
+    private $logger;
 
     /**
      * Upload constructor.
@@ -27,6 +28,12 @@ class Upload extends BaseCommands
     {
         parent::__construct($bot, $event, $replyToken);
         $this->controller = new FileController($this->userId);
+
+        $this->logger = new Logger('channel-name');
+        $this->logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/upload-file.log', Logger::DEBUG));
+
+
+        $this->logger->debug(json_encode($event));
     }
 
 
@@ -37,8 +44,7 @@ class Upload extends BaseCommands
 
     public function getResponse(): Response
     {
-        $logger = new Logger('channel-name');
-        $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/upload-file.log', Logger::DEBUG));
+        $logger = $this->logger;
         try {
             $logger->debug(json_encode($this->event));
             $done = false;
