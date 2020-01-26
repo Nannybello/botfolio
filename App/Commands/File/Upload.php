@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands\Text;
+namespace App\Commands\File;
 
 use App\Commands\BaseCommands;
 use App\Controllers\BaseController;
