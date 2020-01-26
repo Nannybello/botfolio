@@ -13,6 +13,7 @@ class WebHookHandler
 {
     public function index(LINEBot $bot, array $event): Response
     {
+        error_log(json_encode($event));
 
         $logger = new Logger('channel-name');
         $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/app.log', Logger::DEBUG));
