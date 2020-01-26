@@ -5,9 +5,11 @@ namespace App\Commands\Text;
 use App\Commands\BaseCommands;
 use App\Controllers\BaseController;
 use App\Controllers\FileController;
-use App\Controllers\HiController;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use LINE\LINEBot\Response;
+use LINE\LINEBot;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class FileList extends BaseCommands
 {
@@ -19,22 +21,61 @@ class FileList extends BaseCommands
 
     public function canHandle(): bool
     {
-        return $this->matchHoldKeyWord(['file', 'files','my file', 'ไฟล์' ,'เรียกไฟล์','ไฟล์ทั้งหมด' ]);
+        return $this->matchHoldKeyWord(['file', 'files', 'my file', 'ไฟล์', 'เรียกไฟล์', 'ไฟล์ทั้งหมด']);
     }
 
     public function getResponse(): Response
     {
         $files = $this->controller->index();
-        if ($files) {
-            $output = '';
-            foreach ($files as $file) {
-                $output .= "- " . $file['filename_original'] . "\n";
-            }
-        } else {
+        if (!$files) {
             $output = 'ยังไม่มีไฟล์';
+            $message = new TextMessageBuilder($output);
+            return $this->bot->replyMessage($this->replyToken, $message);
         }
 
-        $message = new TextMessageBuilder($output);
-        return $this->bot->replyMessage($this->replyToken, $message);
+
+        try {
+            $textMessageBuilder = new LINEBot\MessageBuilder\TemplateMessageBuilder("img",
+                new LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
+                    [
+                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                            "Title",
+                            "Desc",
+                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
+                            [
+                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
+                                )
+                            ]
+                        ),
+                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                            "Title",
+                            "Desc",
+                            "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg",
+                            [
+                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
+                                )
+                            ]
+                        ),
+                        new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
+                            "Title",
+                            "Desc",
+                            "",
+                            [
+                                new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                                    "Download", "https://botfolio.beautyandballoon.com/storage/20200111-164500.jpg"
+                                )
+                            ]
+                        )
+                    ]
+                )
+            );
+            return $this->bot->replyMessage($this->replyToken, $textMessageBuilder);
+        } catch (Exception $e) {
+            $logger = new Logger('channel-name');
+            $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/reply.log', Logger::DEBUG));
+            $logger->alert($e->getMessage());
+        }
     }
 }
