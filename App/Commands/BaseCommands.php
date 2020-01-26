@@ -27,7 +27,7 @@ abstract class BaseCommands
 
         $this->type = $event['type'];
         if ($this->type == 'message') {
-            $this->text = $event['message']['text'];
+            $this->text = $event['message']['text'] ?? null;
         }
 
         $this->lineUserId = @strval($event['source']['userId']);
