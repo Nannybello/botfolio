@@ -7,6 +7,10 @@ error_reporting(E_ALL);
 
 define("ROOT_PATH", __DIR__);
 
+ini_set("log_errors", 1);
+ini_set("error_log", ROOT_PATH . "/storage/php-error.log");
+error_log( date('Y-m-d H:i:s') . "------------------------------------------------------------------" );
+
 require_once(ROOT_PATH . '/vendor/autoload.php');
 require_once(ROOT_PATH . '/App/Database/init.php');
 require_once(ROOT_PATH . '/App/Config/line_bot.php');
