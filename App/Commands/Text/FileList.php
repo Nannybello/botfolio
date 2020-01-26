@@ -27,6 +27,11 @@ class FileList extends BaseCommands
     public function getResponse(): Response
     {
         $files = $this->controller->index();
+
+        $logger = new Logger('channel-name');
+        $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/command.log', Logger::DEBUG));
+        $logger->alert(json_encode($files));
+
         if (!$files) {
             $output = 'ยังไม่มีไฟล์';
             $message = new TextMessageBuilder($output);
