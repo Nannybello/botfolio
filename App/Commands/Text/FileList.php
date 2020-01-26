@@ -44,6 +44,15 @@ class FileList extends BaseCommands
 
         try {
 
+            $logger = new Logger('channel-name');
+            $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/command.log', Logger::DEBUG));
+            $logger->alert(json_encode([
+                $files[0]['filename_original'],
+                $files[0]['filetype'] . ", upload at " . $files[0]['created_at'],
+                userFileUrl($files[0]['filename'], $this->userId),
+                makeLink(userFileUrl($files[0]['filename'], $this->userId)),
+            ]));
+
             $carouseColumns = array_map(function ($file) {
                 $url = userFileUrl($file['filename'], $this->userId);
                 return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
