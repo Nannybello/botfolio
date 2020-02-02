@@ -21,18 +21,22 @@ class FileController extends BaseController
         $s = explode('.', $ori_filename);
         $ext = end($s);
         $filename = date('Ymd-His') . '.' . $ext;
+
         if (!$this->saveFile($filename, $binaryData)) {
             return false;
         }
 
-        $rec = new FilesInfo();
-        $rec->filename = $filename;
-        $rec->filename_original = $ori_filename;
-        $rec->filetype = $ext;
-        $rec->user_id = $userId;
-        $rec->created_at = date('Y-m-d H:i:s');
-
-        $rec->save();
+        try {
+            $rec = new FilesInfo();
+            $rec->filename = $filename;
+            $rec->filename_original = $ori_filename;
+            $rec->filetype = $ext;
+            $rec->user_id = $userId;
+            $rec->created_at = date('Y-m-d H:i:s');
+            $rec->save();
+        } catch (Exeption $e) {
+            $this->logger->alert($e->getMessage());
+        }
 
         return true;
     }
@@ -43,6 +47,7 @@ class FileController extends BaseController
             file_put_contents(getUserFileStoragePath($filename, $this->userId), $binaryData);
             return true;
         } catch (Exception $e) {
+            $this->logger->alert($e->getMessage());
             return false;
         }
     }
