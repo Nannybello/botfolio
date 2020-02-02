@@ -13,7 +13,12 @@ class FileController extends BaseController
     public function index(): array
     {
         $files = FilesInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
+        return $files;
+    }
 
+    public function delete($id): array
+    {
+        $files = FilesInfo::query()->where('id', '=', $id)->delete();
         return $files;
     }
 

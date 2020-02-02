@@ -69,7 +69,7 @@ class FileList extends BaseCommands
                             "Download", makeLink($url)
                         ),
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                            "Delete", makeLink($url)
+                            "Delete", DeleteFile::getCommand($file['id'])
                         ),
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
                             "Update", makeLink($url)
