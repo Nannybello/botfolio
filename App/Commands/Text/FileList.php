@@ -61,7 +61,7 @@ class FileList extends BaseCommands
                 }
 
                 return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                    $file['filename_original'],
+                    substr($file['filename_original'], 0, 40),
                     $file['filetype'] . ", upload at " . $file['created_at'],
                     $thumb_url,
                     [
