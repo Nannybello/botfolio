@@ -14,14 +14,6 @@ class FileController extends BaseController
     {
         $files = FilesInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
 
-        $rec = new FilesInfo();
-        $rec->filename = 'test';
-        $rec->filename_original = 'test';
-        $rec->filetype = 'test';
-        $rec->user_id = 2;
-        $rec->created_at = date('Y-m-d H:i:s');
-        $rec->save();
-
         return $files;
     }
 
@@ -38,6 +30,11 @@ class FileController extends BaseController
                 'ori_filename' => $ori_filename,
             ]));
 
+            if (!$this->saveFile($filename, $binaryData)) {
+                $this->logger->alert('CANNOT SAVE FILE');
+                return false;
+            }
+
             $rec = new FilesInfo();
             $rec->filename = $filename;
             $rec->filename_original = $ori_filename;
@@ -46,11 +43,7 @@ class FileController extends BaseController
             $rec->created_at = date('Y-m-d H:i:s');
             $rec->save();
             $this->logger->debug(json_encode($rec->toArray()));
-
-            if (!$this->saveFile($filename, $binaryData)) {
-                $this->logger->alert('CANNOT SAVE FILE');
-                return false;
-            }
+            
         } catch (Exeption $e) {
             $this->logger->alert($e->getMessage());
         }
