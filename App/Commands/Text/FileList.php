@@ -55,6 +55,11 @@ class FileList extends BaseCommands
                 ]));
 //                $thumb_url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
 //                $url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
+
+                if(in_array($file['filetype'], ['jpg', 'png'])){
+                    $thumb_url = $url;
+                }
+
                 return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                     $file['filename_original'],
                     $file['filetype'] . ", upload at " . $file['created_at'],
@@ -62,7 +67,13 @@ class FileList extends BaseCommands
                     [
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
                             "Download", makeLink($url)
-                        )
+                        ),
+                        new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                            "Delete", makeLink($url)
+                        ),
+                        new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
+                            "Update", makeLink($url)
+                        ),
                     ]
                 );
             }, $files);
