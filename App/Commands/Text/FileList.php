@@ -53,13 +53,15 @@ class FileList extends BaseCommands
                     '$url' => $url,
                     '$thumb_url' => $thumb_url,
                 ]));
+                $thumb_url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
+                $url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
                 return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                     $file['filename_original'],
                     $file['filetype'] . ", upload at " . $file['created_at'],
                     $thumb_url,
                     [
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                            "Download", 'test1'//makeLink($url)
+                            "Download", makeLink($url)
                         )
                     ]
                 );
