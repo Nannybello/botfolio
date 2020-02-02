@@ -12,6 +12,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use function App\Helpers\makeLink;
 use function App\Helpers\userFileUrl;
+use function App\Helpers\userThumbnailUrl;
 
 class FileList extends BaseCommands
 {
