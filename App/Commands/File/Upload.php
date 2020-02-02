@@ -51,7 +51,7 @@ class Upload extends BaseCommands
             $res = $this->bot->getMessageContent($this->event['message']['id']);
             if ($res->isSucceeded()) {
                 $binaryData = $res->getRawBody();
-                $done = $this->controller->saveFile($filename, $binaryData);
+                $done = $this->controller->saveUserFile($filename, $binaryData, $this->userId);
             }
             $msg = $done ? 'Saved' : 'cannot upload this file';
             $message = new TextMessageBuilder($msg);

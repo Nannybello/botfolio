@@ -16,6 +16,27 @@ class FileController extends BaseController
         return $files;
     }
 
+    public function saveUserFile(string $ori_filename, $binaryData, int $userId)
+    {
+        $s = explode('.', $ori_filename);
+        $ext = end($s);
+        $filename = date('Ymd-His') . '.' . $ext;
+        if (!$this->saveFile($filename, $binaryData)) {
+            return false;
+        }
+
+        $rec = new FilesInfo();
+        $rec->filename = $filename;
+        $rec->filename_original = $ori_filename;
+        $rec->filetype = $ext;
+        $rec->user_id = $userId;
+        $rec->created_at = date('Y-m-d H:i:s');
+
+        $rec->save();
+
+        return true;
+    }
+
     public function saveFile(string $filename, $binaryData)
     {
         try {
