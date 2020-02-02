@@ -13,6 +13,15 @@ class FileController extends BaseController
     public function index(): array
     {
         $files = FilesInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
+
+        $rec = new FilesInfo();
+        $rec->filename = 'test';
+        $rec->filename_original = 'test';
+        $rec->filetype = 'test';
+        $rec->user_id = 2;
+        $rec->created_at = date('Y-m-d H:i:s');
+        $rec->save();
+
         return $files;
     }
 
