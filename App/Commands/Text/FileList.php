@@ -59,7 +59,7 @@ class FileList extends BaseCommands
                     $thumb_url,
                     [
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                            "Download", makeLink($url)
+                            "Download", 'test1'//makeLink($url)
                         )
                     ]
                 );
