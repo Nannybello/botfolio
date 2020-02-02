@@ -43,7 +43,7 @@ class FileController extends BaseController
             $rec->created_at = date('Y-m-d H:i:s');
             $rec->save();
             $this->logger->debug(json_encode($rec->toArray()));
-            
+
         } catch (Exeption $e) {
             $this->logger->alert($e->getMessage());
         }

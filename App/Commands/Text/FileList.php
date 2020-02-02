@@ -45,7 +45,8 @@ class FileList extends BaseCommands
         try {
 
             $carouseColumns = array_map(function ($file) {
-                $url = userFileUrl($file['filename'], $this->userId);
+//                $url = userFileUrl($file['filename'], $this->userId);
+                $url = userThumbnailUrl($file['filename'], $this->userId);
                 return new LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
                     $file['filename_original'],
                     $file['filetype'] . ", upload at " . $file['created_at'],
