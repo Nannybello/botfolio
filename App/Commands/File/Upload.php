@@ -38,7 +38,7 @@ class Upload extends BaseCommands
 
     public function canHandle(): bool
     {
-        return isset($this->event['message']['type']) && $this->event['message']['type'] == "file";
+        return isset($this->event['message']['type']) && in_array($this->event['message']['type'], ["file", "image"]);
     }
 
     public function getResponse(): Response
