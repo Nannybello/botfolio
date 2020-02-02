@@ -22,11 +22,12 @@ class FileController extends BaseController
         $ext = end($s);
         $filename = date('Ymd-His') . '.' . $ext;
 
-        if (!$this->saveFile($filename, $binaryData)) {
-            return false;
-        }
-
         try {
+            if (!$this->saveFile($filename, $binaryData)) {
+                $this->logger->alert('CANNOT SAVE FILE');
+                return false;
+            }
+
             $rec = new FilesInfo();
             $rec->filename = $filename;
             $rec->filename_original = $ori_filename;
@@ -34,6 +35,7 @@ class FileController extends BaseController
             $rec->user_id = $userId;
             $rec->created_at = date('Y-m-d H:i:s');
             $rec->save();
+            $this->logger->debug(json_encode($rec->toArray()));
         } catch (Exeption $e) {
             $this->logger->alert($e->getMessage());
         }
