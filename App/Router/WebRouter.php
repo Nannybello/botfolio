@@ -16,7 +16,7 @@ class WebRouter
         try {
             $paths = explode("/", $_SERVER['PATH_INFO']);
             $path = implode("\\", $paths);
-            $class = "\\App\\Controllers\\Web\\{$path}Controller";
+            $class = "\\App\\Controllers\\Web{$path}Controller";
 
             /**
              * @var BaseController $controller

@@ -3,7 +3,7 @@
 
 namespace App\Controllers\Web;
 
-class EditFileController extends BaseController
+class EditFileController
 {
     public function index()
     {
