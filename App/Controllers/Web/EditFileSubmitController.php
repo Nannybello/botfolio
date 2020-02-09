@@ -12,15 +12,15 @@ class EditFileSubmitController
     {
         $file_id = $_POST['id'];
         $user_id = $_POST['u'];
-        $ori_filename = $_FILES["fileToUpload"]["name"];
+        $ori_filename = $_FILES["f"]["name"];
 
         $s = explode('.', $ori_filename);
         $ext = end($s);
         $filename = date('Ymd-His') . '.' . $ext;
 
         $target_file = getUserFileStoragePath($filename, $user_id);
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        if (move_uploaded_file($_FILES["f"]["tmp_name"], $target_file)) {
+            echo "The file " . basename($_FILES["f"]["name"]) . " has been uploaded.";
 
             $rec = FilesInfo::query()->where('id', '=', $file_id)->first();
             $rec->filename = $filename;
