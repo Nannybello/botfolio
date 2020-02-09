@@ -14,7 +14,7 @@ class EditFileSubmitController
         $user_id = $_GET['u'];
 
         $new_filename = $_POST['filename'];
-        $ori_filename = $_FILES["f"]["name"];
+        $ori_filename = $new_filename ? $new_filename : $_FILES["f"]["name"];
 
         $s = explode('.', $ori_filename);
         $ext = end($s);
@@ -26,7 +26,7 @@ class EditFileSubmitController
 
         $rec = FilesInfo::query()->where('id', '=', $file_id)->first();
         $rec->filename = $filename;
-        $rec->filename_original = $new_filename ? $new_filename : $ori_filename;
+        $rec->filename_original = $ori_filename;
         $rec->filetype = $ext;
         $rec->updated_at = date('Y-m-d H:i:s');
         $rec->save();
