@@ -33,9 +33,10 @@ class LineWebHookRouter
                     return $response->getHTTPStatus() . ' ' . $response->getRawBody();
                 }
             }
-            return 'ok';
+            return true;
         } catch (\Exception $e) {
             $logger->alert($e->getMessage());
+            return false;
         }
     }
 }
