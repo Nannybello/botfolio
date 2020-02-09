@@ -13,7 +13,7 @@ class EditFileSubmitController
         $file_id = $_GET['id'];
         $user_id = $_GET['u'];
 
-        $new_filename = $_POST['u'];
+        $new_filename = $_POST['filename'];
         $ori_filename = $_FILES["f"]["name"];
 
         $s = explode('.', $ori_filename);
