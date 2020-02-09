@@ -17,7 +17,7 @@ class EditFileController
         $controller = new FileController($user_id);
         $file = $controller->get($file_id);
 
-        $url = userFileUrl($file['filename'], $this->userId);
+        $url = userFileUrl($file['filename'], $user_id);
         if (in_array($file['filetype'], ['jpg', 'png'])) {
             $thumb_url = $url;
         } else {
