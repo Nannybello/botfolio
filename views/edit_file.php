@@ -31,7 +31,7 @@
         <input type="hidden" name="id" value="<?= $file_id ?>"/>
         <div class="form-group">
             <label for="filename">File Name</label>
-            <input type="text" id="filename" name="filename" value="<?= filename ?>">
+            <input type="text" id="filename" name="filename" value="<?= $filename ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputFile">Upload new File</label>
