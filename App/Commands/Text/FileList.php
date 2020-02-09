@@ -72,7 +72,7 @@ class FileList extends BaseCommands
                             "Delete", DeleteFile::getCommand($file['id'])
                         ),
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                            "Update", makeLink("https://botfolio.beautyandballoon.com/index.php/EditFile?id={$file['id']}&u={$this->userId}")
+                            "Update", makeLink("https://botfolio.beautyandballoon.com/index.php/EditFile?id={$file['id']}&u={$this->userId}&t=" . time())
                         ),
                     ]
                 );
