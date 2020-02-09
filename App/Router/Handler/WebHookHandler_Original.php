@@ -139,7 +139,7 @@ class WebHookHandler_Original
             return $bot->replyMessage($replyToken, $textMessageBuilder);
         } catch (Exception $e) {
             $logger = new Logger('channel-name');
-            $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/reply.log', Logger::DEBUG));
+            $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/main-log.log', Logger::DEBUG));
             $logger->alert($e->getMessage());
         }
     }

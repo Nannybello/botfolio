@@ -13,7 +13,7 @@ class LineWebHookRouter
     public function route()
     {
         $logger = new Logger('channel-name');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/main-log.log', Logger::DEBUG));
 
         $content = file_get_contents('php://input');
         $logger->info(json_encode(["GET" => $_GET, "POST" => $_POST, "CONTENT" => $content, "HEADERS" => getallheaders()]));

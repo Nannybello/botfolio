@@ -29,7 +29,7 @@ class Upload extends BaseCommands
         $this->controller = new FileController($this->userId);
 
         $this->logger = new Logger('channel-name');
-        $this->logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/upload-file.log', Logger::DEBUG));
+        $this->logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/main-log.log', Logger::DEBUG));
 
 
         $this->logger->debug(json_encode($event));

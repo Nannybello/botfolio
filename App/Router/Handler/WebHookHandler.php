@@ -16,7 +16,7 @@ class WebHookHandler
         error_log(json_encode($event));
 
         $logger = new Logger('channel-name');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(__DIR__ . '/storage/main-log.log', Logger::DEBUG));
 
         try {
             $replyToken = $this->getReplyToken($event);

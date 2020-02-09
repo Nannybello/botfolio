@@ -42,7 +42,7 @@ class DeleteFile extends BaseCommands
             return $this->bot->replyMessage($this->replyToken, $message);
         } catch (Exception $e) {
             $logger = new Logger('channel-name');
-            $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/command.log', Logger::DEBUG));
+            $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/main-log.log', Logger::DEBUG));
             $logger->alert($e->getMessage());
         }
     }
