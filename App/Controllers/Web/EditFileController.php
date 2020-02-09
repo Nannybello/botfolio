@@ -24,6 +24,8 @@ class EditFileController
             $thumb_url = null;
         }
 
+        $filename = $file['filename_original'];
+
         include ROOT_PATH . '/views/edit_file.php';
     }
 }
