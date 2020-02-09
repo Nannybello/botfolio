@@ -10,8 +10,8 @@ class EditFileSubmitController
 {
     public function index()
     {
-        $file_id = $_GET['id'];
-        $user_id = $_GET['u'];
+        $file_id = $_POST['id'];
+        $user_id = $_POST['u'];
         $ori_filename = $_FILES["fileToUpload"]["name"];
 
         $s = explode('.', $ori_filename);
