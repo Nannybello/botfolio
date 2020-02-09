@@ -23,10 +23,12 @@
     <?= $file['filename_original'] ?>
     <hr/>
     <? if ($thumb_url): ?>
-        <img src="<?= $thumb_url ?>"/>
+        <img src="<?= $thumb_url ?>" style="width: 100px; height: auto;"/>
     <? endif; ?>
     <hr/>
     <form action="EditFileSubmit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="u" value="<?= $user_id ?>"/>
+        <input type="hidden" name="id" value="<?= $file_id ?>"/>
         <div class="form-group">
             <label for="exampleInputFile">Upload new File</label>
             <input type="file" id="exampleInputFile" name="f">
