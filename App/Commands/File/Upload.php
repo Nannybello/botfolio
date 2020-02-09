@@ -47,10 +47,21 @@ class Upload extends BaseCommands
         try {
             $logger->debug(json_encode($this->event));
             $done = false;
-            $filename = $this->event['message']['fileName'];
             $res = $this->bot->getMessageContent($this->event['message']['id']);
             if ($res->isSucceeded()) {
                 $binaryData = $res->getRawBody();
+                $headers = $res->getHeaders();
+                $t = date('Ymd-His');
+                switch ($headers['Content-Type']) {
+                    case 'image/jpeg':
+                        $filename = "$t.jpg";
+                        break;
+                    case 'image/png':
+                        $filename = "$t.png";
+                        break;
+                    default:
+                        $filename = $this->event['message']['fileName'] ?? $t;
+                }
                 $done = $this->controller->saveUserFile($filename, $binaryData, $this->userId);
             }
             $msg = $done ? 'Saved' : 'cannot upload this file';
