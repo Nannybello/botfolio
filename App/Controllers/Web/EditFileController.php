@@ -4,6 +4,9 @@
 namespace App\Controllers\Web;
 
 use App\Controllers\FileController;
+use function App\Helpers\makeLink;
+use function App\Helpers\userFileUrl;
+use function App\Helpers\userThumbnailUrl;
 
 class EditFileController
 {
