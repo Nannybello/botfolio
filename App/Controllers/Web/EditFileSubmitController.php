@@ -20,17 +20,16 @@ class EditFileSubmitController
         $filename = date('Ymd-His') . '.' . $ext;
 
         $target_file = getUserFileStoragePath($filename, $user_id);
-        if (move_uploaded_file($_FILES["f"]["tmp_name"], $target_file)) {
-            echo "The file " . basename($_FILES["f"]["name"]) . " has been uploaded.";
 
-            $rec = FilesInfo::query()->where('id', '=', $file_id)->first();
-            $rec->filename = $filename;
-            $rec->filename_original = $new_filename ? $new_filename : $ori_filename;
-            $rec->filetype = $ext;
-            $rec->updated_at = date('Y-m-d H:i:s');
-            $rec->save();
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
+        $res = move_uploaded_file($_FILES["f"]["tmp_name"], $target_file);
+
+        $rec = FilesInfo::query()->where('id', '=', $file_id)->first();
+        $rec->filename = $filename;
+        $rec->filename_original = $new_filename ? $new_filename : $ori_filename;
+        $rec->filetype = $ext;
+        $rec->updated_at = date('Y-m-d H:i:s');
+        $rec->save();
+
+        (new EditFileController())->index();
     }
 }
