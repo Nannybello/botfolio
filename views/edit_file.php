@@ -20,6 +20,8 @@
 </head>
 <body>
 <div class="container">
+    <?= $file['filename_original'] ?>
+    <img src="<?= userFileUrl($file['filename'], $user_id) ?>"/>
     <form action="EditFileSubmit" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputFile">File input</label>

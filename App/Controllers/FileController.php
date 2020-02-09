@@ -15,6 +15,11 @@ class FileController extends BaseController
         $files = FilesInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
         return $files;
     }
+    public function get($id): array
+    {
+        $files = FilesInfo::query()->where('user_id', '=', $this->userId)->where('id', '=', $id)->orderBy('created_at', 'desc')->first()->toArray();
+        return $files;
+    }
 
     public function delete($id): array
     {
