@@ -21,14 +21,15 @@
 <body>
 <div class="container">
     <?= $file['filename_original'] ?>
+    <hr/>
     <? if ($thumb_url): ?>
         <img src="<?= $thumb_url ?>"/>
     <? endif; ?>
+    <hr/>
     <form action="EditFileSubmit" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
+            <label for="exampleInputFile">Upload new File</label>
+            <input type="file" id="exampleInputFile" name="f">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
