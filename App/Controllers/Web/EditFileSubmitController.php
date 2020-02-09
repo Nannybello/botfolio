@@ -3,7 +3,7 @@
 
 namespace App\Controllers\Web;
 
-class EditFileController
+class EditFileSubmitController
 {
     public function index()
     {

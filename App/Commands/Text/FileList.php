@@ -45,7 +45,7 @@ class FileList extends BaseCommands
 
         try {
 
-            $carouseColumns = array_map(function ($file) use($logger) {
+            $carouseColumns = array_map(function ($file) use ($logger) {
                 $url = userFileUrl($file['filename'], $this->userId);
                 $thumb_url = userThumbnailUrl($file['filename'], $this->userId);
                 $logger->debug(json_encode([
@@ -56,7 +56,7 @@ class FileList extends BaseCommands
 //                $thumb_url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
 //                $url = "https://botfolio.beautyandballoon.com/storage/user_files/1/20200111-164500.jpg";
 
-                if(in_array($file['filetype'], ['jpg', 'png'])){
+                if (in_array($file['filetype'], ['jpg', 'png'])) {
                     $thumb_url = $url;
                 }
 
@@ -72,7 +72,7 @@ class FileList extends BaseCommands
                             "Delete", DeleteFile::getCommand($file['id'])
                         ),
                         new LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                            "Update", makeLink($url)
+                            "Update", makeLink("https://botfolio.beautyandballoon.com/index.php/EditFile?id={$file['id']}")
                         ),
                     ]
                 );
