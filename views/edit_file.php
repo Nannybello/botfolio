@@ -26,9 +26,7 @@
         <img src="<?= $thumb_url ?>" style="width: 100px; height: auto;"/>
     <? endif; ?>
     <hr/>
-    <form action="EditFileSubmit" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="u" value="<?= $user_id ?>"/>
-        <input type="hidden" name="id" value="<?= $file_id ?>"/>
+    <form action="EditFileSubmit?id=<?= $file_id ?>&u=<?= $user_id ?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="filename">File Name</label>
             <input type="text" id="filename" name="filename" value="<?= $filename ?>">

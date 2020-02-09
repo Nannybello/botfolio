@@ -14,6 +14,7 @@ class EditFileController
     {
         $file_id = $_GET['id'];
         $user_id = $_GET['u'];
+
         $controller = new FileController($user_id);
         $file = $controller->get($file_id);
 
