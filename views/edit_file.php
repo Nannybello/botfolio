@@ -21,7 +21,9 @@
 <body>
 <div class="container">
     <?= $file['filename_original'] ?>
-    <img src="<?= userFileUrl($file['filename'], $user_id) ?>"/>
+    <? if ($thumb_url): ?>
+        <img src="<?= $thumb_url ?>"/>
+    <? endif; ?>
     <form action="EditFileSubmit" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputFile">File input</label>

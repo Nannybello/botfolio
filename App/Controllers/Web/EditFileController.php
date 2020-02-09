@@ -16,6 +16,14 @@ class EditFileController
         $user_id = $_GET['u'];
         $controller = new FileController($user_id);
         $file = $controller->get($file_id);
+
+        $url = userFileUrl($file['filename'], $this->userId);
+        if (in_array($file['filetype'], ['jpg', 'png'])) {
+            $thumb_url = $url;
+        } else {
+            $thumb_url = null;
+        }
+
         include ROOT_PATH . '/views/edit_file.php';
     }
 }
