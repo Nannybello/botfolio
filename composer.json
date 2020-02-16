@@ -1,25 +1,27 @@
 {
-    "name": "nannybello/botfolio",
-    "authors": [
-        {
-            "name": "Nanny Bello",
-            "email": "nanny5p2n@gmail.com"
-        }
-    ],
-    "require": {
-        "linecorp/line-bot-sdk": "^4.1",
-        "slim/slim": "4.*",
-        "monolog/monolog": "^2.0",
-        "php-di/php-di": "^6.0",
-        "slim/psr7": "^0.6.0",
-        "nyholm/psr7": "^1.2",
-        "nyholm/psr7-server": "^0.4.1",
-        "guzzlehttp/psr7": "^1.6",
-        "http-interop/http-factory-guzzle": "^1.0",
-        "zendframework/zend-diactoros": "^2.2",
-        "ext-json": "*",
-        "laravel/framework": "^6.2",
-        "laravel/tinker": "^1.0",
-        "doctrine/dbal": "^2.10"
+  "name": "nannybello/botfolio",
+  "authors": [
+    {
+      "name": "Nanny Bello",
+      "email": "nanny5p2n@gmail.com"
     }
+  ],
+  "require": {
+    "linecorp/line-bot-sdk": "^4.1",
+    "slim/slim": "4.*",
+    "monolog/monolog": "^2.0",
+    "php-di/php-di": "^6.0",
+    "slim/psr7": "^0.6.0",
+    "nyholm/psr7": "^1.2",
+    "nyholm/psr7-server": "^0.4.1",
+    "guzzlehttp/psr7": "^1.6",
+    "http-interop/http-factory-guzzle": "^1.0",
+    "zendframework/zend-diactoros": "^2.2",
+    "ext-json": "*",
+    "laravel/framework": "^6.2",
+    "laravel/tinker": "^1.0",
+    "doctrine/dbal": "^2.10",
+    "google/cloud-dialogflow": "^0.12.0",
+    "ext-curl": "*"
+  }
 }
