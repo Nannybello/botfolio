@@ -7,5 +7,10 @@ include 'autoload.php';
 
 $logger = new Logger('channel-name');
 $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/dialogflow.log', Logger::DEBUG));
-$logger->info("BEGIN", ["-----------------------------------------------------------"]);
-$logger->info("CONTENT", [$_GET, $_POST]);
+$logger->log("BEGIN", "-----------------------------------------------------------");
+$logger->info("CONTENT", [
+    'GET' => $_GET,
+    'POST' => $_POST,
+    'header' => getallheaders(),
+    'body' => file_get_contents('php://input'),
+]);
