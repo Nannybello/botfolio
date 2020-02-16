@@ -11,6 +11,6 @@ $logger->info("BEGIN", ["-------------------------------------------------------
 $logger->info("CONTENT", [
     'GET' => $_GET,
     'POST' => $_POST,
-    'header' => getallheaders(),
-    'body' => file_get_contents('php://input'),
+    'header' => json_encode(getallheaders(), JSON_PRETTY_PRINT),
+    'body' => json_encode(json_decode(file_get_contents('php://input')), JSON_PRETTY_PRINT),
 ]);
