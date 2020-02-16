@@ -23,3 +23,4 @@ print_r([
 $txt = ob_get_clean();
 
 file_put_contents(ROOT_PATH . '/storage/dialogflow.log', $txt);
+echo "test response from out server";
