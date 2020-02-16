@@ -18,7 +18,8 @@ include 'autoload.php';
 ob_start();
 
 
-$url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/6b8db956-ac4d-4f2e-97d4-c93108d0c9d2";
+//$url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/6b8db956-ac4d-4f2e-97d4-c93108d0c9d2";
+$url = "https://bots.dialogflow.com/line/botfolio-jnxcqb/webhook";
 $headers = getallheaders();
 $headers['Host'] = "bots.dialogflow.com";
 $json_headers = array();
