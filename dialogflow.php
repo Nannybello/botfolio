@@ -43,7 +43,7 @@ curl_close($ch);
 print_r([
     'header' => getallheaders(),
     'body' => json_decode(file_get_contents('php://input')),
-    'result' => $result;
+    'result' => $result,
 ]);
 $txt = ob_get_clean();
 file_put_contents(ROOT_PATH . '/storage/dialogflow.log', $txt);
