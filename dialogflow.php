@@ -15,7 +15,11 @@ include 'autoload.php';
 //    'body' => json_encode(json_decode(file_get_contents('php://input')), JSON_PRETTY_PRINT),
 //]);
 
-file_put_contents(ROOT_PATH . '/storage/dialogflow.log',
-    'header' . json_encode(getallheaders(), JSON_PRETTY_PRINT) . "\n" .
-    'body' . json_encode(json_decode(file_get_contents('php://input')), JSON_PRETTY_PRINT) . "\n"
-);
+ob_start();
+print_r([
+    'header' => getallheaders(),
+    'body' => json_decode(file_get_contents('php://input')),
+]);
+$txt = ob_get_clean();
+
+file_put_contents(ROOT_PATH . '/storage/dialogflow.log', $txt);
