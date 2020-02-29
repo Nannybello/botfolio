@@ -3,7 +3,7 @@
 
 namespace App\Controllers;
 
-use App\Database\Models\FilesInfo;
+use App\Database\Models\FileInfo;
 use function App\Helpers\getUserFileStoragePath;
 use function App\Helpers\makeLink;
 use function App\Helpers\userFileUrl;
@@ -12,18 +12,18 @@ class FileController extends BaseController
 {
     public function index(): array
     {
-        $files = FilesInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
+        $files = FileInfo::query()->where('user_id', '=', $this->userId)->orderBy('created_at', 'desc')->get()->toArray();
         return $files;
     }
     public function get($id): array
     {
-        $files = FilesInfo::query()->where('user_id', '=', $this->userId)->where('id', '=', $id)->orderBy('created_at', 'desc')->first()->toArray();
+        $files = FileInfo::query()->where('user_id', '=', $this->userId)->where('id', '=', $id)->orderBy('created_at', 'desc')->first()->toArray();
         return $files;
     }
 
     public function delete($id): array
     {
-        $files = FilesInfo::query()->where('id', '=', $id)->delete();
+        $files = FileInfo::query()->where('id', '=', $id)->delete();
         return $files;
     }
 
@@ -45,7 +45,7 @@ class FileController extends BaseController
                 return false;
             }
 
-            $rec = new FilesInfo();
+            $rec = new FileInfo();
             $rec->filename = $filename;
             $rec->filename_original = $ori_filename;
             $rec->filetype = $ext;

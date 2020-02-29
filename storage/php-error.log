@@ -1,0 +1,552 @@
+[29-Feb-2020 07:37:21 UTC] 2020-02-29 07:37:21------------------------------------------------------------------
+[29-Feb-2020 07:37:23 UTC] PHP Warning:  require_once(C:\wamp64\www\botfolio/App/Database/init.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 15
+[29-Feb-2020 07:37:23 UTC] PHP Stack trace:
+[29-Feb-2020 07:37:23 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:37:23 UTC] PHP   2. include() C:\wamp64\www\botfolio\index.php:3
+[29-Feb-2020 07:37:23 UTC] PHP Fatal error:  require_once(): Failed opening required 'C:\wamp64\www\botfolio/App/Database/init.php' (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 15
+[29-Feb-2020 07:37:23 UTC] PHP Stack trace:
+[29-Feb-2020 07:37:23 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:37:23 UTC] PHP   2. include() C:\wamp64\www\botfolio\index.php:3
+[29-Feb-2020 07:38:14 UTC] 2020-02-29 07:38:14------------------------------------------------------------------
+[29-Feb-2020 07:38:14 UTC] PHP Warning:  require(C:\wamp64\www\botfolio/../vendor/autoload.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:38:14 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:14 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:14 UTC] PHP Fatal error:  require(): Failed opening required 'C:\wamp64\www\botfolio/../vendor/autoload.php' (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:38:14 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:14 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:15 UTC] 2020-02-29 07:38:15------------------------------------------------------------------
+[29-Feb-2020 07:38:15 UTC] PHP Warning:  require(C:\wamp64\www\botfolio/../vendor/autoload.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:38:15 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:15 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:15 UTC] PHP Fatal error:  require(): Failed opening required 'C:\wamp64\www\botfolio/../vendor/autoload.php' (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:38:15 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:15 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:45 UTC] 2020-02-29 07:38:45------------------------------------------------------------------
+[29-Feb-2020 07:38:45 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:38:45 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:45 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:45 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:38:45 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:38:45 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:38:45 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:38:45 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:45 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:45 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:45 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:38:45 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:45 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:45 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:38:45 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:38:45 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:38:45 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:38:45 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:45 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:45 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:38:46 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:38:46 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:46 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:46 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:38:46 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:38:46 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:38:46 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:38:46 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:38:46 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:46 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:46 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:46 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:38:46 UTC] PHP Stack trace:
+[29-Feb-2020 07:38:46 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:38:46 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:38:46 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:38:46 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:38:46 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:38:46 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:38:46 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:46 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:46 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:38:47 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:39:05 UTC] 2020-02-29 07:39:05------------------------------------------------------------------
+[29-Feb-2020 07:39:05 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:05 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:05 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:05 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:39:05 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:39:05 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:39:05 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:39:05 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:05 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:05 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:05 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:39:05 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:39:05 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:39:05 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:39:05 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:05 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:05 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:05 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:05 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:39:05 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:39:05 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:39:05 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:39:05 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:39:05 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:05 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:05 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:05 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:39:05 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:39:05 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:39:05 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:39:05 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:39:05 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:05 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:39:12 UTC] 2020-02-29 07:39:12------------------------------------------------------------------
+[29-Feb-2020 07:39:12 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:12 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:12 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:12 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:39:12 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:39:12 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:39:12 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:39:12 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:12 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:12 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:12 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:39:12 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:39:12 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:39:12 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:39:12 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:39:12 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:12 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:12 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:12 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:39:12 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:39:12 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:39:12 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:39:12 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:39:12 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:39:12 UTC] PHP Stack trace:
+[29-Feb-2020 07:39:12 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:39:12 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:39:12 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:39:12 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:39:12 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:39:12 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:39:12 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:39:12 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:42:56 UTC] 2020-02-29 07:42:56------------------------------------------------------------------
+[29-Feb-2020 07:42:56 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:42:56 UTC] PHP Stack trace:
+[29-Feb-2020 07:42:56 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:42:56 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:42:56 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:42:56 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:42:56 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:42:56 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:42:56 UTC] PHP Stack trace:
+[29-Feb-2020 07:42:56 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:42:56 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:42:56 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:42:56 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:42:56 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:42:56 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:42:56 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:42:56 UTC] PHP Stack trace:
+[29-Feb-2020 07:42:56 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:42:56 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:42:56 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:42:56 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:42:56 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:42:56 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:42:56 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:42:56 UTC] PHP Stack trace:
+[29-Feb-2020 07:42:56 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:42:56 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:42:56 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:42:56 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:42:56 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:42:56 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:42:56 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:42:56 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:44:06 UTC] 2020-02-29 07:44:06------------------------------------------------------------------
+[29-Feb-2020 07:44:06 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 07:44:06 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:06 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:06 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:44:06 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:44:06 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:44:06 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:44:06 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 07:44:06 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:06 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:06 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:44:06 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:44:06 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:44:06 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:44:06 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:06 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 07:44:06 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:06 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:06 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:44:06 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:44:06 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:44:06 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:44:06 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:44:06 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:06 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:06 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:06 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 07:44:06 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:06 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:06 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:44:06 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:44:06 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:44:06 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:44:06 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:44:06 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:06 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:07 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-23}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:07 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:44:32 UTC] 2020-02-29 07:44:32------------------------------------------------------------------
+[29-Feb-2020 07:44:32 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:44:32 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:32 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:32 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:44:32 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:44:32 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:44:32 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:44:32 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:32 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:32 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:32 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\factory\decoratedresponsefactory.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:44:32 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:32 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:32 UTC] PHP   2. Slim\Factory\AppFactory::create() C:\wamp64\www\botfolio\index.php:10
+[29-Feb-2020 07:44:32 UTC] PHP   3. Slim\Factory\AppFactory::determineResponseFactory() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:93
+[29-Feb-2020 07:44:32 UTC] PHP   4. Slim\Factory\AppFactory::attemptResponseFactoryDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:160
+[29-Feb-2020 07:44:32 UTC] PHP   5. Slim\Factory\Psr17\Psr17Factory::isResponseFactoryAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\AppFactory.php:185
+[29-Feb-2020 07:44:32 UTC] PHP   6. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:32 UTC] PHP   7. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:33 UTC] PHP   8. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\Psr17Factory.php:85
+[29-Feb-2020 07:44:33 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:44:33 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:33 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:33 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:44:33 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:44:33 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:44:33 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:44:33 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:44:33 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\slim\http\serverrequest.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 07:44:33 UTC] PHP Stack trace:
+[29-Feb-2020 07:44:33 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:44:33 UTC] PHP   2. Slim\App->run() C:\wamp64\www\botfolio\index.php:18
+[29-Feb-2020 07:44:33 UTC] PHP   3. Slim\Factory\ServerRequestCreatorFactory::create() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php:191
+[29-Feb-2020 07:44:33 UTC] PHP   4. Slim\Factory\ServerRequestCreatorFactory::determineServerRequestCreator() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:42
+[29-Feb-2020 07:44:33 UTC] PHP   5. Slim\Factory\ServerRequestCreatorFactory::attemptServerRequestCreatorDecoration() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:61
+[29-Feb-2020 07:44:33 UTC] PHP   6. Slim\Factory\Psr17\SlimHttpServerRequestCreator::isServerRequestDecoratorAvailable() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\ServerRequestCreatorFactory.php:82
+[29-Feb-2020 07:44:33 UTC] PHP   7. class_exists() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP   8. spl_autoload_call() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP   9. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Factory\Psr17\SlimHttpServerRequestCreator.php:58
+[29-Feb-2020 07:44:33 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:44:42 UTC] 2020-02-29 07:44:42------------------------------------------------------------------
+[29-Feb-2020 07:44:42 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:45:06 UTC] 2020-02-29 07:45:06------------------------------------------------------------------
+[29-Feb-2020 07:45:06 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:46:07 UTC] 2020-02-29 07:46:07------------------------------------------------------------------
+[29-Feb-2020 07:46:07 UTC] PHP Warning:  require(C:\wamp64\www\botfolio/../vendor/autoload.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:46:07 UTC] PHP Stack trace:
+[29-Feb-2020 07:46:07 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:46:07 UTC] PHP Fatal error:  require(): Failed opening required 'C:\wamp64\www\botfolio/../vendor/autoload.php' (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\index.php on line 9
+[29-Feb-2020 07:46:07 UTC] PHP Stack trace:
+[29-Feb-2020 07:46:07 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 07:46:23 UTC] 2020-02-29 07:46:23------------------------------------------------------------------
+[29-Feb-2020 07:46:23 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(19): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:46:41 UTC] 2020-02-29 07:46:41------------------------------------------------------------------
+[29-Feb-2020 07:46:41 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:47:50 UTC] 2020-02-29 07:47:50------------------------------------------------------------------
+[29-Feb-2020 07:47:50 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:49:28 UTC] 2020-02-29 07:49:28------------------------------------------------------------------
+[29-Feb-2020 07:49:28 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:49:30 UTC] 2020-02-29 07:49:30------------------------------------------------------------------
+[29-Feb-2020 07:49:30 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:49:48 UTC] 2020-02-29 07:49:48------------------------------------------------------------------
+[29-Feb-2020 07:49:48 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:51:51 UTC] 2020-02-29 07:51:51------------------------------------------------------------------
+[29-Feb-2020 07:51:51 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:52:32 UTC] 2020-02-29 07:52:32------------------------------------------------------------------
+[29-Feb-2020 07:52:32 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(18): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:53:50 UTC] 2020-02-29 07:53:50------------------------------------------------------------------
+[29-Feb-2020 07:53:50 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(19): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 07:54:32 UTC] 2020-02-29 07:54:32------------------------------------------------------------------
+[29-Feb-2020 07:54:32 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Slim\Exception\HttpSpecializedException::__construct(), 0 passed in C:\wamp64\www\botfolio\index.php on line 10 and at least 1 expected in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php:23
+Stack trace:
+#0 C:\wamp64\www\botfolio\index.php(10): Slim\Exception\HttpSpecializedException->__construct()
+#1 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php on line 23
+[29-Feb-2020 07:54:37 UTC] 2020-02-29 07:54:37------------------------------------------------------------------
+[29-Feb-2020 07:54:37 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\Exception\HttpSpecializedException::__construct() must be an instance of Psr\Http\Message\ServerRequestInterface, string given, called in C:\wamp64\www\botfolio\index.php on line 10 and defined in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php:23
+Stack trace:
+#0 C:\wamp64\www\botfolio\index.php(10): Slim\Exception\HttpSpecializedException->__construct('')
+#1 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php on line 23
+[29-Feb-2020 07:55:00 UTC] 2020-02-29 07:55:00------------------------------------------------------------------
+[29-Feb-2020 07:55:00 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\Exception\HttpSpecializedException::__construct() must be an instance of Psr\Http\Message\ServerRequestInterface, null given, called in C:\wamp64\www\botfolio\index.php on line 10 and defined in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php:23
+Stack trace:
+#0 C:\wamp64\www\botfolio\index.php(10): Slim\Exception\HttpSpecializedException->__construct(NULL)
+#1 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Exception\HttpSpecializedException.php on line 23
+[29-Feb-2020 07:55:33 UTC] 2020-02-29 07:55:33------------------------------------------------------------------
+[29-Feb-2020 07:55:33 UTC] PHP Fatal error:  Uncaught Slim\Exception\HttpNotFoundException: Not found. in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php:93
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Routing\RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\MiddlewareDispatcher.php(81): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 C:\wamp64\www\botfolio\vendor\slim\slim\Slim\App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#4 C:\wamp64\www\botfolio\index.php(20): Slim\App->run()
+#5 {main}
+  thrown in C:\wamp64\www\botfolio\vendor\slim\slim\Slim\Middleware\RoutingMiddleware.php on line 93
+[29-Feb-2020 08:00:03 UTC] 2020-02-29 08:00:03------------------------------------------------------------------
+[29-Feb-2020 08:00:08 UTC] 2020-02-29 08:00:08------------------------------------------------------------------
+[29-Feb-2020 08:01:37 UTC] 2020-02-29 08:01:37------------------------------------------------------------------
+[29-Feb-2020 08:01:40 UTC] 2020-02-29 08:01:40------------------------------------------------------------------
+[29-Feb-2020 08:01:54 UTC] 2020-02-29 08:01:54------------------------------------------------------------------
+[29-Feb-2020 08:02:39 UTC] 2020-02-29 08:02:39------------------------------------------------------------------
+[29-Feb-2020 08:03:22 UTC] 2020-02-29 08:03:22------------------------------------------------------------------
+[29-Feb-2020 08:04:14 UTC] 2020-02-29 08:04:14------------------------------------------------------------------
+[29-Feb-2020 08:04:17 UTC] 2020-02-29 08:04:17------------------------------------------------------------------
+[29-Feb-2020 08:04:31 UTC] 2020-02-29 08:04:31------------------------------------------------------------------
+[29-Feb-2020 08:04:32 UTC] PHP Fatal error:  Uncaught Error: Cannot unpack array with string keys in C:\wamp64\www\botfolio\index.php:40
+Stack trace:
+#0 {main}
+  thrown in C:\wamp64\www\botfolio\index.php on line 40
+[29-Feb-2020 08:04:58 UTC] 2020-02-29 08:04:58------------------------------------------------------------------
+[29-Feb-2020 08:07:54 UTC] 2020-02-29 08:07:54------------------------------------------------------------------
+[29-Feb-2020 08:07:54 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\app\controllers\api\test.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 08:07:54 UTC] PHP Stack trace:
+[29-Feb-2020 08:07:54 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 08:07:54 UTC] PHP   2. {closure:C:\wamp64\www\botfolio\index.php:10-13}() C:\wamp64\www\botfolio\index.php:49
+[29-Feb-2020 08:07:54 UTC] PHP   3. spl_autoload_call() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:07:54 UTC] PHP   4. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:07:54 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\app\controllers\api\test.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 22
+[29-Feb-2020 08:07:54 UTC] PHP Stack trace:
+[29-Feb-2020 08:07:54 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 08:07:54 UTC] PHP   2. {closure:C:\wamp64\www\botfolio\index.php:10-13}() C:\wamp64\www\botfolio\index.php:49
+[29-Feb-2020 08:07:54 UTC] PHP   3. spl_autoload_call() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:07:54 UTC] PHP   4. {closure:C:\wamp64\www\botfolio\autoload.php:16-24}() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:07:54 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Controllers\Api\Test' not found in C:\wamp64\www\botfolio\index.php:11
+Stack trace:
+#0 C:\wamp64\www\botfolio\index.php(49): {closure}()
+#1 {main}
+  thrown in C:\wamp64\www\botfolio\index.php on line 11
+[29-Feb-2020 08:08:41 UTC] 2020-02-29 08:08:41------------------------------------------------------------------
+[29-Feb-2020 08:08:41 UTC] PHP Warning:  include_once(C:\wamp64\www\botfolio/vendor\app\controllers\api\test.php): failed to open stream: No such file or directory in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 08:08:41 UTC] PHP Stack trace:
+[29-Feb-2020 08:08:41 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 08:08:41 UTC] PHP   2. {closure:C:\wamp64\www\botfolio\index.php:10-13}() C:\wamp64\www\botfolio\index.php:49
+[29-Feb-2020 08:08:41 UTC] PHP   3. spl_autoload_call() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:08:41 UTC] PHP   4. {closure:C:\wamp64\www\botfolio\autoload.php:15-23}() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:08:41 UTC] PHP Warning:  include_once(): Failed opening 'C:\wamp64\www\botfolio/vendor\app\controllers\api\test.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\botfolio\autoload.php on line 21
+[29-Feb-2020 08:08:41 UTC] PHP Stack trace:
+[29-Feb-2020 08:08:41 UTC] PHP   1. {main}() C:\wamp64\www\botfolio\index.php:0
+[29-Feb-2020 08:08:41 UTC] PHP   2. {closure:C:\wamp64\www\botfolio\index.php:10-13}() C:\wamp64\www\botfolio\index.php:49
+[29-Feb-2020 08:08:41 UTC] PHP   3. spl_autoload_call() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:08:41 UTC] PHP   4. {closure:C:\wamp64\www\botfolio\autoload.php:15-23}() C:\wamp64\www\botfolio\index.php:11
+[29-Feb-2020 08:08:41 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Controllers\Api\Test' not found in C:\wamp64\www\botfolio\index.php:11
+Stack trace:
+#0 C:\wamp64\www\botfolio\index.php(49): {closure}()
+#1 {main}
+  thrown in C:\wamp64\www\botfolio\index.php on line 11
+[29-Feb-2020 08:08:59 UTC] 2020-02-29 08:08:59------------------------------------------------------------------
+[29-Feb-2020 08:09:07 UTC] 2020-02-29 08:09:07------------------------------------------------------------------
+[29-Feb-2020 08:09:11 UTC] 2020-02-29 08:09:11------------------------------------------------------------------
+[29-Feb-2020 08:10:57 UTC] 2020-02-29 08:10:57------------------------------------------------------------------
+[29-Feb-2020 08:11:53 UTC] 2020-02-29 08:11:53------------------------------------------------------------------
+[29-Feb-2020 08:11:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'beautyan'@'localhost' (using password: YES) in C:\wamp64\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:27
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(27): PDO->__construct('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#1 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(67): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#2 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(46): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#3 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#4 in C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669
+[29-Feb-2020 08:12:32 UTC] 2020-02-29 08:12:32------------------------------------------------------------------
+[29-Feb-2020 08:12:32 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'beautyan'@'localhost' (using password: YES) in C:\wamp64\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:27
+Stack trace:
+#0 C:\wamp64\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(27): PDO->__construct('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#1 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(67): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#2 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(46): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'beautyan', 'Iw8wYlb222', Array)
+#3 C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#4 in C:\wamp64\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669
+[29-Feb-2020 08:16:23 UTC] 2020-02-29 08:16:23------------------------------------------------------------------

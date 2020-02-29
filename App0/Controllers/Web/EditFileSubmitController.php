@@ -3,7 +3,7 @@
 
 namespace App\Controllers\Web;
 
-use App\Database\Models\FilesInfo;
+use App\Database\Models\FileInfo;
 use function App\Helpers\getUserFileStoragePath;
 
 class EditFileSubmitController
@@ -24,7 +24,7 @@ class EditFileSubmitController
 
         $res = move_uploaded_file($_FILES["f"]["tmp_name"], $target_file);
 
-        $rec = FilesInfo::query()->where('id', '=', $file_id)->first();
+        $rec = FileInfo::query()->where('id', '=', $file_id)->first();
         $rec->filename = $filename;
         $rec->filename_original = $ori_filename;
         $rec->filetype = $ext;
