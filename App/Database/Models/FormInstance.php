@@ -4,7 +4,9 @@ namespace App\Database\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LineUser extends Model
+class FormInstance extends Model
 {
-    protected $table = 'line_user';
+    protected $table = 'form_instance';
+
+
 }

@@ -4,7 +4,7 @@ namespace App\Commands;
 
 
 use App\Controllers\BaseController;
-use App\Database\Models\LineUser;
+use App\Database\Models\User;
 use LINE\LINEBot;
 use LINE\LINEBot\Response;
 
@@ -38,9 +38,9 @@ abstract class BaseCommands
     private function fetchUser()
     {
         //เช็คว่ามีอยู่ใน database มั้ย
-        $user = LineUser::query()->where('lineUserId', '=', $this->lineUserId)->first();
+        $user = User::query()->where('lineUserId', '=', $this->lineUserId)->first();
         if ($user === null) {
-            $user = new LineUser();
+            $user = new User();
             $user->lineUserId = $this->lineUserId;
             $user->created_at = date('Y-m-d H:i:s');
             $user->updated_at = date('Y-m-d H:i:s');

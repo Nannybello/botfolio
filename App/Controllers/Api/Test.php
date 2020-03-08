@@ -3,12 +3,13 @@
 namespace App\Controllers\Api;
 
 use App\Database\Models\FileInfo;
+use App\Database\Models\User;
 
 class Test
 {
     public function index(){
         echo 'test = ok!';
-        $files = FileInfo::all()->toArray();
-        echo json_encode($files);
+        $x = User::fromToken('aaa');
+        echo json_encode($x);
     }
 }

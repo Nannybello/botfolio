@@ -3,12 +3,36 @@
 use App\Controllers\Api\Test;
 
 require 'autoload.php';
+require 'lib/BladeOne/BladeOne.php';
 
 define('BASE_URL', '/botfolio');
+define('BASE_PATH', __DIR__);
+
+class GlobalView
+{
+    public $blade;
+
+    public function __construct()
+    {
+        $viewPath = BASE_PATH . '/views';
+        $compliedPath = BASE_PATH . '/views/compiled';
+        $this->blade = new \eftec\bladeone\BladeOne($viewPath, $compliedPath);
+    }
+
+    public function compose(string $viewName, array $params = []): string
+    {
+        return $this->blade->run($viewName, $params);
+    }
+}
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', BASE_URL . '/test', function () {
         $controller = new Test();
+        $controller->index();
+    });
+
+    $r->addRoute('GET', BASE_URL . '/applyform', function () {
+        $controller = new \App\Controllers\Web\ApplyForm();
         $controller->index();
     });
 
