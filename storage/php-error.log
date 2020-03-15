@@ -645,3 +645,170 @@ Stack trace:
 [08-Mar-2020 08:03:29 UTC] 2020-03-08 08:03:29------------------------------------------------------------------
 [08-Mar-2020 08:03:41 UTC] 2020-03-08 08:03:41------------------------------------------------------------------
 [08-Mar-2020 08:04:40 UTC] 2020-03-08 08:04:40------------------------------------------------------------------
+[15-Mar-2020 05:48:40 UTC] 2020-03-15 05:48:40------------------------------------------------------------------
+[15-Mar-2020 05:48:40 UTC] PHP Warning:  require_once(E:\wamp73\www\botfolio/vendor/autoload.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 22
+[15-Mar-2020 05:48:40 UTC] PHP Stack trace:
+[15-Mar-2020 05:48:40 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[15-Mar-2020 05:48:40 UTC] PHP   2. require() E:\wamp73\www\botfolio\index.php:5
+[15-Mar-2020 05:48:40 UTC] PHP Fatal error:  require_once(): Failed opening required 'E:\wamp73\www\botfolio/vendor/autoload.php' (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 22
+[15-Mar-2020 05:48:40 UTC] PHP Stack trace:
+[15-Mar-2020 05:48:40 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[15-Mar-2020 05:48:40 UTC] PHP   2. require() E:\wamp73\www\botfolio\index.php:5
+[15-Mar-2020 05:50:47 UTC] 2020-03-15 05:50:47------------------------------------------------------------------
+[15-Mar-2020 05:53:38 UTC] 2020-03-15 05:53:38------------------------------------------------------------------
+[15-Mar-2020 06:00:43 UTC] 2020-03-15 06:00:43------------------------------------------------------------------
+[15-Mar-2020 06:01:08 UTC] 2020-03-15 06:01:08------------------------------------------------------------------
+[15-Mar-2020 06:03:21 UTC] 2020-03-15 06:03:21------------------------------------------------------------------
+[15-Mar-2020 06:03:40 UTC] 2020-03-15 06:03:40------------------------------------------------------------------
+[15-Mar-2020 06:29:44 UTC] 2020-03-15 06:29:44------------------------------------------------------------------
+[15-Mar-2020 06:32:49 UTC] 2020-03-15 06:32:49------------------------------------------------------------------
+[15-Mar-2020 06:32:59 UTC] 2020-03-15 06:32:59------------------------------------------------------------------
+[15-Mar-2020 07:05:44 UTC] 2020-03-15 07:05:44------------------------------------------------------------------
+[15-Mar-2020 07:05:44 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:05:44 UTC] PHP Stack trace:
+[15-Mar-2020 07:05:44 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:05:44 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:05:44 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:05:44 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:05:44 UTC] PHP Stack trace:
+[15-Mar-2020 07:05:44 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:05:44 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:05:44 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:05:44 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:07:08 UTC] 2020-03-15 07:07:08------------------------------------------------------------------
+[15-Mar-2020 07:07:08 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:08 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:08 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:08 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:08 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:08 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:08 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:08 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:08 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:08 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:08 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:07:14 UTC] 2020-03-15 07:07:14------------------------------------------------------------------
+[15-Mar-2020 07:07:14 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:14 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:14 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:14 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:14 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:14 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:14 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:14 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:14 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:14 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:14 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:07:21 UTC] 2020-03-15 07:07:21------------------------------------------------------------------
+[15-Mar-2020 07:07:59 UTC] 2020-03-15 07:07:59------------------------------------------------------------------
+[15-Mar-2020 07:07:59 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:59 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:59 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:59 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:59 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:59 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:07:59 UTC] PHP Stack trace:
+[15-Mar-2020 07:07:59 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:07:59 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:59 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:07:59 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:08:06 UTC] 2020-03-15 07:08:06------------------------------------------------------------------
+[15-Mar-2020 07:08:06 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:06 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:06 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:06 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:06 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:06 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:06 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:06 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:06 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:06 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:06 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:08:15 UTC] 2020-03-15 07:08:15------------------------------------------------------------------
+[15-Mar-2020 07:08:15 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:15 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:15 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:15 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:15 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:15 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:15 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:15 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:15 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:15 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:15 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:08:24 UTC] 2020-03-15 07:08:24------------------------------------------------------------------
+[15-Mar-2020 07:08:24 UTC] PHP Warning:  include_once(E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:24 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:24 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:24 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:24 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:24 UTC] PHP Warning:  include_once(): Failed opening 'E:\wamp73\www\botfolio/App\Router\LineWebHookRouter.php' for inclusion (include_path='.;C:\php\pear') in E:\wamp73\www\botfolio\autoload.php on line 18
+[15-Mar-2020 07:08:24 UTC] PHP Stack trace:
+[15-Mar-2020 07:08:24 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\webhook.php:0
+[15-Mar-2020 07:08:24 UTC] PHP   2. spl_autoload_call() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:24 UTC] PHP   3. {closure:E:\wamp73\www\botfolio\autoload.php:14-20}() E:\wamp73\www\botfolio\webhook.php:7
+[15-Mar-2020 07:08:24 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Router\LineWebHookRouter' not found in E:\wamp73\www\botfolio\webhook.php:7
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 7
+[15-Mar-2020 07:09:39 UTC] 2020-03-15 07:09:39------------------------------------------------------------------
+[15-Mar-2020 07:14:18 UTC] 2020-03-15 07:14:18------------------------------------------------------------------
+[15-Mar-2020 07:19:15 UTC] 2020-03-15 07:19:15------------------------------------------------------------------
+[15-Mar-2020 07:19:15 UTC] PHP Fatal error:  Uncaught Error: Class 'BotInputString' not found in E:\wamp73\www\botfolio\webhook.php:14
+Stack trace:
+#0 {main}
+  thrown in E:\wamp73\www\botfolio\webhook.php on line 14
+[15-Mar-2020 07:19:32 UTC] 2020-03-15 07:19:32------------------------------------------------------------------
+[15-Mar-2020 07:21:42 UTC] 2020-03-15 07:21:42------------------------------------------------------------------
+[15-Mar-2020 07:22:08 UTC] 2020-03-15 07:22:08------------------------------------------------------------------
+[15-Mar-2020 07:22:26 UTC] 2020-03-15 07:22:26------------------------------------------------------------------
+[15-Mar-2020 07:22:47 UTC] 2020-03-15 07:22:47------------------------------------------------------------------
+[15-Mar-2020 07:23:07 UTC] 2020-03-15 07:23:07------------------------------------------------------------------
+[15-Mar-2020 07:25:49 UTC] 2020-03-15 07:25:49------------------------------------------------------------------
+[15-Mar-2020 07:26:52 UTC] 2020-03-15 07:26:52------------------------------------------------------------------
+[15-Mar-2020 07:27:01 UTC] 2020-03-15 07:27:01------------------------------------------------------------------
+[15-Mar-2020 07:27:01 UTC] 2020-03-15 07:27:01------------------------------------------------------------------
+[15-Mar-2020 07:27:02 UTC] 2020-03-15 07:27:02------------------------------------------------------------------
+[15-Mar-2020 07:27:03 UTC] 2020-03-15 07:27:03------------------------------------------------------------------
+[15-Mar-2020 07:27:04 UTC] 2020-03-15 07:27:04------------------------------------------------------------------
+[15-Mar-2020 07:27:05 UTC] 2020-03-15 07:27:05------------------------------------------------------------------
+[15-Mar-2020 07:27:41 UTC] 2020-03-15 07:27:41------------------------------------------------------------------
+[15-Mar-2020 07:27:41 UTC] PHP Notice:  Undefined index: token in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php on line 20
+[15-Mar-2020 07:27:41 UTC] PHP Stack trace:
+[15-Mar-2020 07:27:41 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[15-Mar-2020 07:27:41 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:34-37}() E:\wamp73\www\botfolio\index.php:73
+[15-Mar-2020 07:27:41 UTC] PHP   3. App\Controllers\Web\ApplyForm->index() E:\wamp73\www\botfolio\index.php:36
+[15-Mar-2020 07:27:41 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to App\Database\Models\User::fromToken() must be of the type string, null given, called in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php on line 21 and defined in E:\wamp73\www\botfolio\App\Database\Models\User.php:17
+Stack trace:
+#0 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(21): App\Database\Models\User::fromToken(NULL)
+#1 E:\wamp73\www\botfolio\index.php(36): App\Controllers\Web\ApplyForm->index()
+#2 E:\wamp73\www\botfolio\index.php(73): {closure}()
+#3 {main}
+  thrown in E:\wamp73\www\botfolio\App\Database\Models\User.php on line 17
+[15-Mar-2020 07:27:45 UTC] 2020-03-15 07:27:45------------------------------------------------------------------
+[15-Mar-2020 07:27:55 UTC] 2020-03-15 07:27:55------------------------------------------------------------------
+[15-Mar-2020 07:30:59 UTC] 2020-03-15 07:30:59------------------------------------------------------------------
+[15-Mar-2020 07:31:19 UTC] 2020-03-15 07:31:19------------------------------------------------------------------
+[15-Mar-2020 07:34:03 UTC] 2020-03-15 07:34:03------------------------------------------------------------------
+[15-Mar-2020 07:36:03 UTC] 2020-03-15 07:36:03------------------------------------------------------------------
+[15-Mar-2020 07:38:39 UTC] 2020-03-15 07:38:39------------------------------------------------------------------
+[15-Mar-2020 07:38:52 UTC] 2020-03-15 07:38:52------------------------------------------------------------------
+[15-Mar-2020 07:39:29 UTC] 2020-03-15 07:39:29------------------------------------------------------------------

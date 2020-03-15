@@ -20,19 +20,42 @@
 </head>
 <body>
 <div class="container">
-    x is {{ $x }}
-    <div class="my-form">
+    <h1>Apply Form</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <td>{{ $user->id }}</td>
+        </tr>
+        <tr>
+            <th>name</th>
+            <td>{{ $user->info_first_name }} {{ $user->info_last_name }}</td>
+        </tr>
+        <tr>
+            <th>major</th>
+            <td>{{ $user->info_major }}</td>
+        </tr>
+        <tr>
+            <th>faculty</th>
+            <td>{{ $user->info_faculty }}</td>
+        </tr>
+        <tr>
+            <th>position</th>
+            <td>{{ $user->info_position }}</td>
+        </tr>
+    </table>
+    <form class="my-form">
         {!! $formContent !!}
-    </div>
+    </form>
 </div>
 
 <style>
-    .my-form{
+    .my-form {
         border: 1px solid #888;
         background: antiquewhite;
         padding: 20px;
     }
-    .my-form input{
+
+    .my-form input {
         border: none;
         border-bottom: 1px dashed #888;
         background: none;
@@ -69,7 +92,7 @@
 
             let $wrapper = $('<div>')
             let ele = $('<input>', {type: 'text', name: inputName})
-            for(let attr of attrs){
+            for (let attr of attrs) {
                 ele.attr(attr.attr, attr.value)
             }
             $wrapper.append(ele)
@@ -79,12 +102,22 @@
         $form.html(html)
 
         let $input = $form.find('input')
-        $input.on('blur', function(){
+        $input.on('blur', function () {
             let ele = $(this)
             let value = ele.val()
             let name = ele.attr('name')
             $input.filter(`[name=${name}]`).not(this).val(value)
         })
+    })
+
+    $(function () {
+        let userData = JSON.parse('<?= json_encode($user->toArray()) ?>')
+        let $form = $('.my-form');
+        for (let field in userData) {
+            if (field.startsWith('info_')) {
+                $form.find(`input[name=${field}]`).val(userData[field])
+            }
+        }
     })
 </script>
 </body>

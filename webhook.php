@@ -1,8 +1,21 @@
 <?php
 
-include 'autoload.php';
+use App\Controllers\Bot\Main;
+use App\Database\Models\User;
+use App\Models\Input\BotInputString;
+use App\Models\Output\BotOutputString;
 
-use App\Router\LineWebHookRouter;
+require 'autoload.php';
 
-$router = new LineWebHookRouter();
-$router->route();
+define('BASE_URL', '/botfolio');
+define('BASE_PATH', __DIR__);
+
+$main = new Main();
+
+$input = new BotInputString('hi');
+$user = User::query()->find(2);
+
+$output = $main->index($input, $user);
+if ($output instanceof BotOutputString) {
+    print_r($output->getRawOutputString());
+}
