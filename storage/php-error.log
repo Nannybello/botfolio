@@ -812,3 +812,134 @@ Stack trace:
 [15-Mar-2020 07:38:39 UTC] 2020-03-15 07:38:39------------------------------------------------------------------
 [15-Mar-2020 07:38:52 UTC] 2020-03-15 07:38:52------------------------------------------------------------------
 [15-Mar-2020 07:39:29 UTC] 2020-03-15 07:39:29------------------------------------------------------------------
+[15-Mar-2020 07:46:11 UTC] 2020-03-15 07:46:11------------------------------------------------------------------
+[22-Mar-2020 05:10:33 UTC] 2020-03-22 05:10:33------------------------------------------------------------------
+[22-Mar-2020 06:28:51 UTC] 2020-03-22 06:28:51------------------------------------------------------------------
+[22-Mar-2020 06:40:31 UTC] 2020-03-22 06:40:31------------------------------------------------------------------
+[22-Mar-2020 06:42:03 UTC] 2020-03-22 06:42:03------------------------------------------------------------------
+[22-Mar-2020 06:42:10 UTC] 2020-03-22 06:42:10------------------------------------------------------------------
+[22-Mar-2020 06:51:53 UTC] 2020-03-22 06:51:53------------------------------------------------------------------
+[22-Mar-2020 06:59:55 UTC] 2020-03-22 06:59:55------------------------------------------------------------------
+[22-Mar-2020 06:59:55 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userId' in 'where clause' in E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:61
+Stack trace:
+#0 E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(61): PDO->prepare('select * from `...', Array)
+#1 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(331): Doctrine\DBAL\Driver\PDOConnection->prepare('select * from `...')
+#2 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(662): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#3 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(629): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#4 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(338): Illuminate\Database\Connection->run('sel in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669
+[22-Mar-2020 07:00:16 UTC] 2020-03-22 07:00:16------------------------------------------------------------------
+[22-Mar-2020 07:00:16 UTC] PHP Fatal error:  Uncaught TypeError: Return value of App\Database\Models\FileInfo::of() must be of the type array, object returned in E:\wamp73\www\botfolio\App\Database\Models\FileInfo.php:17
+Stack trace:
+#0 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(24): App\Database\Models\FileInfo::of(Object(App\Database\Models\User))
+#1 E:\wamp73\www\botfolio\index.php(36): App\Controllers\Web\ApplyForm->index()
+#2 E:\wamp73\www\botfolio\index.php(73): {closure}()
+#3 {main}
+  thrown in E:\wamp73\www\botfolio\App\Database\Models\FileInfo.php on line 17
+[22-Mar-2020 07:00:34 UTC] 2020-03-22 07:00:34------------------------------------------------------------------
+[22-Mar-2020 07:00:34 UTC] PHP Parse error:  syntax error, unexpected end of file in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 133
+[22-Mar-2020 07:04:16 UTC] 2020-03-22 07:04:16------------------------------------------------------------------
+[22-Mar-2020 07:06:37 UTC] 2020-03-22 07:06:37------------------------------------------------------------------
+[22-Mar-2020 07:08:01 UTC] 2020-03-22 07:08:01------------------------------------------------------------------
+[22-Mar-2020 07:09:22 UTC] 2020-03-22 07:09:22------------------------------------------------------------------
+[22-Mar-2020 07:10:38 UTC] 2020-03-22 07:10:38------------------------------------------------------------------
+[22-Mar-2020 07:10:56 UTC] 2020-03-22 07:10:56------------------------------------------------------------------
+[22-Mar-2020 07:12:13 UTC] 2020-03-22 07:12:13------------------------------------------------------------------
+[22-Mar-2020 07:13:02 UTC] 2020-03-22 07:13:02------------------------------------------------------------------
+[22-Mar-2020 07:13:17 UTC] 2020-03-22 07:13:17------------------------------------------------------------------
+[22-Mar-2020 07:13:31 UTC] 2020-03-22 07:13:31------------------------------------------------------------------
+[22-Mar-2020 07:14:32 UTC] 2020-03-22 07:14:32------------------------------------------------------------------
+[22-Mar-2020 07:14:46 UTC] 2020-03-22 07:14:46------------------------------------------------------------------
+[22-Mar-2020 07:14:55 UTC] 2020-03-22 07:14:55------------------------------------------------------------------
+[22-Mar-2020 07:15:33 UTC] 2020-03-22 07:15:33------------------------------------------------------------------
+[22-Mar-2020 07:15:42 UTC] 2020-03-22 07:15:42------------------------------------------------------------------
+[22-Mar-2020 07:27:52 UTC] 2020-03-22 07:27:52------------------------------------------------------------------
+[22-Mar-2020 07:28:21 UTC] 2020-03-22 07:28:21------------------------------------------------------------------
+[22-Mar-2020 07:28:22 UTC] 2020-03-22 07:28:22------------------------------------------------------------------
+[22-Mar-2020 07:28:44 UTC] 2020-03-22 07:28:44------------------------------------------------------------------
+[22-Mar-2020 07:28:45 UTC] 2020-03-22 07:28:45------------------------------------------------------------------
+[22-Mar-2020 07:29:20 UTC] 2020-03-22 07:29:20------------------------------------------------------------------
+[22-Mar-2020 07:29:25 UTC] 2020-03-22 07:29:25------------------------------------------------------------------
+[22-Mar-2020 07:42:57 UTC] 2020-03-22 07:42:57------------------------------------------------------------------
+[22-Mar-2020 07:42:57 UTC] PHP Notice:  Undefined index: approval_type_id in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php on line 24
+[22-Mar-2020 07:42:57 UTC] PHP Stack trace:
+[22-Mar-2020 07:42:57 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[22-Mar-2020 07:42:57 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:34-37}() E:\wamp73\www\botfolio\index.php:77
+[22-Mar-2020 07:42:57 UTC] PHP   3. App\Controllers\Web\ApplyForm->index() E:\wamp73\www\botfolio\index.php:36
+[22-Mar-2020 07:42:57 UTC] PHP Fatal error:  Uncaught Illuminate\Database\Eloquent\ModelNotFoundException: No query results for model [App\Database\Models\ApprovalType]. in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:387
+Stack trace:
+#0 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(26): Illuminate\Database\Eloquent\Builder->findOrFail(NULL)
+#1 E:\wamp73\www\botfolio\index.php(36): App\Controllers\Web\ApplyForm->index()
+#2 E:\wamp73\www\botfolio\index.php(77): {closure}()
+#3 {main}
+  thrown in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php on line 387
+[22-Mar-2020 07:43:08 UTC] 2020-03-22 07:43:08------------------------------------------------------------------
+[22-Mar-2020 07:43:08 UTC] PHP Warning:  file_get_contents(E:\wamp73\www\botfolio/forms/[{&quot;id&quot;:1,&quot;approval_type_id&quot;:1,&quot;name&quot;:&quot;A1&quot;}].php): failed to open stream: No such file or directory in E:\wamp73\www\botfolio\App\Utils\FormLoader.php on line 9
+[22-Mar-2020 07:43:08 UTC] PHP Stack trace:
+[22-Mar-2020 07:43:08 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[22-Mar-2020 07:43:08 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:34-37}() E:\wamp73\www\botfolio\index.php:77
+[22-Mar-2020 07:43:08 UTC] PHP   3. App\Controllers\Web\ApplyForm->index() E:\wamp73\www\botfolio\index.php:36
+[22-Mar-2020 07:43:08 UTC] PHP   4. App\Utils\FormLoader->load() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php:31
+[22-Mar-2020 07:43:08 UTC] PHP   5. file_get_contents() E:\wamp73\www\botfolio\App\Utils\FormLoader.php:9
+[22-Mar-2020 07:43:08 UTC] PHP Fatal error:  Uncaught Exception: Property [id] does not exist on this collection instance. in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\EnumeratesValues.php:815
+Stack trace:
+#0 E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec(46): Illuminate\Support\Collection->__get('id')
+#1 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(963): include('E:\\wamp73\\www\\b...')
+#2 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(905): eftec\bladeone\BladeOne->evaluatePath('E:\\wamp73\\www\\b...', Array)
+#3 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(1457): eftec\bladeone\BladeOne->runInternal('apply_form', Array, 0, true, 0)
+#4 E:\wamp73\www\botfolio\index.php(24): eftec\bladeone\BladeOne->run('apply_form', Array)
+#5 E:\wamp73\www\botfolio\App\Views\View.php(14): GlobalView->compose('apply_form', Array)
+#6 E:\wamp73\www\botfolio\App\Views\View.php(19): App\Views\View::compose('apply_form', Array)
+#7 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(37):  in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\EnumeratesValues.php on line 815
+[22-Mar-2020 07:43:48 UTC] 2020-03-22 07:43:48------------------------------------------------------------------
+[22-Mar-2020 07:43:48 UTC] PHP Fatal error:  Uncaught Exception: Property [name] does not exist on this collection instance. in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\EnumeratesValues.php:815
+Stack trace:
+#0 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(31): Illuminate\Support\Collection->__get('name')
+#1 E:\wamp73\www\botfolio\index.php(36): App\Controllers\Web\ApplyForm->index()
+#2 E:\wamp73\www\botfolio\index.php(77): {closure}()
+#3 {main}
+  thrown in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\EnumeratesValues.php on line 815
+[22-Mar-2020 07:44:35 UTC] 2020-03-22 07:44:35------------------------------------------------------------------
+[22-Mar-2020 07:45:16 UTC] 2020-03-22 07:45:16------------------------------------------------------------------
+[22-Mar-2020 07:45:19 UTC] 2020-03-22 07:45:19------------------------------------------------------------------
+[22-Mar-2020 07:50:27 UTC] 2020-03-22 07:50:27------------------------------------------------------------------
+[22-Mar-2020 07:50:27 UTC] PHP Notice:  Trying to get property 'id' of non-object in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 25
+[22-Mar-2020 07:50:27 UTC] PHP Stack trace:
+[22-Mar-2020 07:50:27 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[22-Mar-2020 07:50:27 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[22-Mar-2020 07:50:27 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[22-Mar-2020 07:50:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' in E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:61
+Stack trace:
+#0 E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(61): PDO->prepare('insert into `ap...', Array)
+#1 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(457): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `ap...')
+#2 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(662): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `ap...', Array)
+#3 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(629): Illuminate\Database\Connection->runQueryCallback('insert into `ap...', Array, Object(Closure))
+#4 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(464): Illuminate\Database\Connection->run('i in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669
+[22-Mar-2020 07:51:26 UTC] 2020-03-22 07:51:26------------------------------------------------------------------
+[22-Mar-2020 07:51:28 UTC] 2020-03-22 07:51:28------------------------------------------------------------------
+[22-Mar-2020 07:51:28 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' in E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php:61
+Stack trace:
+#0 E:\wamp73\www\botfolio\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php(61): PDO->prepare('insert into `ap...', Array)
+#1 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(457): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `ap...')
+#2 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(662): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `ap...', Array)
+#3 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(629): Illuminate\Database\Connection->runQueryCallback('insert into `ap...', Array, Object(Closure))
+#4 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php(464): Illuminate\Database\Connection->run('i in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669
+[22-Mar-2020 07:52:35 UTC] 2020-03-22 07:52:35------------------------------------------------------------------
+[22-Mar-2020 07:58:10 UTC] 2020-03-22 07:58:10------------------------------------------------------------------
+[22-Mar-2020 07:58:36 UTC] 2020-03-22 07:58:36------------------------------------------------------------------
+[22-Mar-2020 07:58:39 UTC] 2020-03-22 07:58:39------------------------------------------------------------------
+[22-Mar-2020 07:58:42 UTC] 2020-03-22 07:58:42------------------------------------------------------------------
+[22-Mar-2020 07:59:10 UTC] 2020-03-22 07:59:10------------------------------------------------------------------
+[22-Mar-2020 07:59:11 UTC] 2020-03-22 07:59:11------------------------------------------------------------------
+[22-Mar-2020 08:02:58 UTC] 2020-03-22 08:02:58------------------------------------------------------------------
+[22-Mar-2020 08:03:37 UTC] 2020-03-22 08:03:37------------------------------------------------------------------
+[22-Mar-2020 08:03:37 UTC] PHP Notice:  Array to string conversion in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 28
+[22-Mar-2020 08:03:37 UTC] PHP Stack trace:
+[22-Mar-2020 08:03:37 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[22-Mar-2020 08:03:37 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[22-Mar-2020 08:03:37 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[22-Mar-2020 08:04:13 UTC] 2020-03-22 08:04:13------------------------------------------------------------------
+[22-Mar-2020 08:04:13 UTC] PHP Notice:  Array to string conversion in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 28
+[22-Mar-2020 08:04:13 UTC] PHP Stack trace:
+[22-Mar-2020 08:04:13 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[22-Mar-2020 08:04:13 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[22-Mar-2020 08:04:13 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40

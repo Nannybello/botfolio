@@ -8,5 +8,5 @@ class ApprovalInstance extends Model
 {
     protected $table = 'approval_instance';
 
-
+    public $timestamps = false;
 }

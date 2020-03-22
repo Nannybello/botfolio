@@ -7,15 +7,15 @@ use App\Models\BotOutput;
 class BotOutputString extends BotOutput
 {
 
-    private $str;
+    private $strLines = [];
 
     public function __construct($str)
     {
-        $this->str = $str;
+        $this->strLines[] = $str;
     }
 
     function getRawOutputString(): string
     {
-        return $this->str;
+        return join("\n", $this->strLines);
     }
 }

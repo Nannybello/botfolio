@@ -35,6 +35,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $controller = new \App\Controllers\Web\ApplyForm();
         $controller->index();
     });
+    $r->addRoute('POST', BASE_URL . '/applyform-submit', function () {
+        $controller = new \App\Controllers\Web\ApplyFormSubmit();
+        $controller->index();
+    });
 
     $r->addRoute('GET', BASE_URL . '/users', function () {
         echo 'users';

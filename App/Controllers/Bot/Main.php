@@ -5,6 +5,7 @@ namespace App\Controllers\Bot;
 use App\Database\Models\User;
 use App\Models\BotInput;
 use App\Models\BotOutput;
+use App\Models\Input\BotInputCommand;
 use App\Models\Output\BotOutputString;
 
 class Main
@@ -53,6 +54,19 @@ class Main
                         ->save();
             }
         }
+
+        if ($input instanceof BotInputCommand) {
+            return $this->runCommand($input, $user);
+        }
+
         return new BotOutputString('hi ?');
+    }
+
+    function runCommand(BotInputCommand $input, User $user): BotOutput
+    {
+        if($input->is(BotInputCommand::REQUEST_FORM)){
+
+        }
+        return new BotOutputString('command not found !!');
     }
 }

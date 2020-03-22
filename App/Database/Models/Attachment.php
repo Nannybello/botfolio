@@ -8,5 +8,5 @@ class Attachment extends Model
 {
     protected $table = 'attachment';
 
-
+    public $timestamps = false;
 }

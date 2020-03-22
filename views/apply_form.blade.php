@@ -8,9 +8,8 @@
     <title>Botfolio</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,19 +42,41 @@
             <td>{{ $user->info_position }}</td>
         </tr>
     </table>
-    <form class="my-form">
-        {!! $formContent !!}
+    <form class="my-form" method="post" action="applyform-submit">
+        <input type="hidden" name="approval_type_id" value="{{ $approval_type_id }}"/>
+        <input type="hidden" name="form_type" value="{{ $form_type->id }}"/>
+        <input type="hidden" name="token" value="{{ $token }}"/>
+        <div class="my-form-paper">
+            {!! $formContent !!}
+        </div>
+        <div>
+            <h2>แนบเอกสาร</h2>
+            <ul class="list-group">
+                @foreach($files as $file)
+                    <li class="list-group-item">
+                        <input class="form-check-input" type="checkbox" name="attach_files[]" value="{{ $file->id }}"
+                               id="f{{ $file->id }}">
+                        <label class="form-check-label" for="f{{ $file->id }}">
+                            {{ $file->filename_original }}
+                        </label>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="ส่งคำขออนุมัติ"/>
     </form>
+    <hr/>
 </div>
 
 <style>
-    .my-form {
+    .my-form-paper {
         border: 1px solid #888;
         background: antiquewhite;
         padding: 20px;
     }
 
-    .my-form input {
+    .my-form-paper input {
         border: none;
         border-bottom: 1px dashed #888;
         background: none;
@@ -64,13 +85,14 @@
     }
 </style>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
 <script>
@@ -91,7 +113,7 @@
             //console.log({tagName: inputName, attrs})
 
             let $wrapper = $('<div>')
-            let ele = $('<input>', {type: 'text', name: inputName})
+            let ele = $('<input>', {type: 'text', name: `data_${inputName}`})
             for (let attr of attrs) {
                 ele.attr(attr.attr, attr.value)
             }
@@ -106,7 +128,7 @@
             let ele = $(this)
             let value = ele.val()
             let name = ele.attr('name')
-            $input.filter(`[name=${name}]`).not(this).val(value)
+            $input.filter(`[name=data_${name}]`).not(this).val(value)
         })
     })
 
@@ -115,7 +137,7 @@
         let $form = $('.my-form');
         for (let field in userData) {
             if (field.startsWith('info_')) {
-                $form.find(`input[name=${field}]`).val(userData[field])
+                $form.find(`input[name=data_${field}]`).val(userData[field])
             }
         }
     })
