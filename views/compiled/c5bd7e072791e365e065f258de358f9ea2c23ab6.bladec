@@ -20,70 +20,19 @@
 <body>
 <div class="container">
  <h1>Apply Form</h1>
- <table>
- <tr>
- <th>id</th>
- <td><?php echo static::e($user->id); ?></td>
- </tr>
- <tr>
- <th>name</th>
- <td><?php echo static::e($user->info_first_name); ?> <?php echo static::e($user->info_last_name); ?></td>
- </tr>
- <tr>
- <th>major</th>
- <td><?php echo static::e($user->info_major); ?></td>
- </tr>
- <tr>
- <th>faculty</th>
- <td><?php echo static::e($user->info_faculty); ?></td>
- </tr>
- <tr>
- <th>position</th>
- <td><?php echo static::e($user->info_position); ?></td>
- </tr>
- </table>
- <form class="my-form" method="post" action="applyform-submit">
- <input type="hidden" name="approval_type_id" value="<?php echo static::e($approval_type_id); ?>"/>
- <input type="hidden" name="form_type" value="<?php echo static::e($form_type->id); ?>"/>
- <input type="hidden" name="token" value="<?php echo static::e($token); ?>"/>
  <div class="my-form-paper">
  <?php echo $formContent; ?>
 
  </div>
- <div>
- <h2>แนบเอกสาร</h2>
- <ul class="list-group">
- <?php $__currentLoopData = $files; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
- <li class="list-group-item">
- <input class="form-check-input" type="checkbox" name="attach_files[]" value="<?php echo static::e($file->id); ?>"
- id="f<?php echo static::e($file->id); ?>">
- <label class="form-check-label" for="f<?php echo static::e($file->id); ?>">
- <?php echo static::e($file->filename_original); ?>
-
- </label>
- </li>
- <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
- </ul>
- </div>
- <br/>
- <input type="submit" class="btn btn-primary btn-lg btn-block" value="ส่งคำขออนุมัติ"/>
- </form>
  <hr/>
 </div>
 
 <style>
+
  .my-form-paper {
- border: 1px solid #888;
- background: antiquewhite;
- padding: 20px;
  }
 
- .my-form-paper input {
- border: none;
- border-bottom: 1px dashed #888;
- background: none;
- color: #888888;
- font-family: monospace;
+ .my-form-paper p {
  }
 </style>
 
@@ -98,7 +47,7 @@
  crossorigin="anonymous"></script>
 
 <script>
- $('.my-form').each(function () {
+ $('.my-form-paper').each(function () {
  let $form = $(this)
  let html = $form.html()
  let inputs = html.match(/{([^}]+)}\}/g).map(res => res.replace(/{|}/g, ''))
@@ -115,7 +64,7 @@
  //console.log({tagName: inputName, attrs})
 
  let $wrapper = $('<div>')
- let ele = $('<input>', {type: 'text', name: `data_${inputName}`})
+ let ele = $('<span>', {type: 'text', id: `data_${inputName}`})
  for (let attr of attrs) {
  ele.attr(attr.attr, attr.value)
  }
@@ -135,12 +84,11 @@
  })
 
  $(function () {
- let userData = JSON.parse('<?= json_encode($user->toArray()) ?>')
- let $form = $('.my-form');
- for (let field in userData) {
- if (field.startsWith('info_')) {
- $form.find(`input[name=data_${field}]`).val(userData[field])
- }
+ let data = JSON.parse('<?= json_encode($data) ?>')
+ let $form = $('.my-form-paper');
+ for (let field in data) {
+ let id = `data_${field}`
+ $form.find(`input[id=${id}]`).text(data[field])
  }
  })
 </script>

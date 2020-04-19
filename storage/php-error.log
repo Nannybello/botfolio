@@ -943,3 +943,277 @@ Stack trace:
 [22-Mar-2020 08:04:13 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
 [22-Mar-2020 08:04:13 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
 [22-Mar-2020 08:04:13 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 06:25:47 UTC] 2020-04-19 06:25:47------------------------------------------------------------------
+[19-Apr-2020 06:27:02 UTC] 2020-04-19 06:27:02------------------------------------------------------------------
+[19-Apr-2020 06:58:26 UTC] 2020-04-19 06:58:26------------------------------------------------------------------
+[19-Apr-2020 06:58:26 UTC] PHP Notice:  Array to string conversion in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 28
+[19-Apr-2020 06:58:26 UTC] PHP Stack trace:
+[19-Apr-2020 06:58:26 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 06:58:26 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 06:58:26 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 06:58:48 UTC] 2020-04-19 06:58:48------------------------------------------------------------------
+[19-Apr-2020 07:00:03 UTC] 2020-04-19 07:00:03------------------------------------------------------------------
+[19-Apr-2020 07:00:33 UTC] 2020-04-19 07:00:33------------------------------------------------------------------
+[19-Apr-2020 07:00:55 UTC] 2020-04-19 07:00:55------------------------------------------------------------------
+[19-Apr-2020 07:01:01 UTC] 2020-04-19 07:01:01------------------------------------------------------------------
+[19-Apr-2020 07:06:22 UTC] 2020-04-19 07:06:22------------------------------------------------------------------
+[19-Apr-2020 07:06:22 UTC] PHP Notice:  Array to string conversion in E:\wamp73\www\botfolio\App\Utils\FormLoader.php on line 12
+[19-Apr-2020 07:06:22 UTC] PHP Stack trace:
+[19-Apr-2020 07:06:22 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:06:22 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:06:22 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:06:22 UTC] PHP   4. App\Utils\FormLoader->load() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:41
+[19-Apr-2020 07:07:17 UTC] 2020-04-19 07:07:17------------------------------------------------------------------
+[19-Apr-2020 07:14:38 UTC] 2020-04-19 07:14:38------------------------------------------------------------------
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 26
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Trying to get property 'id' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 26
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 30
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Trying to get property 'info_first_name' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 30
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 30
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Trying to get property 'info_last_name' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 30
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 34
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Trying to get property 'info_major' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 34
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:38 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:38 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:38 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:38 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:38 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:38 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:38 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:38 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:38 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 38
+[19-Apr-2020 07:14:38 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:38 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:38 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Trying to get property 'info_faculty' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 38
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 42
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Trying to get property 'info_position' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 42
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: approval_type_id in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 46
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: form_type in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 47
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Trying to get property 'id' of non-object in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 47
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: token in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 48
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: files in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 56
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 56
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Notice:  Undefined variable: user in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 138
+[19-Apr-2020 07:14:39 UTC] PHP Stack trace:
+[19-Apr-2020 07:14:39 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 07:14:39 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 07:14:39 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 07:14:39 UTC] PHP   4. App\Views\View::render() E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php:45
+[19-Apr-2020 07:14:39 UTC] PHP   5. App\Views\View::compose() E:\wamp73\www\botfolio\App\Views\View.php:19
+[19-Apr-2020 07:14:39 UTC] PHP   6. GlobalView->compose() E:\wamp73\www\botfolio\App\Views\View.php:14
+[19-Apr-2020 07:14:39 UTC] PHP   7. eftec\bladeone\BladeOne->run() E:\wamp73\www\botfolio\index.php:24
+[19-Apr-2020 07:14:39 UTC] PHP   8. eftec\bladeone\BladeOne->runInternal() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:1457
+[19-Apr-2020 07:14:39 UTC] PHP   9. eftec\bladeone\BladeOne->evaluatePath() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:905
+[19-Apr-2020 07:14:39 UTC] PHP  10. include() E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php:963
+[19-Apr-2020 07:14:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function toArray() on null in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec:138
+Stack trace:
+#0 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(963): include()
+#1 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(905): eftec\bladeone\BladeOne->evaluatePath('E:\\wamp73\\www\\b...', Array)
+#2 E:\wamp73\www\botfolio\lib\BladeOne\BladeOne.php(1457): eftec\bladeone\BladeOne->runInternal('apply_form', Array, 0, true, 0)
+#3 E:\wamp73\www\botfolio\index.php(24): eftec\bladeone\BladeOne->run('apply_form', Array)
+#4 E:\wamp73\www\botfolio\App\Views\View.php(14): GlobalView->compose('apply_form', Array)
+#5 E:\wamp73\www\botfolio\App\Views\View.php(19): App\Views\View::compose('apply_form', Array)
+#6 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php(45): App\Views\View::render('apply_form', Array)
+#7 E:\wamp73\www\botfolio\index.php(40): App\Controllers\Web\ApplyFormSubmit->index()
+#8 E:\wamp73\www\botfolio\index.php(77): {closure}()
+#9 in E:\wamp73\www\botfolio\views\compiled\ce47acd9a656fbcdb354f386a5bc897bf9ee7c4e.bladec on line 138
+[19-Apr-2020 07:15:23 UTC] 2020-04-19 07:15:23------------------------------------------------------------------
+[19-Apr-2020 07:15:44 UTC] 2020-04-19 07:15:44------------------------------------------------------------------
+[19-Apr-2020 07:16:23 UTC] 2020-04-19 07:16:23------------------------------------------------------------------
+[19-Apr-2020 07:16:58 UTC] 2020-04-19 07:16:58------------------------------------------------------------------
+[19-Apr-2020 07:17:18 UTC] 2020-04-19 07:17:18------------------------------------------------------------------
+[19-Apr-2020 07:18:19 UTC] 2020-04-19 07:18:19------------------------------------------------------------------
+[19-Apr-2020 07:18:32 UTC] 2020-04-19 07:18:32------------------------------------------------------------------
+[19-Apr-2020 07:18:39 UTC] 2020-04-19 07:18:39------------------------------------------------------------------
+[19-Apr-2020 07:18:47 UTC] 2020-04-19 07:18:47------------------------------------------------------------------
+[19-Apr-2020 07:33:51 UTC] 2020-04-19 07:33:51------------------------------------------------------------------
+[19-Apr-2020 07:36:03 UTC] 2020-04-19 07:36:03------------------------------------------------------------------
+[19-Apr-2020 07:36:19 UTC] 2020-04-19 07:36:19------------------------------------------------------------------
