@@ -1217,3 +1217,30 @@ Stack trace:
 [19-Apr-2020 07:33:51 UTC] 2020-04-19 07:33:51------------------------------------------------------------------
 [19-Apr-2020 07:36:03 UTC] 2020-04-19 07:36:03------------------------------------------------------------------
 [19-Apr-2020 07:36:19 UTC] 2020-04-19 07:36:19------------------------------------------------------------------
+[19-Apr-2020 08:12:09 UTC] 2020-04-19 08:12:09------------------------------------------------------------------
+[19-Apr-2020 08:13:14 UTC] 2020-04-19 08:13:14------------------------------------------------------------------
+[19-Apr-2020 08:13:36 UTC] 2020-04-19 08:13:36------------------------------------------------------------------
+[19-Apr-2020 08:13:53 UTC] 2020-04-19 08:13:53------------------------------------------------------------------
+[19-Apr-2020 08:13:53 UTC] PHP Fatal error:  Uncaught BadMethodCallException: Call to undefined method Illuminate\Database\Eloquent\Builder::toArray() in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:50
+Stack trace:
+#0 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php(36): Illuminate\Database\Eloquent\Builder::throwBadMethodCallException('toArray')
+#1 E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1369): Illuminate\Database\Eloquent\Builder->forwardCallTo(Object(Illuminate\Database\Query\Builder), 'toArray', Array)
+#2 E:\wamp73\www\botfolio\App\Controllers\Web\ApplyForm.php(32): Illuminate\Database\Eloquent\Builder->__call('toArray', Array)
+#3 E:\wamp73\www\botfolio\index.php(36): App\Controllers\Web\ApplyForm->index()
+#4 E:\wamp73\www\botfolio\index.php(77): {closure}()
+#5 {main}
+  thrown in E:\wamp73\www\botfolio\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php on line 50
+[19-Apr-2020 08:14:03 UTC] 2020-04-19 08:14:03------------------------------------------------------------------
+[19-Apr-2020 08:14:27 UTC] 2020-04-19 08:14:27------------------------------------------------------------------
+[19-Apr-2020 08:15:29 UTC] 2020-04-19 08:15:29------------------------------------------------------------------
+[19-Apr-2020 08:15:29 UTC] PHP Notice:  Undefined index: attach_files in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 60
+[19-Apr-2020 08:15:29 UTC] PHP Stack trace:
+[19-Apr-2020 08:15:29 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 08:15:29 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 08:15:29 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 08:15:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in E:\wamp73\www\botfolio\App\Controllers\Web\ApplyFormSubmit.php on line 60
+[19-Apr-2020 08:15:29 UTC] PHP Stack trace:
+[19-Apr-2020 08:15:29 UTC] PHP   1. {main}() E:\wamp73\www\botfolio\index.php:0
+[19-Apr-2020 08:15:29 UTC] PHP   2. {closure:E:\wamp73\www\botfolio\index.php:38-41}() E:\wamp73\www\botfolio\index.php:77
+[19-Apr-2020 08:15:29 UTC] PHP   3. App\Controllers\Web\ApplyFormSubmit->index() E:\wamp73\www\botfolio\index.php:40
+[19-Apr-2020 08:16:32 UTC] 2020-04-19 08:16:32------------------------------------------------------------------

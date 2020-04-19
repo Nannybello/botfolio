@@ -66,7 +66,13 @@
  </ul>
  </div>
  <br/>
- <input type="submit" class="btn btn-primary btn-lg btn-block" value="ส่งคำขออนุมัติ"/>
+ <h3>เลือกคนอนุมัติ</h3>
+ <select name="approver_id">
+ <?php $__currentLoopData = $h4_list; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $h4): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <option value="<?php echo static::e($h4->id); ?>"><?php echo static::e($h4->info_first_name); ?> <?php echo static::e($h4->info_last_name); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="ส่งคำขออนุมัติ"/>
  </form>
  <hr/>
 </div>

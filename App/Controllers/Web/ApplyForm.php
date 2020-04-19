@@ -28,6 +28,8 @@ class ApplyForm
         $user = User::fromToken($token);
         $files = FileInfo::of($user);
 
+        $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
+
         $content = $this->formLoader->load($formType->name);
         View::render('apply_form', [
             'user' => $user,
@@ -36,6 +38,7 @@ class ApplyForm
             'token' => $token,
             'approval_type_id' => $approvalTypeId,
             'form_type' => $formType,
+            'h4_list' => $usersH4,
         ]);
     }
 }

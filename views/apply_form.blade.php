@@ -64,7 +64,13 @@
             </ul>
         </div>
         <br/>
-        <input type="submit" class="btn btn-primary btn-lg btn-block" value="ส่งคำขออนุมัติ"/>
+        <h3>เลือกคนอนุมัติ</h3>
+        <select name="approver_id">
+            @foreach($h4_list as $h4)
+                <option value="{{ $h4->id }}">{{ $h4->info_first_name }} {{ $h4->info_last_name }}</option>
+            @endforeach
+        </select>
+        <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="ส่งคำขออนุมัติ"/>
     </form>
     <hr/>
 </div>

@@ -25,6 +25,7 @@ class ApplyFormSubmit
         $rawData = $_POST;
         $user = User::fromToken($rawData['token']);
         $approvalTypeId = $rawData['approval_type_id'];
+        $approverId = $rawData['approver_id'];
 
         //echo '<pre>';
         $data = [];
@@ -51,11 +52,13 @@ class ApplyFormSubmit
         $approvalInstance->approval_type_id = $approvalTypeId;
         $approvalInstance->data = json_encode($data);
         $approvalInstance->created_at = date('Y-m-d H:i:s');
+        $approvalInstance->approver_id = $approverId;
         $approvalInstance->save();
 
         echo "id: " . $approvalInstance->id;
 
-        foreach ($rawData['attach_files'] as $fileId) {
+        $files = empty($rawData['attach_files']) ? [] : $rawData['attach_files'];
+        foreach ($files as $fileId) {
             $attach = new Attachment();
             $attach->file_id = $fileId;
             $attach->approval_instance_id = $approvalInstance->id;
