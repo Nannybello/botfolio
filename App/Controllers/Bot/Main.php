@@ -4,13 +4,13 @@ namespace App\Controllers\Bot;
 
 use App\Database\Models\User;
 use App\Models\BotInput;
-use App\Models\BotOutput;
+use App\Models\BotMessage;
 use App\Models\Input\BotInputCommand;
 use App\Models\Output\BotOutputString;
 
 class Main
 {
-    public function index(BotInput $input, User $user): BotOutput
+    public function index(BotInput $input, User $user): BotMessage
     {
         if (!$user->isCompleteInfo() && !$user->hasPendingQuestion()) {
             $user
@@ -62,7 +62,7 @@ class Main
         return new BotOutputString('hi ?');
     }
 
-    function runCommand(BotInputCommand $input, User $user): BotOutput
+    function runCommand(BotInputCommand $input, User $user): BotMessage
     {
         if($input->is(BotInputCommand::REQUEST_FORM)){
 

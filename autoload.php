@@ -13,7 +13,7 @@ error_log(date('Y-m-d H:i:s') . "-----------------------------------------------
 
 spl_autoload_register(function ($path) {
     if (strpos($path, "App") === 0) {
-        $paths = explode("/", $path);
+        $paths = explode("\\", $path);
         $path = implode(DIRECTORY_SEPARATOR, $paths);
         include_once ROOT_PATH . "/$path.php";
     }
