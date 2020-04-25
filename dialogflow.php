@@ -1,9 +1,21 @@
 <?php
 
+use LINE\LINEBot;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use App\Controllers\Bot\Main;
+use App\Database\Models\User;
+use App\Models\Input\BotInputString;
+use App\Models\Input\BotInputCommand;
+use App\Models\Output\BotOutputString;
+
+define('BASE_URL', '/botfolio');
+define('BASE_PATH', __DIR__);
 
 include 'autoload.php';
+include BASE_PATH . '/App/Config/line_bot.php';
 
 $logger = new Logger('channel-name');
 $logger->pushHandler(new StreamHandler(ROOT_PATH . '/storage/dialogflow.log', Logger::DEBUG));
@@ -15,36 +27,29 @@ $logger->info("CONTENT", [
     'body' => json_encode(json_decode(file_get_contents('php://input')), JSON_PRETTY_PRINT),
 ]);
 
-//ob_start();
+$dialogFlowPayload = json_decode(file_get_contents('php://input'));
+$fulfillmentText = $dialogFlowPayload['queryResult']['fulfillmentText'];
+$intent = $dialogFlowPayload['queryResult']['intent'];
+
+$linePayload = $dialogFlowPayload['originalDetectIntentRequest']['payload'];
+$replyToken = $linePayload['data']['replyToken'];
+$lineUserId = $linePayload['source']['userId'];
+
 //
+//$main = new Main();
 //
-////$url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/6b8db956-ac4d-4f2e-97d4-c93108d0c9d2";
-//$url = "https://bots.dialogflow.com/line/botfolio-jnxcqb/webhook";
-//$headers = getallheaders();
-//$headers['Host'] = "bots.dialogflow.com";
-//$json_headers = array();
-//foreach ($headers as $k => $v) {
-//    $json_headers[] = $k . ":" . $v;
+////$input = new BotInputString('hi');
+//$input = new BotInputCommand('ขออนุมัติเข้าร่วมอบรม', BotInputCommand::REQUEST_FORM);
+//
+//$user = User::query()->find(1);
+//$output = $main->index($input, $user);
+//if ($output instanceof BotOutputString) {
+//    print_r($output->getRawOutputString());
 //}
-//$inputJSON = file_get_contents('php://input');
-//$ch = curl_init();
-//curl_setopt($ch, CURLOPT_URL, $url);
-//curl_setopt($ch, CURLOPT_POST, 1);
-//curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
-//curl_setopt($ch, CURLOPT_POSTFIELDS, $inputJSON);
-//curl_setopt($ch, CURLOPT_HTTPHEADER, $json_headers);
-//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); // 0 | ssl=2
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // 0 | ssl=1
-//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//$result = curl_exec($ch);
-//curl_close($ch);
-//
-//
-//print_r([
-//    'header' => getallheaders(),
-//    'body' => json_decode(file_get_contents('php://input')),
-//    'result' => $result,
-//]);
-//$txt = ob_get_clean();
-//file_put_contents(ROOT_PATH . '/storage/dialogflow.log', $txt);
+
+$textMsg = $intent['name'] . " / " . $intent['displayName'] . " say: " . $fulfillmentText;
+
+$httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
+$bot = new LINEBot($httpClient, ['channelSecret' => LINE_MESSAGE_CHANNEL_SECRET]);
+$message = new TextMessageBuilder('');
+$bot->replyMessage($this->replyToken, $message);
