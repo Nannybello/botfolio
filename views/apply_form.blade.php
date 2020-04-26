@@ -142,9 +142,15 @@
         let userData = JSON.parse('<?= json_encode($user->toArray()) ?>')
         let $form = $('.my-form');
         for (let field in userData) {
-            if (field.startsWith('info_')) {
-                $form.find(`input[name=data_${field}]`).val(userData[field])
-            }
+            $form.find(`input[name=data_${field}]`).val(userData[field])
+        }
+    })
+
+    $(function () {
+        let prefields = JSON.parse('<?= /** @var Array $prefields */ json_encode($prefields) ?>')
+        let $form = $('.my-form');
+        for (let field in prefields) {
+            $form.find(`input[name=data_${field}]`).val(prefields[field])
         }
     })
 </script>

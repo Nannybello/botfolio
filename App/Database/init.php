@@ -17,15 +17,15 @@ $capsule->addConnection([
 ]);
 
 //localhost
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'beautyan_botfolio',
-    'username' => 'root',
-    'charset' => 'utf8',
-    'collation' => 'utf8_general_ci',
-    'prefix' => '',
-]);
+//$capsule->addConnection([
+//    'driver' => 'mysql',
+//    'host' => 'localhost',
+//    'database' => 'beautyan_botfolio',
+//    'username' => 'root',
+//    'charset' => 'utf8',
+//    'collation' => 'utf8_general_ci',
+//    'prefix' => '',
+//]);
 
 // Set the event dispatcher used by Eloquent models... (optional)
 use Illuminate\Events\Dispatcher;

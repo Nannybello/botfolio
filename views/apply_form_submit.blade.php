@@ -18,6 +18,12 @@
     <![endif]-->
 </head>
 <body>
+
+<!--
+<? /** @var TYPE_NAME $rawData */
+print_r($rawData); ?>
+        -->
+
 <div class="container">
     <h1>Apply Form</h1>
     <div class="my-form-paper">

@@ -1,12 +1,19 @@
 <?php
 
 use App\Controllers\Api\Test;
+use LINE\LINEBot;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
 require 'autoload.php';
 require 'lib/BladeOne/BladeOne.php';
 
-define('BASE_URL', '/botfolio');
+//define('BASE_URL', '/botfolio');
+define('BASE_URL', '');
 define('BASE_PATH', __DIR__);
+
+include BASE_PATH . '/App/Config/line_bot.php';
+$httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
+$bot = new LINEBot($httpClient, ['channelSecret' => LINE_MESSAGE_CHANNEL_SECRET]);
 
 class GlobalView
 {
@@ -25,7 +32,7 @@ class GlobalView
     }
 }
 
-$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) use ($bot) {
     $r->addRoute('GET', BASE_URL . '/test', function () {
         $controller = new Test();
         $controller->index();
@@ -35,8 +42,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $controller = new \App\Controllers\Web\ApplyForm();
         $controller->index();
     });
-    $r->addRoute('POST', BASE_URL . '/applyform-submit', function () {
-        $controller = new \App\Controllers\Web\ApplyFormSubmit();
+    $r->addRoute('POST', BASE_URL . '/applyform-submit', function () use ($bot) {
+        $controller = new \App\Controllers\Web\ApplyFormSubmit($bot);
         $controller->index();
     });
 

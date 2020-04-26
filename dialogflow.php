@@ -30,17 +30,18 @@ define('BASE_PATH', __DIR__);
 $dialogFlowPayload = json_decode(file_get_contents('php://input'), true);
 $fulfillmentText = $dialogFlowPayload['queryResult']['fulfillmentText'];
 $intent = $dialogFlowPayload['queryResult']['intent'];
+$parameters = $dialogFlowPayload['queryResult']['parameters'];
 
 $linePayload = $dialogFlowPayload['originalDetectIntentRequest']['payload'];
 $replyToken = $linePayload['data']['replyToken'];
 $lineUserId = $linePayload['data']['source']['userId'];
 
 $processor = new IntentProcessor();
-$intent = BotIntent::build($intent['name'], $intent['displayName'], $fulfillmentText, $replyToken, $linePayload);
-$message = $processor->process($intent)->getMessageBuilder();
+$intent = BotIntent::build($intent['name'], $intent['displayName'], $fulfillmentText, $replyToken, $lineUserId, $parameters);
 
 
 include BASE_PATH . '/App/Config/line_bot.php';
 $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
 $bot = new LINEBot($httpClient, ['channelSecret' => LINE_MESSAGE_CHANNEL_SECRET]);
-$bot->replyMessage($replyToken, $message);
+
+$processor->process($bot, $intent);

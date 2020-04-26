@@ -31,6 +31,11 @@ class ApplyForm
         $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
 
         $content = $this->formLoader->load($formType->name);
+
+        $prefields = [
+            'courseName' => $_GET['data-course-name'],
+        ];
+
         View::render('apply_form', [
             'user' => $user,
             'formContent' => $content,
@@ -39,6 +44,7 @@ class ApplyForm
             'approval_type_id' => $approvalTypeId,
             'form_type' => $formType,
             'h4_list' => $usersH4,
+            'prefields' => $prefields,
         ]);
     }
 }

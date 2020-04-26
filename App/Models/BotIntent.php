@@ -12,6 +12,7 @@ abstract class BotIntent
     public $fulfillmentText;
     public $replyToken;
     public $lineUserId;
+    public $parameters = [];
 
     /**
      * BotIntent constructor.
@@ -20,25 +21,26 @@ abstract class BotIntent
      * @param $fulfillmentText
      * @param $replyToken
      * @param $lineUserId
+     * @param $parameters
      */
-    public function __construct($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId)
+    public function __construct($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters)
     {
         $this->intentName = $intentName;
         $this->intentDisplayName = $intentDisplayName;
         $this->fulfillmentText = $fulfillmentText;
         $this->replyToken = $replyToken;
         $this->lineUserId = $lineUserId;
+        $this->parameters = $parameters;
     }
 
-    public static function build($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId): ?BotIntent
+    public static function build($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters = []): ?BotIntent
     {
-        switch ($intentDisplayName) {
-            case 'Training Request Intent':
-                return new TrainingRequestIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId);
+        if ($intentDisplayName == 'Training Request Intent' || $intentName == 'projects/botfolio-jnxcqb/agent/intents/2ca195eb-cf63-45f2-b453-edc00ca07bc3') {
+            return new TrainingRequestIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
         }
-        return new DefaultFallbackIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId);
-    }
 
+        return new DefaultFallbackIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
+    }
 
 
 }

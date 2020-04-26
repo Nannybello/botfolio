@@ -8,15 +8,25 @@ use App\Database\Models\Attachment;
 use App\Database\Models\FileInfo;
 use App\Database\Models\FormType;
 use App\Database\Models\User;
+use App\Models\Messages\TextMessage;
 use App\Utils\FormLoader;
 use App\Views\View;
+use LINE\LINEBot;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use function GuzzleHttp\Promise\queue;
 
 class ApplyFormSubmit
 {
     private $formLoader;
 
-    public function __construct()
+    /**
+     * @var LINEBot $bot
+     */
+    private $bot;
+
+    public function __construct(LINEBot $bot)
     {
+        $this->bot = $bot;
         $this->formLoader = new FormLoader();
     }
 
@@ -39,9 +49,11 @@ class ApplyFormSubmit
 
         $approvalType = ApprovalType::query()->findOrFail($approvalTypeId);
         $formType = FormType::of($approvalType)->first();
+        $approvers = User::query()->where('id', '=', $approverId)->get();
         $content = $this->formLoader->load($formType->name, $data);
 
         View::render('apply_form_submit', [
+            'rawData' => $rawData,
             'formContent' => $content,
             'data' => $data,
         ]);
@@ -63,6 +75,12 @@ class ApplyFormSubmit
             $attach->file_id = $fileId;
             $attach->approval_instance_id = $approvalInstance->id;
             $attach->save();
+        }
+
+        foreach ($approvers as $approver) {
+            $approverLineId = $approver->lineUserId;
+            $msg = new TextMessage('มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่');
+            $this->bot->pushMessage($approverLineId, $msg->getMessageBuilder());
         }
     }
 }
