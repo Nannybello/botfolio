@@ -28,6 +28,9 @@ class ApplyForm
         $user = User::fromToken($token);
         $files = FileInfo::of($user);
 
+        $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
+        $usersH2 = User::query()->where('user_type_id', '=', 2)->get();
+        $usersH3 = User::query()->where('user_type_id', '=', 3)->get();
         $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
 
         $content = $this->formLoader->load($formType->name);
@@ -43,6 +46,9 @@ class ApplyForm
             'token' => $token,
             'approval_type_id' => $approvalTypeId,
             'form_type' => $formType,
+            'h1_list' => $usersH1,
+            'h2_list' => $usersH2,
+            'h3_list' => $usersH3,
             'h4_list' => $usersH4,
             'prefields' => $prefields,
         ]);

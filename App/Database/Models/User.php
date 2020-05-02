@@ -19,6 +19,11 @@ class User extends Model
         return self::query()->where('token', '=', $token)->first();
     }
 
+    public static function fromId($id): ?User
+    {
+        return self::query()->where('id', '=', $id)->first();
+    }
+
     public function hasPendingQuestion(): bool
     {
         return $this->pending_question ? true : false;

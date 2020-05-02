@@ -3,13 +3,16 @@
 namespace App\Controllers\Web;
 
 use App\Database\Models\ApprovalInstance;
+use App\Database\Models\ApprovalInstanceResult;
 use App\Database\Models\ApprovalType;
 use App\Database\Models\Attachment;
 use App\Database\Models\FileInfo;
 use App\Database\Models\FormType;
 use App\Database\Models\User;
+use App\Models\Messages\ConfirmDialogMessage;
 use App\Models\Messages\TextMessage;
 use App\Utils\FormLoader;
+use App\Utils\Url;
 use App\Views\View;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -35,7 +38,10 @@ class ApplyFormSubmit
         $rawData = $_POST;
         $user = User::fromToken($rawData['token']);
         $approvalTypeId = $rawData['approval_type_id'];
-        $approverId = $rawData['approver_id'];
+        $H1approverId = $rawData['H1_approver_id'];
+        $H2approverId = $rawData['H2_approver_id'];
+        $H3approverId = $rawData['H3_approver_id'];
+        $H4approverId = $rawData['H4_approver_id'];
 
         //echo '<pre>';
         $data = [];
@@ -49,7 +55,7 @@ class ApplyFormSubmit
 
         $approvalType = ApprovalType::query()->findOrFail($approvalTypeId);
         $formType = FormType::of($approvalType)->first();
-        $approvers = User::query()->where('id', '=', $approverId)->get();
+        $approvers = User::query()->where('id', '=', $H4approverId)->get();
         $content = $this->formLoader->load($formType->name, $data);
 
         View::render('apply_form_submit', [
@@ -64,8 +70,15 @@ class ApplyFormSubmit
         $approvalInstance->approval_type_id = $approvalTypeId;
         $approvalInstance->data = json_encode($data);
         $approvalInstance->created_at = date('Y-m-d H:i:s');
-        $approvalInstance->approver_id = $approverId;
+        $approvalInstance->H1_approver_id = $H1approverId;
+        $approvalInstance->H2_approver_id = $H2approverId;
+        $approvalInstance->H3_approver_id = $H3approverId;
+        $approvalInstance->H4_approver_id = $H4approverId;
         $approvalInstance->save();
+
+        $approvalInstanceResult = new ApprovalInstanceResult();
+        $approvalInstanceResult->approval_instance_id = $approvalInstance->id;
+        $approvalInstanceResult->save();
 
         echo "id: " . $approvalInstance->id;
 
@@ -79,8 +92,16 @@ class ApplyFormSubmit
 
         foreach ($approvers as $approver) {
             $approverLineId = $approver->lineUserId;
-            $msg = new TextMessage('มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่');
+            $url = Url::viewform($approvalInstance->id);
+            $msg = new TextMessage("มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่\n$url");
             $this->bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+
+            $url = Url::rejectform($approvalInstance->id, $user->token);
+            $confirmMsg = new ConfirmDialogMessage("Approve form {$approvalInstance->id} ?", [
+                "Approve" => "cmd:approve-form:{$approvalInstance->id}",
+                "Reject" => "cmd:reject-form:{$approvalInstance->id}\n{$url}",
+            ]);
+            $this->bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
         }
     }
 }

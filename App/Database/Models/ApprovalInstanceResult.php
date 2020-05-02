@@ -8,5 +8,6 @@ class ApprovalInstanceResult extends Model
 {
     protected $table = 'approval_instance_result';
 
+    public $timestamps = false;
 
 }

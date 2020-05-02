@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\Api\Test;
+use App\Views\View;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
@@ -46,6 +47,28 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $controller = new \App\Controllers\Web\ApplyFormSubmit($bot);
         $controller->index();
     });
+
+
+
+    $r->addRoute('GET', BASE_URL . '/viewform/{id:\d+}', function ($id) {
+        $controller = new \App\Controllers\Web\ViewApplyForm();
+        $controller->index($id);
+    });
+
+
+
+    $r->addRoute('GET', BASE_URL . '/rejectform/{id:\d+}', function ($id) {
+        View::render('reject_form', [
+            'approval_instance_id' => $id,
+            'token' => $_GET['token'],
+        ]);
+    });
+    $r->addRoute('POST', BASE_URL . '/rejectform', function () use($bot) {
+        $controller = new \App\Controllers\Web\RejectFormSubmit($bot);
+        $controller->index();
+    });
+
+
 
     $r->addRoute('GET', BASE_URL . '/users', function () {
         echo 'users';

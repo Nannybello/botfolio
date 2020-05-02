@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Intents\ApproveFormIntent;
 use App\Models\Intents\DefaultFallbackIntent;
 use App\Models\Intents\TrainingRequestIntent;
 
@@ -37,6 +38,10 @@ abstract class BotIntent
     {
         if ($intentDisplayName == 'Training Request Intent' || $intentName == 'projects/botfolio-jnxcqb/agent/intents/2ca195eb-cf63-45f2-b453-edc00ca07bc3') {
             return new TrainingRequestIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
+        }
+
+        if ($intentDisplayName == 'Approve Form Intent' || $intentName == 'projects/botfolio-jnxcqb/agent/intents/792137b1-34ed-4dd5-8693-fd8cb6da77be') {
+            return new ApproveFormIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
         }
 
         return new DefaultFallbackIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);

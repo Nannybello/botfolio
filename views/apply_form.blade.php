@@ -64,12 +64,34 @@
             </ul>
         </div>
         <br/>
-        <h3>เลือกคนอนุมัติ</h3>
-        <select name="approver_id">
+        <h3>เลือกคนอนุมัติ H4</h3>
+        <select name="H4_approver_id">
             @foreach($h4_list as $h4)
                 <option value="{{ $h4->id }}">{{ $h4->info_first_name }} {{ $h4->info_last_name }}</option>
             @endforeach
         </select>
+
+        <h3>เลือกคนอนุมัติ H3</h3>
+        <select name="H3_approver_id">
+            @foreach($h3_list as $h3)
+                <option value="{{ $h3->id }}">{{ $h3->info_first_name }} {{ $h3->info_last_name }}</option>
+            @endforeach
+        </select>
+
+        <h3>เลือกคนอนุมัติ H2</h3>
+        <select name="H2_approver_id">
+            @foreach($h2_list as $h2)
+                <option value="{{ $h2->id }}">{{ $h2->info_first_name }} {{ $h2->info_last_name }}</option>
+            @endforeach
+        </select>
+
+        <h3>เลือกคนอนุมัติ H1</h3>
+        <select name="H1_approver_id">
+            @foreach($h1_list as $h1)
+                <option value="{{ $h1->id }}">{{ $h1->info_first_name }} {{ $h1->info_last_name }}</option>
+            @endforeach
+        </select>
+
         <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="ส่งคำขออนุมัติ"/>
     </form>
     <hr/>
