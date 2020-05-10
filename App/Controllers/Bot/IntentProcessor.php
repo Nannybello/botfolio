@@ -12,7 +12,9 @@ use App\Models\BotIntent;
 use App\Models\BotMessage;
 use App\Models\Intents\ApproveFormIntent;
 use App\Models\Intents\RequestFromTypeIntent;
+use App\Models\Intents\TrainingCompleteIntent;
 use App\Models\Intents\TrainingRequestIntent;
+use App\Models\Messages\CarouselMessage;
 use App\Models\Messages\ConfirmDialogMessage;
 use App\Models\Messages\TextMessage;
 use App\Utils\Url;
@@ -121,6 +123,24 @@ class IntentProcessor
             $url = Url::applyA2A3form($token, $type);
 
             $reply = new TextMessage($url . "\n" . $defaultText);
+            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+        } elseif ($intent instanceof TrainingCompleteIntent) {
+            $user = $this->getUser($intent->lineUserId);
+
+//            $reply = new TextMessage("กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว" . "\n" . $defaultText);
+//            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+
+            $instances = ApprovalInstance::query()
+                ->where('user_id', '=', $user->id)
+                ->where('status', '=', 0)
+                ->get();
+
+            $items = array_map(function ($instance) {
+                return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว");
+            }, $instances->toArray());
+
+            //กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว
+            $reply = new CarouselMessage("img", $items);
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         }
 

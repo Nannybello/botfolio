@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Intents\ApproveFormIntent;
 use App\Models\Intents\DefaultFallbackIntent;
 use App\Models\Intents\RequestFromTypeIntent;
+use App\Models\Intents\TrainingCompleteIntent;
 use App\Models\Intents\TrainingRequestIntent;
 
 abstract class BotIntent
@@ -45,8 +46,12 @@ abstract class BotIntent
             return new ApproveFormIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
         }
 
-        if ($intentDisplayName == 'Request From Type' || $intentName == ' projects/botfolio-jnxcqb/agent/intents/b1933b65-537e-4611-b8d4-7704bb94b3fb') {
+        if ($intentDisplayName == 'Request From Type Intent' || $intentName == 'projects/botfolio-jnxcqb/agent/intents/b1933b65-537e-4611-b8d4-7704bb94b3fb') {
             return new RequestFromTypeIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
+        }
+
+        if ($intentDisplayName == 'Training Complete Intent' || $intentName == ' projects/botfolio-jnxcqb/agent/intents/81732c6d-d481-44c6-b1f1-86ca8c40ba46') {
+            return new TrainingCompleteIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
         }
 
         return new DefaultFallbackIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $parameters);
