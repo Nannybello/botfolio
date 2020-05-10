@@ -51,4 +51,9 @@ class User extends Model
     {
         return $this->info_status == 1;
     }
+
+    public function isOfficer(): bool
+    {
+        return $this->employee_type == 'officer';
+    }
 }
