@@ -38,10 +38,10 @@ class ApplyFormSubmit
         $rawData = $_POST;
         $user = User::fromToken($rawData['token']);
         $approvalTypeId = $rawData['approval_type_id'];
-        $H1approverId = $rawData['H1_approver_id'];
-        $H2approverId = $rawData['H2_approver_id'];
-        $H3approverId = $rawData['H3_approver_id'];
-        $H4approverId = $rawData['H4_approver_id'];
+        $H1approverId = $rawData['H1_approver_id'] ?? null;
+        $H2approverId = $rawData['H2_approver_id'] ?? null;
+        $H3approverId = $rawData['H3_approver_id'] ?? null;
+        $H4approverId = $rawData['H4_approver_id'] ?? null;
 
         //echo '<pre>';
         $data = [];

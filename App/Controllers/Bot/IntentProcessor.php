@@ -114,7 +114,13 @@ class IntentProcessor
                 $bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
             }
         } elseif ($intent instanceof RequestFromTypeIntent) {
-            $reply = new TextMessage("test123" . "\n" . $defaultText);
+            $user = $this->getUser($intent->lineUserId);
+            $token = $user ? $user->token : '';
+
+            $type = $intent->parameters['request-form-type'];
+            $url = Url::applyA2A3form($token, $type);
+
+            $reply = new TextMessage($url . "\n" . $defaultText);
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         }
 
