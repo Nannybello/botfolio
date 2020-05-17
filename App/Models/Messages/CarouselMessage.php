@@ -15,12 +15,13 @@ class CarouselMessage extends BotMessage
     private $msg;
     private $items = [];
 
-    public static function item(int $id, string $title, string $desc): array
+    public static function item(int $id, string $title, string $desc, string $action): array
     {
         return [
             'id' => $id,
             'title' => $title,
             'desc' => $desc,
+            'action' => $action,
         ];
     }
 
@@ -40,32 +41,31 @@ class CarouselMessage extends BotMessage
                 $thumbnail,
                 [
                     new MessageTemplateActionBuilder(
-                        "Select to Done", "cmd:training-complete:" . $item['id']
+                        "Select to Done", $item['action']//"cmd:training-complete:" . $item['id']
                     )
                 ]
             );
         }, $this->items);
 
-        return new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("img",
-            new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder(
-                [
-                    new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(
-                        "Title",
-                        "Desc",
-                        $thumbnail,
-                        [
-                            new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder(
-                                "Download", "test123"
-                            )
-                        ]
-                    )
-                ]
-            )
-        );
+        // limit by LINE
+        $items = array_slice($items, 0, 10);
 
         return new TemplateMessageBuilder($this->msg,
             new CarouselTemplateBuilder(
-                $items,
+                $items
+//                [
+//                    $items[0],
+//                    new CarouselColumnTemplateBuilder(
+//                        "Title",
+//                        "Desc",
+//                        $thumbnail,
+//                        [
+//                            new MessageTemplateActionBuilder(
+//                                "Mark as Complete", "test123"
+//                            )
+//                        ]
+//                    )
+//                ]
             )
         );
     }

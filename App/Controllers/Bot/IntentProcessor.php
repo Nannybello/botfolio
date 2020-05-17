@@ -126,22 +126,28 @@ class IntentProcessor
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         } elseif ($intent instanceof TrainingCompleteIntent) {
             $user = $this->getUser($intent->lineUserId);
+            $token = $user ? $user->token : '';
 
-//            $reply = new TextMessage("กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว" . "\n" . $defaultText);
-//            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+            $approvalInstanceId = $intent->parameters['approval-instance-id'];
+            $action = $intent->parameters['training-complete-action'];
 
-            $instances = ApprovalInstance::query()
-                ->where('user_id', '=', $user->id)
-                ->where('status', '=', 0)
-                ->get();
+            if ($action == 'done') {
+                $instances = ApprovalInstance::query()
+                    ->where('user_id', '=', $user->id)
+                    ->where('status', '=', 0)
+                    ->get();
 
-            $items = array_map(function ($instance) {
-                return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว");
-            }, $instances->toArray());
+                $items = array_map(function ($instance) use ($token) {
+                    return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", Url::applyA5form($token));
+                }, $instances->toArray());
 
-            //กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว
-            $reply = new CarouselMessage("img", $items);
-            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+                //กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว
+                $reply = new CarouselMessage("Select Form", $items);
+                $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+            } elseif ($approvalInstanceId) {
+                $reply = new TextMessage("แจ้งการอบรบสำเร็จแล้ว");
+                $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+            }
         }
 
 

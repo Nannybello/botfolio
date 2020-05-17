@@ -22,10 +22,19 @@ class Url
             case '3':
                 $id = 3;
                 break;
+            case 'A5':
+            case '5':
+                $id = 5;
+                break;
             default:
                 $id = null;
         }
         return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=$id";
+    }
+
+    public static function applyA5form($token)
+    {
+        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=5";
     }
 
     public static function viewform($id)
