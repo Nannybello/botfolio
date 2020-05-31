@@ -32,6 +32,11 @@ class Url
         return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=$id";
     }
 
+    public static function applyA4form($token)
+    {
+        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=4";
+    }
+
     public static function applyA5form($token)
     {
         return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=5";

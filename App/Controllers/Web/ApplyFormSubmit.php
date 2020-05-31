@@ -55,7 +55,6 @@ class ApplyFormSubmit
 
         $approvalType = ApprovalType::query()->findOrFail($approvalTypeId);
         $formType = FormType::of($approvalType)->first();
-        $approvers = User::query()->where('id', '=', $H4approverId)->get();
         $content = $this->formLoader->load($formType->name, $data);
 
         View::render('apply_form_submit', [
@@ -90,18 +89,39 @@ class ApplyFormSubmit
             $attach->save();
         }
 
-        foreach ($approvers as $approver) {
-            $approverLineId = $approver->lineUserId;
-            $url = Url::viewform($approvalInstance->id);
-            $msg = new TextMessage("มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่\n$url");
-            $this->bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+        switch ($approvalTypeId) {
+            case 1:
+                $approvers = User::query()->where('id', '=', $H4approverId)->get();
+                foreach ($approvers as $approver) {
+                    $approverLineId = $approver->lineUserId;
+                    $url = Url::viewform($approvalInstance->id);
+                    $msg = new TextMessage("มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่\n$url");
+                    $this->bot->pushMessage($approverLineId, $msg->getMessageBuilder());
 
-            $url = Url::rejectform($approvalInstance->id, $user->token);
-            $confirmMsg = new ConfirmDialogMessage("Approve form {$approvalInstance->id} ?", [
-                "Approve" => "cmd:approve-form:{$approvalInstance->id}",
-                "Reject" => "cmd:reject-form:{$approvalInstance->id}\n{$url}",
-            ]);
-            $this->bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                    $url = Url::rejectform($approvalInstance->id, $user->token);
+                    $confirmMsg = new ConfirmDialogMessage("Approve form {$approvalInstance->id} ?", [
+                        "Approve" => "cmd:approve-form:{$approvalInstance->id}",
+                        "Reject" => "cmd:reject-form:{$approvalInstance->id}\n{$url}",
+                    ]);
+                    $this->bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                }
+                break;
+            case 5:
+                $approvers = User::query()->whereIn('id', [$H4approverId, $H1approverId])->get();
+                foreach ($approvers as $approver) {
+                    $approverLineId = $approver->lineUserId;
+                    $url = Url::viewform($approvalInstance->id);
+                    $msg = new TextMessage("มีคนส่ง approve id ' . $approvalInstance->id . ' รอให้คุณ approve อยู่\n$url");
+                    $this->bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+
+                    $url = Url::rejectform($approvalInstance->id, $user->token);
+                    $confirmMsg = new ConfirmDialogMessage("Approve form {$approvalInstance->id} ?", [
+                        "Approve" => "cmd:approve-form:{$approvalInstance->id}",
+                        "Reject" => "cmd:reject-form:{$approvalInstance->id}\n{$url}",
+                    ]);
+                    $this->bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                }
+                break;
         }
     }
 }

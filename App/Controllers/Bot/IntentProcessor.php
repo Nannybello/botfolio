@@ -59,6 +59,16 @@ class IntentProcessor
 
             $nextApprover = $approverLineId = null;
 
+            //TODO:
+//            if ($instance->approval_type_id == 5) {
+//                if($instance->H1_approver_id == $user->id){
+//
+//                }
+//                $result = new ApprovalInstanceResult();
+//                $result->approval_instance_id = $id
+//                return;
+//            }
+
             //Done!
             if (!is_null($result->H1_approve)) {
                 $nextFormType = $target->isOfficer() ? 'A3' : 'A2';
@@ -122,7 +132,14 @@ class IntentProcessor
             $type = $intent->parameters['request-form-type'];
             $url = Url::applyA2A3form($token, $type);
 
-            $reply = new TextMessage($url . "\n" . $defaultText);
+            $urlA4 = Url::applyA4form($token);
+
+            $reply = new TextMessage($url . "\n" .
+                "\n" .
+                "ถ้าไปอบรมเกิน 1 เดือน ให้กรอกใบข้อล่างด้วย\n" .
+                $urlA4 . "\n" .
+                $defaultText
+            );
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         } elseif ($intent instanceof TrainingCompleteIntent) {
             $user = $this->getUser($intent->lineUserId);
