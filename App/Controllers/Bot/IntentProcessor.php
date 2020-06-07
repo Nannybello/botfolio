@@ -11,6 +11,7 @@ use App\Models\BotAction;
 use App\Models\BotIntent;
 use App\Models\BotMessage;
 use App\Models\Intents\ApproveFormIntent;
+use App\Models\Intents\DefaultFallbackIntent;
 use App\Models\Intents\RequestFromTypeIntent;
 use App\Models\Intents\TrainingCompleteIntent;
 use App\Models\Intents\TrainingRequestIntent;
@@ -32,6 +33,7 @@ class IntentProcessor
     {
 
         $defaultText = "\n---\n" .
+            "message-text: {$intent->messageText}\n" .
             "fulfillment: {$intent->fulfillmentText}\n" .
             "params: " . json_encode($intent->parameters) . "\n" .
             "intent: {$intent->intentName} ({$intent->intentDisplayName})\n" .
@@ -40,7 +42,9 @@ class IntentProcessor
 
         $replyToken = $intent->replyToken;
 
-        if ($intent instanceof TrainingRequestIntent) {
+        if ($intent instanceof DefaultFallbackIntent) {
+
+        } elseif ($intent instanceof TrainingRequestIntent) {
             $user = $this->getUser($intent->lineUserId);
             $token = $user ? $user->token : '';
             $url = Url::applyform($token, $intent->parameters['data-course-name']);
