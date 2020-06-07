@@ -59,72 +59,102 @@ class IntentProcessor
 
             $nextApprover = $approverLineId = null;
 
-            //TODO:
-//            if ($instance->approval_type_id == 5) {
-//                if($instance->H1_approver_id == $user->id){
-//
-//                }
-//                $result = new ApprovalInstanceResult();
-//                $result->approval_instance_id = $id
-//                return;
-//            }
+            switch ($instance->approval_type_id) {
+                case 1:
 
-            //Done!
-            if (!is_null($result->H1_approve)) {
-                $nextFormType = $target->isOfficer() ? 'A3' : 'A2';
-                $confirmMsg = new ConfirmDialogMessage("H1 approve your form. Next, you have to submit form {$nextFormType}?", [
-                    "Request Form" => "cmd:request-form-type:{$nextFormType}",
-                    "Cancel" => "cancel",
-                ]);
-                $bot->pushMessage("U8d979fc1b1a2b976ec6fc65c54e288f1", $confirmMsg->getMessageBuilder());
-                $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
-                return;
+                    //A1: Done! -> A2 A3
+                    if (!is_null($result->H1_approve)) {
+                        $nextFormType = $target->isOfficer() ? 'A3' : 'A2';
+                        $confirmMsg = new ConfirmDialogMessage("H1 approve your form. Next, you have to submit form {$nextFormType}?", [
+                            "Request Form" => "cmd:request-form-type:{$nextFormType}",
+                            "Cancel" => "cancel",
+                        ]);
+                        $bot->pushMessage("U8d979fc1b1a2b976ec6fc65c54e288f1", $confirmMsg->getMessageBuilder());
+                        $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
+                        return;
+                    }
+
+                    //A1: in approving step
+                    if (!is_null($result->H2_approve)) {
+                        $H1 = User::fromId($instance->H1_approver_id);
+                        $approverLineId = $H1->lineUserId;
+                        $nextApprover = $H1;
+
+                        $result->H1_approve = $user->id;
+                        $result->save();
+
+                    } elseif (!is_null($result->H3_approve)) {
+                        $H2 = User::fromId($instance->H2_approver_id);
+                        $approverLineId = $H2->lineUserId;
+                        $nextApprover = $H2;
+
+                        $result->H2_approve = $user->id;
+                        $result->save();
+
+                    } elseif (!is_null($result->H4_approve)) {
+                        $H3 = User::fromId($instance->H3_approver_id);
+                        $approverLineId = $H3->lineUserId;
+                        $nextApprover = $H3;
+
+                        $result->H3_approve = $user->id;
+                        $result->save();
+                    } else {
+                        $result->H4_approve = $user->id;
+                        $result->save();
+                    }
+
+                    $reply = new TextMessage("อนุมัติแล้ว" . "\n" . $defaultText);
+                    $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+
+                    if ($nextApprover && $approverLineId) {
+                        $url = Url::viewform($id);
+                        $msg = new TextMessage("มีคนส่ง approve id ' . $id . ' รอให้คุณ approve อยู่\n$url" . "\n" . $defaultText);
+                        $bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+
+                        $url = Url::rejectform($id, $target->token);
+                        $confirmMsg = new ConfirmDialogMessage("Approve form {$id} ?", [
+                            "Approve" => "cmd:approve-form:{$id}",
+                            "Reject" => "cmd:reject-form:{$id}\n{$url}",
+                        ]);
+                        $bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                    }
+                    return;
+
+
+                case 5:
+                    //A5
+                    if (is_null($result->H4_approve)) {
+                        $H4 = User::fromId($instance->H1_approver_id);
+                        $approverLineId = $H4->lineUserId;
+
+                        $result->H4_approve = $user->id;
+                        $result->save();
+                    } elseif (is_null($result->H1_approve)) {
+                        $H1 = User::fromId($instance->H1_approver_id);
+                        $approverLineId = $H1->lineUserId;
+
+                        $result->H1_approve = $user->id;
+                        $result->save();
+                    } else {
+                        $approverLineId = null;
+                    }
+
+                    if ($approverLineId) {
+                        $viewUrl = Url::viewform($id);
+
+                        $msg = new TextMessage("มีคนส่ง approve id ' . $id . ' รอให้คุณ approve อยู่\n$viewUrl" . "\n" . $defaultText);
+                        $bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+
+                        $rejectUrl = Url::rejectform($id, $target->token);
+                        $confirmMsg = new ConfirmDialogMessage("Approve form {$id} ?", [
+                            "Approve" => "cmd:approve-form:{$id}",
+                            "Reject" => "cmd:reject-form:{$id}\n{$rejectUrl}",
+                        ]);
+                        $bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                    }
+                    return;
             }
 
-            //in approving step
-            if (!is_null($result->H2_approve)) {
-                $H1 = User::fromId($instance->H1_approver_id);
-                $approverLineId = $H1->lineUserId;
-                $nextApprover = $H1;
-
-                $result->H1_approve = $user->id;
-                $result->save();
-
-            } elseif (!is_null($result->H3_approve)) {
-                $H2 = User::fromId($instance->H2_approver_id);
-                $approverLineId = $H2->lineUserId;
-                $nextApprover = $H2;
-
-                $result->H2_approve = $user->id;
-                $result->save();
-
-            } elseif (!is_null($result->H4_approve)) {
-                $H3 = User::fromId($instance->H3_approver_id);
-                $approverLineId = $H3->lineUserId;
-                $nextApprover = $H3;
-
-                $result->H3_approve = $user->id;
-                $result->save();
-            } else {
-                $result->H4_approve = $user->id;
-                $result->save();
-            }
-
-            $reply = new TextMessage("อนุมัติแล้ว" . "\n" . $defaultText);
-            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
-
-            if ($nextApprover && $approverLineId) {
-                $url = Url::viewform($id);
-                $msg = new TextMessage("มีคนส่ง approve id ' . $id . ' รอให้คุณ approve อยู่\n$url" . "\n" . $defaultText);
-                $bot->pushMessage($approverLineId, $msg->getMessageBuilder());
-
-                $url = Url::rejectform($id, $H3->token);
-                $confirmMsg = new ConfirmDialogMessage("Approve form {$id} ?", [
-                    "Approve" => "cmd:approve-form:{$id}",
-                    "Reject" => "cmd:reject-form:{$id}\n{$url}",
-                ]);
-                $bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
-            }
         } elseif ($intent instanceof RequestFromTypeIntent) {
             $user = $this->getUser($intent->lineUserId);
             $token = $user ? $user->token : '';
@@ -148,7 +178,7 @@ class IntentProcessor
             $approvalInstanceId = $intent->parameters['approval-instance-id'];
             $action = $intent->parameters['training-complete-action'];
 
-            if ($action == 'done') {
+            if ($action == 'done' || empty($approvalInstanceId)) {
                 $instances = ApprovalInstance::query()
                     ->where('user_id', '=', $user->id)
                     ->where('status', '=', 0)
@@ -158,9 +188,14 @@ class IntentProcessor
                     return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", Url::applyA5form($token));
                 }, $instances->toArray());
 
-                //กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว
-                $reply = new CarouselMessage("Select Form", $items);
-                $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+                if (empty($items)) {
+                    $reply = new TextMessage("ไม่มีการอบรบที่ยังค้างอยู่ของคุณเลย\n" . $defaultText);
+                    $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+                } else {
+                    //กรุณาเลือกการอบรมที่ต้องการแจ้งว่าสำเร็จแล้ว
+                    $reply = new CarouselMessage("Select Form", $items);
+                    $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+                }
             } elseif ($approvalInstanceId) {
                 $reply = new TextMessage("แจ้งการอบรบสำเร็จแล้ว");
                 $bot->replyMessage($replyToken, $reply->getMessageBuilder());

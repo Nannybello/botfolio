@@ -103,6 +103,16 @@
             </select>
         @endif
 
+
+        @if($followUpRange)
+            <h3>ติดตามผลภายใน</h3>
+            <select name="follow_up">
+                @foreach($followUpRange as $month)
+                    <option value="{{ $month }}">{{ $month }} เดือน</option>
+                @endforeach
+            </select>
+        @endif
+
         <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="ส่งคำขออนุมัติ"/>
     </form>
     <hr/>

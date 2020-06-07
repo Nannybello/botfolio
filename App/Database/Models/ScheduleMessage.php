@@ -8,6 +8,8 @@ class ScheduleMessage extends Model
 {
     protected $table = 'schedule_message';
 
+    public $timestamps = false;
+
     /**
      * @param ApprovalType $approvalType
      * @return FormType[]

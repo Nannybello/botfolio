@@ -28,11 +28,17 @@ class ApplyForm
         $user = User::fromToken($token);
         $files = FileInfo::of($user);
 
+        $followUpRange = [];
+
         if ($formType->name == 'A1') {
             $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
             $usersH2 = User::query()->where('user_type_id', '=', 2)->get();
             $usersH3 = User::query()->where('user_type_id', '=', 3)->get();
             $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
+        } elseif ($formType->name == 'A5') {
+            $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
+            $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
+            $followUpRange = [6, 9];
         }
 
         $content = $this->formLoader->load($formType->name);
@@ -53,6 +59,7 @@ class ApplyForm
             'h3_list' => $usersH3 ?? null,
             'h4_list' => $usersH4 ?? null,
             'prefields' => $prefields,
+            'followUpRange' => $followUpRange,
         ]);
     }
 }

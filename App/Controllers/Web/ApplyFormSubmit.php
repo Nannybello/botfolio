@@ -8,6 +8,7 @@ use App\Database\Models\ApprovalType;
 use App\Database\Models\Attachment;
 use App\Database\Models\FileInfo;
 use App\Database\Models\FormType;
+use App\Database\Models\ScheduleMessage;
 use App\Database\Models\User;
 use App\Models\Messages\ConfirmDialogMessage;
 use App\Models\Messages\TextMessage;
@@ -36,12 +37,16 @@ class ApplyFormSubmit
     public function index()
     {
         $rawData = $_POST;
+        echo '<pre>';
+        print_r($rawData);
+        echo '</pre>';
         $user = User::fromToken($rawData['token']);
         $approvalTypeId = $rawData['approval_type_id'];
         $H1approverId = $rawData['H1_approver_id'] ?? null;
         $H2approverId = $rawData['H2_approver_id'] ?? null;
         $H3approverId = $rawData['H3_approver_id'] ?? null;
         $H4approverId = $rawData['H4_approver_id'] ?? null;
+        $followUp = $rawData['follow_up'] ?? null;
 
         //echo '<pre>';
         $data = [];
@@ -68,6 +73,7 @@ class ApplyFormSubmit
         $approvalInstance->user_id = $user->id;
         $approvalInstance->approval_type_id = $approvalTypeId;
         $approvalInstance->data = json_encode($data);
+        $approvalInstance->follow_up = $followUp;
         $approvalInstance->created_at = date('Y-m-d H:i:s');
         $approvalInstance->H1_approver_id = $H1approverId;
         $approvalInstance->H2_approver_id = $H2approverId;
@@ -121,6 +127,18 @@ class ApplyFormSubmit
                     ]);
                     $this->bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
                 }
+
+                if ($followUp) {
+                    $final = date("Y-m-d", strtotime("+$followUp month", time()));
+
+                    $task = new ScheduleMessage();
+                    $task->lineUserId = $user->lineUserId;
+                    $task->message = "follow up ของคุณถึงกำหนดแล้ว ให้ส่งฟอร์มนี้ " . Url::applyA6form($user->token);
+                    $task->send_at = $final;
+                    $task->issue_at = date('Y-m-d H:i:s');
+                    $task->save();
+                }
+
                 break;
         }
     }
