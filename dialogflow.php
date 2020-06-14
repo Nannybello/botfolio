@@ -35,9 +35,10 @@ $parameters = $dialogFlowPayload['queryResult']['parameters'];
 $linePayload = $dialogFlowPayload['originalDetectIntentRequest']['payload'];
 $replyToken = $linePayload['data']['replyToken'];
 $lineUserId = $linePayload['data']['source']['userId'];
+$messageText = $linePayload['data']['message']['text'];
 
 $processor = new IntentProcessor();
-$intent = BotIntent::build($intent['name'], $intent['displayName'], $fulfillmentText, $replyToken, $lineUserId, $parameters);
+$intent = BotIntent::build($intent['name'], $intent['displayName'], $fulfillmentText, $replyToken, $lineUserId, $messageText, $parameters);
 
 
 include BASE_PATH . '/App/Config/line_bot.php';
