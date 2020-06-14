@@ -194,7 +194,7 @@ class IntentProcessor
                     ->get();
 
                 $items = array_map(function ($instance) use ($token) {
-                    return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", Url::applyA5form($token));
+                    return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", Url::applyA50form($token));
                 }, $instances->toArray());
 
                 if (empty($items)) {

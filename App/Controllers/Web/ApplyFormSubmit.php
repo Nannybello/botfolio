@@ -133,7 +133,7 @@ class ApplyFormSubmit
 
                     $task = new ScheduleMessage();
                     $task->lineUserId = $user->lineUserId;
-                    $task->message = "follow up ของคุณถึงกำหนดแล้ว ให้ส่งฟอร์มนี้ " . Url::applyA6form($user->token);
+                    $task->message = "follow up ของคุณถึงกำหนดแล้ว ให้ส่งฟอร์มนี้ " . Url::applyA60form($user->token);
                     $task->send_at = $final;
                     $task->issue_at = date('Y-m-d H:i:s');
                     $task->save();
