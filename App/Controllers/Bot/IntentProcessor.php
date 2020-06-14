@@ -41,11 +41,19 @@ class IntentProcessor
             "IntentClass: " . get_class($intent);
 
         $replyToken = $intent->replyToken;
+        $user = $this->getUser($intent->lineUserId);
+
+        if (!$this->alreadyAskForWelcomeQuestion($bot, $intent)) {
+            return;
+        }
 
         if ($intent instanceof DefaultFallbackIntent) {
 
+            $txt = $intent->messageText;
+            $reply = new TextMessage("original text: $txt\n" . $defaultText);
+            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+
         } elseif ($intent instanceof TrainingRequestIntent) {
-            $user = $this->getUser($intent->lineUserId);
             $token = $user ? $user->token : '';
             $url = Url::applyform($token, $intent->parameters['data-course-name']);
             //"https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=1&data-course-name=" . urlencode($intent->parameters['data-course-name']);
@@ -54,7 +62,6 @@ class IntentProcessor
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         } //
         elseif ($intent instanceof ApproveFormIntent) {
-            $user = $this->getUser($intent->lineUserId);
             $id = $intent->parameters['approval-instance-id'];
 
             $instance = ApprovalInstance::query()->where('id', '=', $id)->first();
@@ -160,7 +167,6 @@ class IntentProcessor
             }
 
         } elseif ($intent instanceof RequestFromTypeIntent) {
-            $user = $this->getUser($intent->lineUserId);
             $token = $user ? $user->token : '';
 
             $type = $intent->parameters['request-form-type'];
@@ -176,7 +182,6 @@ class IntentProcessor
             );
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         } elseif ($intent instanceof TrainingCompleteIntent) {
-            $user = $this->getUser($intent->lineUserId);
             $token = $user ? $user->token : '';
 
             $approvalInstanceId = $intent->parameters['approval-instance-id'];
@@ -208,5 +213,111 @@ class IntentProcessor
 
 
         $bot->replyMessage($replyToken, (new TextMessage($defaultText))->getMessageBuilder());
+    }
+
+    private function alreadyAskForWelcomeQuestion(LINEBot $bot, BotIntent $intent)
+    {
+        $defaultText = "\n---\n" .
+            "message-text: {$intent->messageText}\n" .
+            "fulfillment: {$intent->fulfillmentText}\n" .
+            "params: " . json_encode($intent->parameters) . "\n" .
+            "intent: {$intent->intentName} ({$intent->intentDisplayName})\n" .
+            "lineUserId: {$intent->lineUserId}\n" .
+            "IntentClass: " . get_class($intent);
+
+        $replyToken = $intent->replyToken;
+        $user = $this->getUser($intent->lineUserId);
+
+        if (is_null($user)) {
+            $user = new User();
+            $user->lineUserId = $user_token = $intent->lineUserId;
+            $user->created_at = $user->updated_at = date('Y-m-d H:i:s');
+            $user->save();
+        }
+
+        if ($user->isCompleteInfo()) {
+            return true;
+        }
+
+        if (!$user->isCompleteInfo() && !$user->hasPendingQuestion()) {
+            $user->setPendingQuestion(User::PENDING_QUESTION_FIRST_NAME)->save();
+            $reply = new TextMessage("คุณชื่ออะไร?" . "\n" . $defaultText);
+            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+            return false;
+        }
+
+
+        if ($user->hasPendingQuestion()) {
+            $question = $user->getPendingQuestion();
+            $answer = $intent->messageText;
+            switch ($question) {
+                case User::PENDING_QUESTION_FIRST_NAME:
+                    $user->info_first_name = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_LAST_NAME)->save();
+                    $replyMessage = 'นามสกุลอะไร?';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+                    break;
+                case User::PENDING_QUESTION_LAST_NAME:
+                    $user->info_last_name = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_MAJOR)->save();
+                    $replyMessage = 'สาขาวิชาอะไร?';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+                    break;
+                case User::PENDING_QUESTION_MAJOR:
+                    $user->info_major = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_FACULTY)->save();
+                    $replyMessage = 'คณะอะไร?';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+                    break;
+                case User::PENDING_QUESTION_FACULTY:
+                    $user->info_faculty = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_POSITION)->save();
+                    $replyMessage = 'ตำแหน่งอะไร?';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+                    break;
+                case User::PENDING_QUESTION_POSITION:
+                    $user->info_position = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_USER_TYPE)->save();
+
+                    $replyMessage = 'คุณเป็นผู้ใช้ระดับอะไร?';
+
+                    $items = [
+                        CarouselMessage::item(0, 'ผู้ใช้', 'ผู้ใช้แบบธรรมดา', '0'),
+                        CarouselMessage::item(1, 'H1', 'ผู้ใช้แบบ1', '1'),
+                        CarouselMessage::item(2, 'H2', 'ผู้ใช้แบบ2', '2'),
+                        CarouselMessage::item(3, 'H3', 'ผู้ใช้แบบ3', '3'),
+                        CarouselMessage::item(4, 'H4', 'ผู้ใช้แบบ4', '4'),
+                    ];
+                    $reply = new CarouselMessage($replyMessage, $items);
+
+                    break;
+                case User::PENDING_QUESTION_USER_TYPE:
+                    $user->user_type_id = $answer;
+                    $user->setPendingQuestion(User::PENDING_QUESTION_EMPLOYEE_TYPE)->save();
+                    $replyMessage = 'เป็นพนักงานประเภทไหน?';
+                    $reply = new ConfirmDialogMessage($replyMessage, [
+                        'ข้าราชการ' => 'officer',
+                        'พนักงาน' => 'employee',
+                    ]);
+                    break;
+                case User::PENDING_QUESTION_EMPLOYEE_TYPE:
+                    $user->employee_type = $answer;
+                    $user->completeInfo()->save();
+                    $replyMessage = 'ใส่ข้อมูลพื้นฐานครบแล้ว';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+                    break;
+                default:
+                    $replyMessage = 'XXX';
+                    $reply = new TextMessage($replyMessage . "\n" . $defaultText);
+            }
+            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+            return false;
+        }
+
+
+        $reply = new TextMessage("ERROR!\n" . $defaultText);
+        $bot->replyMessage($replyToken, $reply->getMessageBuilder());
+        return false;
+
     }
 }

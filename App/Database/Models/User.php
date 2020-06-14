@@ -11,6 +11,8 @@ class User extends Model
     const PENDING_QUESTION_MAJOR = 'MAJOR';
     const PENDING_QUESTION_FACULTY = 'FACULTY';
     const PENDING_QUESTION_POSITION = 'POSITION';
+    const PENDING_QUESTION_USER_TYPE = 'USER_TYPE';
+    const PENDING_QUESTION_EMPLOYEE_TYPE = 'EMPLOYEE_TYPE';
 
     protected $table = 'line_user';
 
