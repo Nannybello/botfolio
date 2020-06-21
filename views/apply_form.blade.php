@@ -113,6 +113,10 @@
             </select>
         @endif
 
+        @if($parent_id)
+            <input type="hidden" name="parent_id" value="{{ $parent_id }}"/>
+        @endif
+
         <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="ส่งคำขออนุมัติ"/>
     </form>
     <hr/>

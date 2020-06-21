@@ -47,7 +47,9 @@ class IntentProcessor
             return;
         }
 
-        if ($intent instanceof DefaultFallbackIntent) {
+        if (strpos($intent->messageText, "https://") != false ) {
+
+        } elseif ($intent instanceof DefaultFallbackIntent) {
 
             $txt = $intent->messageText;
             $reply = new TextMessage("original text: $txt\n" . $defaultText);
@@ -68,48 +70,49 @@ class IntentProcessor
             $result = ApprovalInstanceResult::query()->where('approval_instance_id', '=', $id)->first();
             $target = User::fromId($instance->user_id);
 
-            $nextApprover = $approverLineId = null;
+            $nextApprover = null;
 
             switch ($instance->approval_type_id) {
                 case 1:
 
                     //A1: Done! -> A2 A3
-                    if (!is_null($result->H1_approve)) {
+                    // เหลือ H1 เป็นตนสุดท้าย ถ้าให้ผ่านก็ส่งกลับหา user เลย
+                    if (!is_null($result->H2_approve)) {
+                        $result->H1_approve = $user->id;
+                        $result->save();
+
                         $nextFormType = $target->isOfficer() ? 'A3' : 'A2';
                         $confirmMsg = new ConfirmDialogMessage("H1 approve your form. Next, you have to submit form {$nextFormType}?", [
                             "Request Form" => "cmd:request-form-type:{$nextFormType}",
                             "Cancel" => "cancel",
                         ]);
-                        $bot->pushMessage("U8d979fc1b1a2b976ec6fc65c54e288f1", $confirmMsg->getMessageBuilder());
+                        $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
                         $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
                         return;
+
                     }
-
-                    //A1: in approving step
-                    if (!is_null($result->H2_approve)) {
+                    // H3 กรอกแล้ว รอ H2 อยู่ -- ถ้า H2 กรอกแล้ว คนต่อไปจะเป็น H1
+                    elseif (!is_null($result->H3_approve)) {
                         $H1 = User::fromId($instance->H1_approver_id);
-                        $approverLineId = $H1->lineUserId;
                         $nextApprover = $H1;
-
-                        $result->H1_approve = $user->id;
-                        $result->save();
-
-                    } elseif (!is_null($result->H3_approve)) {
-                        $H2 = User::fromId($instance->H2_approver_id);
-                        $approverLineId = $H2->lineUserId;
-                        $nextApprover = $H2;
 
                         $result->H2_approve = $user->id;
                         $result->save();
 
-                    } elseif (!is_null($result->H4_approve)) {
-                        $H3 = User::fromId($instance->H3_approver_id);
-                        $approverLineId = $H3->lineUserId;
-                        $nextApprover = $H3;
+                    }
+                    // H4 กรอกแล้ว รอ H3 อยู่ -- ถ้า H3 กรอกแล้ว คนต่อไปจะเป็น H2
+                    elseif (!is_null($result->H4_approve)) {
+                        $H2 = User::fromId($instance->H2_approver_id);
+                        $nextApprover = $H2;
 
                         $result->H3_approve = $user->id;
                         $result->save();
-                    } else {
+                    }
+                    // H4 ว่างอยู่
+                    else {
+                        $H3 = User::fromId($instance->H3_approver_id);
+                        $nextApprover = $H3;
+
                         $result->H4_approve = $user->id;
                         $result->save();
                     }
@@ -117,17 +120,17 @@ class IntentProcessor
                     $reply = new TextMessage("อนุมัติแล้ว" . "\n" . $defaultText);
                     $bot->replyMessage($replyToken, $reply->getMessageBuilder());
 
-                    if ($nextApprover && $approverLineId) {
+                    if ($nextApprover) {
                         $url = Url::viewform($id);
                         $msg = new TextMessage("มีคนส่ง approve id ' . $id . ' รอให้คุณ approve อยู่\n$url" . "\n" . $defaultText);
-                        $bot->pushMessage($approverLineId, $msg->getMessageBuilder());
+                        $bot->pushMessage($nextApprover->lineUserId, $msg->getMessageBuilder());
 
                         $url = Url::rejectform($id, $target->token);
                         $confirmMsg = new ConfirmDialogMessage("Approve form {$id} ?", [
                             "Approve" => "cmd:approve-form:{$id}",
                             "Reject" => "cmd:reject-form:{$id}\n{$url}",
                         ]);
-                        $bot->pushMessage($approverLineId, $confirmMsg->getMessageBuilder());
+                        $bot->pushMessage($nextApprover->lineUserId, $confirmMsg->getMessageBuilder());
                     }
                     return;
 
@@ -194,7 +197,7 @@ class IntentProcessor
                     ->get();
 
                 $items = array_map(function ($instance) use ($token) {
-                    return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", Url::applyA50form($token));
+                    return CarouselMessage::item($instance['id'], "id: {$instance['id']}", "เลือกเพื่อแจ้งว่าสำเร็จแล้ว", "กรุณาข้อมูลในฟอร์มนี้ " . Url::applyA50form($token));
                 }, $instances->toArray());
 
                 if (empty($items)) {
@@ -211,7 +214,7 @@ class IntentProcessor
             }
         }
 
-
+        //Test default case
         $bot->replyMessage($replyToken, (new TextMessage($defaultText))->getMessageBuilder());
     }
 

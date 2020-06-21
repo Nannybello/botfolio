@@ -22,6 +22,7 @@ class ApplyForm
     {
         $token = $_GET['token'];
         $approvalTypeId = $_GET['approval_type_id'];
+        $parentId = $_GET['parent_id'] ?? null;
 
         $approvalType = ApprovalType::query()->findOrFail($approvalTypeId);
         $formType = FormType::of($approvalType)->first();
@@ -35,9 +36,12 @@ class ApplyForm
             $usersH2 = User::query()->where('user_type_id', '=', 2)->get();
             $usersH3 = User::query()->where('user_type_id', '=', 3)->get();
             $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
-        } elseif ($formType->name == 'A5') {
+        } elseif ($formType->name == 'A50') {
             $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
             $usersH4 = User::query()->where('user_type_id', '=', 4)->get();
+            $followUpRange = [6, 9];
+        } elseif ($formType->name == 'A51') {
+            $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
             $followUpRange = [6, 9];
         }
 
@@ -60,6 +64,7 @@ class ApplyForm
             'h4_list' => $usersH4 ?? null,
             'prefields' => $prefields,
             'followUpRange' => $followUpRange,
+            'parent_id' => $parentId,
         ]);
     }
 }

@@ -42,9 +42,9 @@ class Url
         return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=50";
     }
 
-    public static function applyA51form($token)
+    public static function applyA51form($token, $parent_id = null)
     {
-        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=51";
+        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=51" . ($parent_id ? "&parent_id=$parent_id" : "");
     }
 
     public static function applyA52form($token)
@@ -57,9 +57,9 @@ class Url
         return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=60";
     }
 
-    public static function applyA61form($token)
+    public static function applyA61form($token, $parent_id = null)
     {
-        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=61";
+        return "https://botfolio.beautyandballoon.com/applyform?token=$token&approval_type_id=61" . ($parent_id ? "&parent_id=$parent_id" : "");
     }
 
     public static function applyA62form($token)

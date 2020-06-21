@@ -1,4 +1,4 @@
-<h1>บันทึกข้อความ A5</h1>
+<h1>บันทึกข้อความ A51</h1>
 
 <div>
     <p>ส่วนราชการ สาขาวิชา {{info_major}} คณะ {{info_faculty}}</p>
@@ -10,27 +10,7 @@
 
 <p>เรียน คณะบดี</p>
 
-<table>
-    <thead>
-    <tr>
-        <td rowspan="2">หัวข้อเรื่อง</td>
-        <td colspan="2">ผลสัมฤทธิ์</td>
-        <td rowspan="2">มีการนำมาใช้</td>
-    </tr>
-    <tr>
-        <td>ไม่มีการนำมาใช้</td>
-        <td>มีการนำมาใช้</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>1.สามารถนำความรู้มาใช้ ...</td>
-        <td>{{yes_1}}</td>
-        <td>{{no_1}}</td>
-        <td>{{how_1}}</td>
-    </tr>
-    </tbody>
-</table>
+{{comment}}
 
 <style>
     .my-form-paper thead td{
