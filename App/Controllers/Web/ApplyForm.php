@@ -43,6 +43,9 @@ class ApplyForm
         } elseif ($formType->name == 'A51') {
             $usersH1 = User::query()->where('user_type_id', '=', 1)->get();
             $followUpRange = [6, 9];
+        } elseif ($formType->name == 'A52') {
+            $usersH1 = null;
+            $followUpRange = null;
         }
 
         $content = $this->formLoader->load($formType->name);

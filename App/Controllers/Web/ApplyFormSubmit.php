@@ -136,7 +136,7 @@ class ApplyFormSubmit
                 $approverLineId = $approver->lineUserId;
                 $url50 = Url::viewform($parentId);
                 $url51 = Url::viewform($approvalInstance->id);
-                $url52 = Url::applyA51form($approver->token);
+                $url52 = Url::applyA52form($approver->token);
                 $msg = new TextMessage(
                     "มีคนส่ง approve id " . $approvalInstance->id .
                     " รอให้คุณ approve อยู่\n" .

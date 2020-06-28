@@ -87,7 +87,6 @@ class IntentProcessor
                             "Cancel" => "cancel",
                         ]);
                         $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
-                        $bot->pushMessage($target->lineUserId, $confirmMsg->getMessageBuilder());
                         return;
 
                     }
@@ -194,6 +193,7 @@ class IntentProcessor
                 $instances = ApprovalInstance::query()
                     ->where('user_id', '=', $user->id)
                     ->where('status', '=', 0)
+                    ->where('approval_type_id', '=', 1)
                     ->get();
 
                 $items = array_map(function ($instance) use ($token) {
@@ -233,8 +233,11 @@ class IntentProcessor
 
         if (is_null($user)) {
             $user = new User();
-            $user->lineUserId = $user_token = $intent->lineUserId;
+            $user->lineUserId = $intent->lineUserId;
             $user->created_at = $user->updated_at = date('Y-m-d H:i:s');
+            $user->save();
+
+            $user->token = "u{$user->id}";
             $user->save();
         }
 
