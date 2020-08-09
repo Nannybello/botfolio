@@ -1,5 +1,14 @@
 <h1>บันทึกข้อความ A5</h1>
-
+<table>
+    <thead>
+    <tr>
+        <td rowspan="2">รายงานการฝึกอบรม ดูงาน ประชุม สัมนา</td>
+        <td rowspan="2">Training Report 1 <br/> 
+                        เอกสารหมายเลข 1</td>
+    </tr>
+    </thead>
+    
+</table>
 <ol>
     <li>
         ชื่อ / นามสกุล {{info_first_name}} {{info_last_name}}
