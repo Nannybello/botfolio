@@ -35,9 +35,9 @@
     </li>
     <li>
         ค่าใช้จ่าย <br/>
-        ค่าลงทะเบียนเรียน {{registerFee}} 
-        ค่าเดินทาง {{fare}} 
-        ค่าใช้จ่ายอื่นๆ {expenses}}
+        ค่าลงทะเบียนเรียน {{registerFee}} <br/>
+        ค่าเดินทาง {{fare}} <br/>
+        ค่าใช้จ่ายอื่นๆ {expenses}} <br/>
     </li>
     <li>
         คุณวุฒิ/วุฒิบัตรที่ได้รับ {{qualification}}
@@ -47,24 +47,19 @@
     </li>
     <li>
         สรุปผลโดยย่อ<br/>
-        <input type="radio" name="purposeSummary" id="purposeSummary_1" value="purposeFor"/>
-        <label for="purposeSummary_1">วัตถุประสงค์</label>
-        {{purposeTrainingSummary}}
-        <br>
-        <input type="radio" name="purposeSummary" id="purposeSummary_2" value="courseSummary"/>
-        <label for="purposeSummary_2">เนื้อหาโดยย่อ</label>
-        {{briefContent}}}
+        - วัตถุประสงค์ {{purposeSummary}} <br/>
+        - เนื้อหาโดย่อ {{briefContent}}
     </li>
     <li>
         ผลที่ได้รับ <br/>
-        <input type="radio" name="resultObtained" id="resultObtained_1" value="resultObtainedOnMyself"/>
-        <label for="resultObtained_1">ต่อตนเอง</label>
-        {{resultObtainedOnMyself}}
-        <br>
-        <input type="radio" name="resultObtained" id="resultObtained_2" value="resultObtainedOnMyself"/>
-        <label for="resultObtained_2">ต่อหน่วยงาน</label>
-        {{resultObtainedOnMyself}}
-        <br>
+        - ต่อตนเอง {{resultObtainedOnMyself}} <br/>
+        ภายในระยะเวลา {{resultObtainedOnMyselfTime}} <br/>
+        - ต่อองค์กร {{resultObtainedOnOganization}} <br/>
+        ภายในระยะเวลา {{resultObtainedOnOganizationTime}} <br/>
+        - อื่นๆ (ระบุ) {{resultObtainedOnOther}}
+    </li>
+    <li>
+        ความคิดเห็นและข้อเสนอแนะ {{suggestion}}
     </li>
 </ol>
 
