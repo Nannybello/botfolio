@@ -71,40 +71,8 @@
         ความคิดเห็นและข้อเสนอแนะ {{suggestion}}
     </li>
 </ol>
-
-<div>
-    <p>ส่วนราชการ สาขาวิชา {{info_major}} คณะ {{info_faculty}}</p>
-    <p>ที่ {{at}} วันที่ {{date}}</p>
-    <p>เรื่อง {{courseName}}</p>
-</div>
-
-<hr/>
-
-<p>เรียน คณะบดี</p>
-
-<table>
-    <thead>
-    <tr>
-        <td rowspan="2">หัวข้อเรื่อง</td>
-        <td colspan="2">ผลสัมฤทธิ์</td>
-        <td rowspan="2">มีการนำมาใช้</td>
-    </tr>
-    <tr>
-        <td>ไม่มีการนำมาใช้</td>
-        <td>มีการนำมาใช้</td>
-    </tr>
-    </thead>
-    <tbody>
-    <!--1-->
-    <tr>
-        <td>1.สามารถนำความรู้มาใช้ ...</td>
-        <td>{{yes_1}}</td>
-        <td>{{no_1}}</td>
-        <td>{{how_1}}</td>
-    </tr>
-    <!--1-->
-    </tbody>
-</table>
+(ผู้รายงาน) {{info_first_name}} {{info_last_name}} <br/>
+วันที่ {{date}}
 
 <style>
     .my-form-paper thead td{
