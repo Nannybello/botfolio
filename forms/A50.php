@@ -71,9 +71,10 @@
         ความคิดเห็นและข้อเสนอแนะ {{suggestion}}
     </li>
 </ol>
+<p> 
 (ผู้รายงาน) {{info_first_name}} {{info_last_name}} <br/>
 วันที่ {{date}}
-
+</p>
 <style>
     .my-form-paper thead td{
         text-align: center;
@@ -82,4 +83,5 @@
         border: 1px solid #000;
         padding: 5px;
     }
+    p {text-align: right;}
 </style>
