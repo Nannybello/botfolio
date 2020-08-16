@@ -1,5 +1,14 @@
 <h1>บันทึกข้อความ A6</h1>
-
+<table>
+    <thead>
+    <tr>
+        <td rowspan="2">รายงานการฝึกอบรม ดูงาน ประชุม สัมนา</td>
+        <td rowspan="2">Training Report 1 <br/> 
+                        เอกสารหมายเลข 1</td>
+    </tr>
+    </thead>
+    
+</table>
 <div>
     <p>ส่วนราชการ สาขาวิชา {{info_major}} คณะ {{info_faculty}}</p>
     <p>ที่ {{at}} วันที่ {{date}}</p>
