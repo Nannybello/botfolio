@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="9b56c990-6efb-421d-b09f-892600d5a302" name="beautyan" url="http://beautyandballoon.com">
-        <fileTransfer host="103.246.18.14" port="21" rootFolder="/botfolio">
+        <fileTransfer host="103.246.18.14" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
