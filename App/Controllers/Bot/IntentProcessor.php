@@ -32,13 +32,14 @@ class IntentProcessor
     public function process(LINEBot $bot, BotIntent $intent)
     {
 
-        $defaultText = "\n---\n" .
-            "message-text: {$intent->messageText}\n" .
-            "fulfillment: {$intent->fulfillmentText}\n" .
-            "params: " . json_encode($intent->parameters) . "\n" .
-            "intent: {$intent->intentName} ({$intent->intentDisplayName})\n" .
-            "lineUserId: {$intent->lineUserId}\n" .
-            "IntentClass: " . get_class($intent);
+        // $defaultText = "\n---\n" .
+        //     "message-text: {$intent->messageText}\n" .
+        //     "fulfillment: {$intent->fulfillmentText}\n" .
+        //     "params: " . json_encode($intent->parameters) . "\n" .
+        //     "intent: {$intent->intentName} ({$intent->intentDisplayName})\n" .
+        //     "lineUserId: {$intent->lineUserId}\n" .
+        //     "IntentClass: " . get_class($intent);
+        $defultText = "";
 
         $replyToken = $intent->replyToken;
         $user = $this->getUser($intent->lineUserId);

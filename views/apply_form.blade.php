@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Apply Form</h1>
+    
     <table>
         <tr>
             <th>id</th>
