@@ -7,6 +7,7 @@ use App\Models\Intents\DefaultFallbackIntent;
 use App\Models\Intents\RequestFromTypeIntent;
 use App\Models\Intents\TrainingCompleteIntent;
 use App\Models\Intents\TrainingRequestIntent;
+use App\Models\Intents\UploadFileIntent;
 
 abstract class BotIntent
 {
@@ -54,6 +55,10 @@ abstract class BotIntent
 
         if ($intentDisplayName == '5.0 Training Complete Intent' || $intentName == ' projects/botfolio-jnxcqb/agent/intents/81732c6d-d481-44c6-b1f1-86ca8c40ba46') {
             return new TrainingCompleteIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $messageText, $parameters);
+        }
+
+        if ($intentDisplayName == 'Upload File Intent')  {
+            return new UploadFileIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $messageText, $parameters);
         }
 
         return new DefaultFallbackIntent($intentName, $intentDisplayName, $fulfillmentText, $replyToken, $lineUserId, $messageText, $parameters);

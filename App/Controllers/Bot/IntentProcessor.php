@@ -15,12 +15,14 @@ use App\Models\Intents\DefaultFallbackIntent;
 use App\Models\Intents\RequestFromTypeIntent;
 use App\Models\Intents\TrainingCompleteIntent;
 use App\Models\Intents\TrainingRequestIntent;
+use App\Models\Intents\UploadFileIntent;
 use App\Models\Messages\CarouselMessage;
 use App\Models\Messages\ConfirmDialogMessage;
 use App\Models\Messages\TextMessage;
 use App\Utils\Url;
 use LINE\LINEBot;
 use mysql_xdevapi\Exception;
+
 
 class IntentProcessor
 {
@@ -213,6 +215,9 @@ class IntentProcessor
                 $reply = new TextMessage("แจ้งการอบรบสำเร็จแล้ว");
                 $bot->replyMessage($replyToken, $reply->getMessageBuilder());
             }
+        }  elseif ($intent instanceof UploadFileIntent){
+            $reply = new TextMessage("อัพโหลดไฟล์");
+            $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         }
 
         //Test default case
