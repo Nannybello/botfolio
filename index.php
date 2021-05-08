@@ -86,6 +86,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $controller = new \App\Controllers\Web\UploadFile();
         $controller->index();
     });
+
+    $r->addRoute('POST', BASE_URL . '/uploadfile', function () {
+        $controller = new \App\Controllers\Web\UploadFile();
+        $controller->upload();
+    });
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

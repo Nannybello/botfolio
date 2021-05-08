@@ -28,4 +28,17 @@ class UploadFile
             'token' => $token,
         ]);
     }
+
+    public function uploadfile()
+    {
+        $token = $_GET['token'];
+        $user = User::fromToken($token);
+        print_r($user);
+        print_r($_FILES);
+    }   
+    
+    function getUserFileStoragePath(string $filename, string $userId): string
+    {
+        return ROOT_PATH . "/storage/user_files/$userId/$filename";
+    }
 }
