@@ -76,4 +76,9 @@ class Url
     {
         return "https://botfolio.beautyandballoon.com/rejectform/$id?token=$token";
     }
+
+    public static function uploadfile($token)
+    {
+        return "https://botfolio.beautyandballoon.com/uploadfile/?token=$token";
+    }
 }

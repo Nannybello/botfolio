@@ -81,6 +81,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', BASE_URL . '/articles/{id:\d+}[/{title}]', function ($id, $title = 'no') {
         echo "id=$id, title=$title";
     });
+
+    $r->addRoute('GET', BASE_URL . '/uploadfile', function () {
+        $controller = new \App\Controllers\Web\UploadFile();
+        $controller->index();
+    });
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

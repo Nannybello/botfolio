@@ -41,7 +41,7 @@ class IntentProcessor
         //     "intent: {$intent->intentName} ({$intent->intentDisplayName})\n" .
         //     "lineUserId: {$intent->lineUserId}\n" .
         //     "IntentClass: " . get_class($intent);
-        $defultText = "";
+        $defaultText = "";
 
         $replyToken = $intent->replyToken;
         $user = $this->getUser($intent->lineUserId);
@@ -216,10 +216,12 @@ class IntentProcessor
                 $bot->replyMessage($replyToken, $reply->getMessageBuilder());
             }
         }  elseif ($intent instanceof UploadFileIntent){
-            $reply = new TextMessage("อัพโหลดไฟล์");
+            $token = $user ? $user->token : '';
+            $url = Url::uploadfile($token);
+            $reply = new TextMessage($url . "\n" . $defaultText);
             $bot->replyMessage($replyToken, $reply->getMessageBuilder());
         }
-
+ 
         //Test default case
         $bot->replyMessage($replyToken, (new TextMessage($defaultText))->getMessageBuilder());
     }
