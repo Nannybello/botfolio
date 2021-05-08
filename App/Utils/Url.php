@@ -79,6 +79,6 @@ class Url
 
     public static function uploadfile($token)
     {
-        return "https://botfolio.beautyandballoon.com/uploadfile/?token=$token";
+        return "https://botfolio.beautyandballoon.com/uploadfile?token=$token";
     }
 }
