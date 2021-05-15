@@ -81,6 +81,9 @@ class UploadFile
 
     function getUserFileStoragePath(string $filename, string $userId): string
     {
+        if (!file_exists(ROOT_PATH . "/storage/user_files/$userId")) {
+            mkdir(ROOT_PATH . "/storage/user_files/$userId", 0777, true);
+        }
         return ROOT_PATH . "/storage/user_files/$userId/$filename";
     }
 }
